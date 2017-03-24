@@ -1,4 +1,10 @@
-var name = require("./name")
-console.log(0);
+import React from 'react'
+import ReactDom from 'react-dom'
+import Index from './component/index'
 
-console.log(name.sayName());
+
+require('../style/app.scss')
+ReactDom.render(
+	<Index></Index>,
+	document.getElementById('root')
+);
