@@ -4,16 +4,52 @@
 	@include flex-direction(column);
 	header{
 		height: .44rem;
-		background: green;
+		background: #fff;
 	}
 	section{
-		flex:1;
-		height: 1rem;
-		background: grey;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		background: #f3f3f3;
 	}
 	footer{
 		height: .5rem;
-		background: blue;
-	}
+		background: #fff;
+		@include flexbox();
+		ul{
+			@include flex();
+			@include flexbox();
+			line-height: .5rem;
+			li{
+				@include flex();
+				@include flexbox();
+				@include flex-direction(column);
+				@include align-items(center);
+				@include justify-content(center);
+				i{
+					line-height: .25rem;
+					font-size: .25rem;
+				}
+				b{
+					line-height: .14rem;
+					font-size: .12rem;
+				}
+				i, b {
+					color: rgba(0, 0, 0, 0.5)
+				}
+				a{
+					@include flexbox();
+					@include flex-direction(column);
+					@include align-items(center);
+					@include justify-content(center);
+					&.active i,
+					&.active b {
+						font-weight: bold;
+						color: rgba(254, 175, 0, 1)
+					}
+				}
 
+			}
+		}
+	}
 }

@@ -708,26 +708,193 @@ a {
   -moz-osx-font-smoothing: grayscale;
   vertical-align: middle; }
 
+/**
+ * @module fragment
+ * @method yo-header
+ * @version 3.0.0
+ * @description 构造头的自定义使用方法
+ * @demo http://ued.qunar.com/hy2/yo/demo/src/html/fragment/yo-header.html
+ * @param {String} $name 定义扩展名称 <3.0.0>
+ * @param {Length} $height 高度 <3.0.0>
+ * @param {Length} $item-width 两侧子项操作区宽度 <3.0.0>
+ * @param {Length} $item-space 两侧子项离边界的间隙 <3.0.0>
+ * @param {Length} $border-width 边框厚度 <3.0.0>
+ * @param {Color} $border-color 边框色 <3.0.0>
+ * @param {Color} $bgcolor 背景色 <3.0.0>
+ * @param {Color} $color 文本色 <3.0.0>
+ * @param {Length} $font-size 字号大小 <3.0.0>
+ * @param {Color} $item-color 两侧子项操作区文本色 <3.0.0>
+ * @param {Color} $item-ico-color 两侧子项操作区ico色 <3.0.0>
+ * @param {Length} $item-font-size 两侧子项操作区字号大小 <3.0.0>
+ * @param {Length} $item-ico-size 两侧子项操作区ico大小 <3.0.0>
+ */
+.yo-header {
+  height: 0.44rem;
+  line-height: 0.44rem;
+  position: relative;
+  background-color: #00bcd4;
+  color: #fff;
+  font-size: 0.18rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center; }
+  .yo-header::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    content: " ";
+    border-color: #00bcd4;
+    border-style: solid;
+    border-width: 0 0 1px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .yo-header::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .yo-header::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .yo-header::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+  .yo-header > .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 0.6rem; }
+  .yo-header > .regret,
+  .yo-header > .affirm {
+    position: absolute;
+    top: 0;
+    width: 0.6rem;
+    color: #fff;
+    cursor: pointer; }
+    .yo-header > .regret.yo-ico,
+    .yo-header > .regret > .yo-ico,
+    .yo-header > .affirm.yo-ico,
+    .yo-header > .affirm > .yo-ico {
+      color: #7ff;
+      font-size: 0.2rem; }
+  .yo-header > .regret {
+    left: 0;
+    padding-left: 0.15rem;
+    text-align: left; }
+  .yo-header > .affirm {
+    right: 0;
+    padding-right: 0.15rem;
+    text-align: right; }
+  .yo-header .action-touch {
+    opacity: .5; }
+
+/**
+ * yo-header通用或全局扩展
+ */
 #root {
   height: 100%; }
 
+@font-face {
+  font-family: yofont;
+  src: url(/iconfont/iconfont.woff) format("woff"), url(/iconfont/iconfont.ttf) format("truetype"); }
+
+.yo-header {
+  background-color: #fff;
+  color: #5b5b5b;
+  font-size: 0.16rem; }
+  .yo-header::after {
+    border-width: 0; }
+  .yo-header > .regret.yo-ico,
+  .yo-header > .regret > .yo-ico,
+  .yo-header > .affirm.yo-ico,
+  .yo-header > .affirm > .yo-ico {
+    color: #fff; }
+  .yo-header .regret {
+    right: 0;
+    left: auto; }
+
 .m-index {
-  display: flex;
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  flex-direction: column;
-  height: 100%; }
+  flex-direction: column; }
   .m-index header {
     height: .44rem;
-    background: green; }
+    background: #fff; }
   .m-index section {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
-    height: 1rem;
-    background: grey; }
+    background: #f3f3f3; }
   .m-index footer {
     height: .5rem;
-    background: blue; }
+    background: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex; }
+    .m-index footer ul {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      width: .1px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      line-height: .5rem; }
+      .m-index footer ul li {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        width: .1px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center; }
+        .m-index footer ul li i {
+          line-height: .25rem;
+          font-size: .25rem; }
+        .m-index footer ul li b {
+          line-height: .14rem;
+          font-size: .12rem; }
+        .m-index footer ul li i, .m-index footer ul li b {
+          color: rgba(0, 0, 0, 0.5); }
+        .m-index footer ul li a {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center; }
+          .m-index footer ul li a.active i,
+          .m-index footer ul li a.active b {
+            font-weight: bold;
+            color: #feaf00; }

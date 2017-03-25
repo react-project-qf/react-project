@@ -36,12 +36,14 @@ module.exports = {
 			// },
 			{
 				test: /\.css$/,
+				exclude: /node_modules/,
 				loader: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
 					use: 'css-loader'
 				})
 			}, {
 				test: /\.scss$/,
+				exclude: /node_modules/,
 				loader: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
 					use: 'css-loader!sass-loader'
@@ -81,5 +83,6 @@ module.exports = {
 	externals: {
 		'react': 'window.React',
 		'react-dom': 'window.ReactDOM',
+		'react-router': 'window.ReactRouter',
 	}
 }
