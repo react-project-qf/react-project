@@ -1,8 +1,7 @@
 .m-index{
-	display:flex;
+	height: 100%;
 	@include flexbox();
 	@include flex-direction(column);
-	height: 100%;
 	header{
 		height: .44rem;
 		background: green;
