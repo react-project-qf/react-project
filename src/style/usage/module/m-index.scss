@@ -1,0 +1,20 @@
+.m-index{
+	display:flex;
+	@include flexbox();
+	@include flex-direction(column);
+	height: 100%;
+	header{
+		height: .44rem;
+		background: green;
+	}
+	section{
+		flex:1;
+		height: 1rem;
+		background: grey;
+	}
+	footer{
+		height: .5rem;
+		background: blue;
+	}
+
+}

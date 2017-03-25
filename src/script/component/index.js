@@ -9,8 +9,12 @@ class Index extends React.Component {
 	}
 	render() {
 		return (
-			<div> 
-				{this.state.name}
+			<div className="m-index"> 
+				<header></header>
+				<section>
+					{this.state.name}
+				</section>
+				<footer></footer>
 			</div>
 		)
 	}

@@ -1,4 +1,4 @@
-$base-color: red;
-body {
-  background: $base-color;
-}
+@charset "UTF-8";
+@import "./usage/core/reset";
+@import "./usage/module/common";
+@import "./usage/module/m-index";
