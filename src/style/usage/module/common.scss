@@ -1,0 +1,30 @@
+@import "../fragment/yo-header";
+
+#root {
+  height: 100%;
+}
+
+@font-face {
+  font-family: yofont;
+  src: url(/iconfont/iconfont.woff) format("woff"),
+  url(/iconfont/iconfont.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: yofont;
+  src: url(/iconfont/iconfont-more.woff) format("woff"),
+  url(/iconfont/iconfont-more.ttf) format("truetype");
+}
+
+@include yo-header(
+  $name: a,
+  $bgcolor: #35495e,
+  $border-width: 0,
+  $item-ico-color: #fff,
+  $font-size: .16rem
+){
+  .regret {
+    right: 0;
+    left: auto;
+  }
+}
