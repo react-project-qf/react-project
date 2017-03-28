@@ -11,7 +11,7 @@ var multiData = {
     subList: kindData[0].body.categorys
 };
 
-class Kinds extends React.Component {
+class Kind extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,7 +29,7 @@ class Kinds extends React.Component {
             <div
                 id="container"
                 title="multiList Demo"
-                className="kindList"
+                className="kindList flex demo-content"
             >
                 <MultiList
                     dataSource={ this.state.dataSource}
@@ -47,6 +47,7 @@ class Kinds extends React.Component {
                         }
                     }}
                     renderContent={({type}) => {
+                        console.log(type);
                         return <Product data={type} />;
                     }}
 
@@ -55,4 +56,4 @@ class Kinds extends React.Component {
         )
     }
 }
-export default Kinds
+export default Kind

@@ -17,7 +17,7 @@ class Product extends React.Component {
 						{this.state.list}
 					</ul>
 				</div>
-				< /Scroller>
+				</Scroller>
 			</div>
 		)
 	}

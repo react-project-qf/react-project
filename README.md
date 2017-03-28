@@ -1,4 +1,4 @@
-npm install
+npm i
 
 //安装json-server
 npm i json-server -g

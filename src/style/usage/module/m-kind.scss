@@ -2,7 +2,9 @@ section{
 	@include border($border-width :1px 0 0 0, $border-color: #eee);
 }
 .kindList{
+	height: 100%;
 	.yo-multilist{
+		height: 100%;
 		> .item {
 			background: #fff;
 			&:first-child{
@@ -28,6 +30,8 @@ section{
 	}
 }
 .kindLists{
+
+
 	overflow-y:auto !important;
 	background: #fafafa;
 	li{
