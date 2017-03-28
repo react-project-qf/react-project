@@ -1,53 +1,3 @@
-<<<<<<< HEAD
-.m-index {
-  @include flexbox();
-  @include flex-direction(column);
-  height: 100%;
-  header {
-    height: .44rem;
-    background: green;
-  }
-  section {
-    flex: 1;
-  }
-  footer {
-    height: .5rem;
-    background: #eee;
-    @include border(1px 0 0 0, #fff);
-    ul {
-      width: 100%;
-      height: 100%;
-      @include flexbox();
-      li {
-        @include flex();
-        a {
-          height: 100%;
-          @include flexbox();
-          @include flex-direction(column);
-          @include align-items(center);
-          @include justify-content(center);
-          i, b {
-            color: rgba(0, 0, 0, 0.5)
-          }
-          i {
-            font-size: .25rem;
-            line-height: .25rem;
-          }
-          b {
-            font-weight: normal;
-            font-size: .12rem;
-            // @include transform(scale(0.5));
-          }
-          &.active i,
-          &.active b {
-            font-weight: bold;
-            color: rgba(0, 0, 0, 1)
-          }
-        }
-      }
-    }
-  }
-=======
 .m-index{
 	height: 100%;
 	@include flexbox();
@@ -106,5 +56,4 @@
 			}
 		}
 	}
->>>>>>> master
 }

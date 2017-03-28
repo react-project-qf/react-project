@@ -1,11 +1,4 @@
 @import "../fragment/yo-header";
-<<<<<<< HEAD
-
-#root {
-  height: 100%;
-}
-
-=======
 @import '../fragment/yo-search.scss';
 #root{
 	height:100%;
@@ -52,33 +45,11 @@ header{
       }
     }
   }
->>>>>>> master
 @font-face {
   font-family: yofont;
   src: url(/iconfont/iconfont.woff) format("woff"),
   url(/iconfont/iconfont.ttf) format("truetype");
 }
-<<<<<<< HEAD
-
-@font-face {
-  font-family: yofont;
-  src: url(/iconfont/iconfont-more.woff) format("woff"),
-  url(/iconfont/iconfont-more.ttf) format("truetype");
-}
-
-@include yo-header(
-  $name: a,
-  $bgcolor: #35495e,
-  $border-width: 0,
-  $item-ico-color: #fff,
-  $font-size: .16rem
-){
-  .regret {
-    right: 0;
-    left: auto;
-  }
-}
-=======
 @font-face {
   font-family: yofont;
   src: url(/iconfont/iconfont-le.woff) format("woff"),
@@ -97,4 +68,3 @@ header{
   $font-size:0.14rem,
   $input-bgcolor:#eee
 )
->>>>>>> master

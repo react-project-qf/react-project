@@ -1,18 +1,3 @@
 @charset "utf-8";
-<<<<<<< HEAD
-@import "./modal";
-@import "../fragment/yo-popup";
-@import "./picker";
-
-.yo-popup-picker {
-    > .bd {
-        @include flexbox;
-    }
-    .yo-picker {
-        @include flex;
-    }
-}
-=======
 @import "./popup";
 @import "./picker";
->>>>>>> master
