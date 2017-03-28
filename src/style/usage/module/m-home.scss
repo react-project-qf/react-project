@@ -1,10 +1,125 @@
-@import "../fragment/yo-tab";
-.m-home{
-	section{
-		background: #fff;
+@import "../component/carousel";
+@include yo-carousel(
+
+){
+	$on-index-bgcolor:#EEC900;
+	$btn-size:.1rem
+}
+section{
+	overflow-y:auto;
+	#content{
+		position:relative;
+		background:#eee;
+		overflow:hidden;
+		height:100%;
+		.guang{
+			display:block;
+			font-size:.12rem;
+			background:rgba(0,0,0,0.3);
+			color:#fff;
+			width:.3rem;
+			height:.14rem;
+			position:absolute;
+			z-index: 999;
+			right:0;
+			top:1.2rem;
+			text-align: center;
+			line-height:.14rem;
+		}
+		.homeTitle{
+			width:100%;
+			height:1.8rem;
+			background:#fff;
+			ul{
+				width:100%;
+				height:100%;
+				li{
+					float:left;
+					width:25%;
+					height:50%;
+					@include flexbox();
+      				@include flex-direction(column);
+      				@include align-items(center);
+         			@include justify-content(center);
+      				i{
+      					border-radius:50%;
+      					background:red;
+      					width:.4rem;
+      					height:.4rem;
+            			font-size: .25rem;
+            			line-height: .25rem;
+      				}
+				}
+			}
+		}
+		.char{
+			height:12rem;
+			background:#fff;
+			margin-top:.2rem;
+			.module-title-box{
+				position:relative;
+				width:100%;
+				display:block;
+				padding:.1rem 0;
+				font-size:.14rem;
+				color:#000;
+				.module-title-left-icon{
+					background: #f1622d;
+					display: block;
+				    position: absolute;
+				    left: .1rem;
+				    top: .13rem;
+				    width: .05rem;
+				    height: .13rem;
+				}
+				.module-title-right-icon{
+					display: block;
+				    position: absolute;
+				    right: .1rem;
+				    top: .13rem;
+				    width: .1rem;
+				    height: .11rem;
+				    background-size: .09rem .1rem;
+				    color:#333;
+				}
+				.module-title-txt{
+					font-size:.14rem;
+					padding-left:.22rem;
+				}
+				.module-title-countdown{
+				    position: absolute;
+				    top: .06rem;
+				    right: .3rem;
+				    padding: .05rem;
+				    border: 1px solid #efefef;
+				    border-radius: .05rem;
+					float:right;
+					font-size: .14rem;
+					.count-down-txt{
+						color: #6C6C6C;
+    					padding-right: .05rem;
+    					border-right: 1px solid #c4c1c1;
+					}
+					#orderAndStart2{
+						padding-left: 5px;
+						color: #f1622d;
+					}
+				}
+			}
+		}
+		.yo-carousel{
+			width:100%;
+			height:1.35rem;
+			.cont{
+				height:100%;
+				li{
+					height:100%;
+					.img{
+						height:100%;
+						width:100%;
+					}
+				}
+			}
+		}
 	}
 }
-@include yo-tab(
-  $bgcolor: #fff,
-	$color:#5b5b5b
-);

@@ -5,7 +5,7 @@ import {
 import {
 	connect
 } from 'react-redux'
-
+import Header from './header'
 import {
 	mapStateToProps,
 	mapDispatchToProps
@@ -15,16 +15,15 @@ class Index extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			title: '首页'
+			title: '首页',
+			topHeader: <Header></Header>
 		}
 	}
 
 	render() {
 		return (
 			<div className="m-index">
-				<header>
-						<h2 className="yo-header">{this.props.value}</h2>
-				</header>
+				{this.state.topHeader}
 				<section>
 					{this.props.children}
 				</section>
@@ -66,6 +65,30 @@ class Index extends React.Component {
 		)
 	}
 	componentDidMount() {}
+	componentWillReceiveProps() {
+		switch (this.props.routes[1].title) {
+			case "2":
+				this.setState({
+					topHeader: <header><p className="leMa">乐妈圈<span className="yo-ico">&#xe655;</span><span className="yo-ico">&#xe64a;</span></p></header>
+				});
+				break;
+			case "3":
+				this.setState({
+					topHeader: <header><p>购物车</p></header>
+				});
+				break;
+			case "4":
+				this.setState({
+					topHeader: null
+				});
+				break;
+			default:
+				this.setState({
+					topHeader: <Header></Header>
+				});
+				break;
+		}
+	}
 	componentDidUpdate() {
 		let title = this.props.routes[1].title;
 		console.log(title);

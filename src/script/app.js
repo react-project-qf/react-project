@@ -28,11 +28,11 @@ ReactDom.render(
 		<Router history={hashHistory}>
 			<Route path="/" component={Index}>
 				<IndexRoute path="home" component={Home}></IndexRoute>
-				<Route path="home" title="首页"  component={Home}></Route>
-				<Route path="kind" title="分类" component={Kind}></Route>
-				<Route path="friends" title="乐妈圈" component={Friends}></Route>
-				<Route path="cart" title="购物车" component={Cart}></Route>
-				<Route path="my" title="我的" component={My}></Route>
+				<Route path="home" title="0"  component={Home}></Route>
+				<Route path="kind" title="1" component={Kind}></Route>
+				<Route path="friends" title="2" component={Friends}></Route>
+				<Route path="cart" title="3" component={Cart}></Route>
+				<Route path="my" title="4" component={My}></Route>
 			</Route>
 		</Router>
 	</Provider>,

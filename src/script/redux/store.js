@@ -3,7 +3,7 @@ import {
 } from 'redux'
 
 function reducer(state = {
-  title: "首页"
+  title: "1"
 }, action) {
   switch (action.type) {
     case 'SETTITLE':

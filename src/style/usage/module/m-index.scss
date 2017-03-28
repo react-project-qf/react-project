@@ -27,10 +27,12 @@
 				@include align-items(center);
 				@include justify-content(center);
 				i{
+					margin-top: -.02rem;
 					line-height: .25rem;
 					font-size: .25rem;
 				}
 				b{
+					margin-top: .04rem;
 					line-height: .14rem;
 					font-size: .12rem;
 				}
