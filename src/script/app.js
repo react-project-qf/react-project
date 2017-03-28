@@ -21,7 +21,7 @@ import Home from './component/home'
 import Kind from './component/kind'
 import Friends from './component/friends'
 import Cart from './component/cart'
-import My from './component/kind1'
+import My from './component/my'
 
 ReactDom.render(
 	<Provider store={store}>
