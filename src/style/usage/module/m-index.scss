@@ -19,9 +19,6 @@
       @include flexbox();
       li {
         @include flex();
-        &:first-child i {
-          margin-top: .08rem;
-        }
         a {
           height: 100%;
           @include flexbox();

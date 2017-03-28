@@ -1,7 +1,33 @@
+@import "../component/carousel";
+
+@include yo-carousel(
+
+){
+  height: 100%;
+  ul.cont {
+    height: 100%;
+    li {
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+};
+
 .m-board {
   div.swiper {
     height: 1.9rem;
     background: #f9efd4;
+    .yo-carousel {
+      height: 100%;
+      li {
+        height: 100%;
+        img {
+          height: 100%;
+        }
+      }
+    }
   }
   > ul {
     height: 1.87rem;

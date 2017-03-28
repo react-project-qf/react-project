@@ -19,8 +19,9 @@ module.exports = {
     historyApiFallback: false,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'localhost:9000',
         pathRewrite: {'^/api': ''}
+        
       }
     }
   },
@@ -69,7 +70,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.ejs',
       filename: 'index.html',
-      title: '豆瓣电影'
+      title: '乐友'
     }),
     new ExtractTextPlugin({
       // filename: 'app_[hash].css',
@@ -85,6 +86,8 @@ module.exports = {
   externals: {
     'react': 'window.React',
     'react-dom': 'window.ReactDOM',
-    'react-router': 'window.ReactRouter'
+    'react-router': 'window.ReactRouter',
+    'react-redux':'window.ReactRedux',
+    'redux':'window.Redux'
   }
 }
