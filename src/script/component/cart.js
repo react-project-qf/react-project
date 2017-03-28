@@ -1,12 +1,5 @@
 import React from 'react'
 
-<<<<<<< HEAD
-class Cart extends React.Component {
-  render() {
-    return (
-      <div className="m-cart">
-        cart...
-=======
 class Cart extends React.Component{
   render(){
     return(
@@ -19,14 +12,8 @@ class Cart extends React.Component{
                <p>空空如也,快去填满它</p>
              <div className="btn">随意逛逛</div>
         </div>
->>>>>>> master
       </div>
     )
   }
 }
-<<<<<<< HEAD
-
 export default Cart
-=======
-export default Cart
->>>>>>> master
