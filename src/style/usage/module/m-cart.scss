@@ -1,0 +1,42 @@
+.m-cat{
+	.beforCat{
+		.cat-top a{
+		display:inline-block;
+		width:100%;
+		height:.4rem;
+		background:#666;
+		font-size:.12rem;
+		line-height:.4rem;
+		span{
+			display:inline-block;
+			text-indent:.2rem;
+			color:#EEC900;
+			font-size:.12rem;
+		}
+	}
+	.cat-img{
+		width:.6rem;
+		height:.6rem;
+		border-radius:50%;
+		background:#666;
+		font-size:0.4rem;
+		text-align:center;
+		line-height:.6rem;
+		margin:1rem auto;
+	}
+	p{
+		width:100%;
+		font-size:.2rem;
+		text-align:center;
+	}
+	.btn{
+		border:1px solid #EEC900;
+		width:.6rem;
+		height:.3rem;
+		text-align:center;
+		line-height:.3rem;
+		color:#EEC900;
+		margin:.3rem auto;
+	}
+	}
+}
