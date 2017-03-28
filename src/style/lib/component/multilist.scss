@@ -17,7 +17,7 @@
         @include yo-checked( $name: radio, $on-color: $active-color ) {
             margin-right: 0.1rem;
         };
-        @include yo-checked( $name: checkbox, $on-color: $active-color, $border-width: 1px, $bgcolor: #fff, $border-color: $active-color, $on-border-color: $active-color ) {
+        @include yo-checked( $name: checkbox, $on-color: $active-color, $border-width: 0px, $bgcolor: #fff, $border-color: $active-color, $on-border-color: $active-color ) {
             margin-right: 0.1rem;
         };
         @include yo-checked( $name: dot, $content:'\f083', $on-color: $active-color ){
@@ -53,8 +53,8 @@
                     content: ' ';
                     width: 6px;
                     height: 6px;
-                    border-top: 1px solid $line-color;
-                    border-left: 1px solid $line-color;
+                    border-top: 0px solid $line-color;
+                    border-left: 0px solid $line-color;
                     background-color: $line-color;
                     @include transform(rotate(-45deg) translate(50%, -50%));
                 }
@@ -69,7 +69,7 @@
                 }
                 &.spread {
                     background-color: #fff;
-                    @include border(1px 1px 0 0, $line-color #fff $line-color $line-color, solid);
+                    @include border(0px 0px 0 0, $line-color #fff $line-color $line-color, solid);
                     &::before{
                         content: none;
                     }

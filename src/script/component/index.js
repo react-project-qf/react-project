@@ -1,5 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router'
+import {
+	Link
+} from 'react-router'
+import {
+	connect
+} from 'react-redux'
+
+import {
+	mapStateToProps,
+	mapDispatchToProps
+} from '../redux/store'
+
 class Index extends React.Component {
 	constructor(props) {
 		super(props)
@@ -7,16 +18,12 @@ class Index extends React.Component {
 			title: '首页'
 		}
 	}
-	clickHandler(type) {
-    this.setState({
-      title: type
-    })
-  }
+
 	render() {
 		return (
 			<div className="m-index">
 				<header>
-						<h2 className="yo-header">{this.state.title}</h2>
+						<h2 className="yo-header">{this.props.value}</h2>
 				</header>
 				<section>
 					{this.props.children}
@@ -24,31 +31,31 @@ class Index extends React.Component {
 				<footer>
 					<ul>
 						<li>
-							<Link to="/home" onClick={this.clickHandler.bind(this, '首页')} activeClassName="active" >
+							<Link to="/home" activeClassName="active" >
 								<i className="yo-ico">&#xe601;</i>
 								<b>首页</b>
 							</Link>
 						</li>
 						<li>
-							<Link to="/kind" onClick={this.clickHandler.bind(this, '分类')} activeClassName="active">
+							<Link to="/kind" activeClassName="active">
 								<i className="yo-ico">&#xe66f;</i>
 								<b>分类</b>
 							</Link>
 						</li>
 						<li>
-							<Link to="/friends" onClick={this.clickHandler.bind(this, '乐妈圈')} activeClassName="active">
+							<Link to="/friends" activeClassName="active">
 								<i className="yo-ico">&#xe608;</i>
 								<b>乐妈圈</b>
 							</Link>
 						</li>
 						<li>
-							<Link to="/cart" onClick={this.clickHandler.bind(this, '购物车')} activeClassName="active">
+							<Link to="/cart" activeClassName="active">
 								<i className="yo-ico">&#xe654;</i>
 								<b>购物车</b>
 							</Link>
 						</li>
 						<li>
-							<Link to="/my" onClick={this.clickHandler.bind(this, '我的')} activeClassName="active">
+							<Link to="/my" activeClassName="active">
 								<i className="yo-ico">&#xe60f;</i>
 								<b>我的</b>
 							</Link>
@@ -58,21 +65,19 @@ class Index extends React.Component {
 			</div>
 		)
 	}
-	componentDidMount() {
-		// fetch('/api/list.php')
-		// 	.then(response => response.json())
-		// 	.then(
-		// 		res => {
-		// 			console.log("aaaa");
-		// 			console.log(res);
-		// 			this.setState({
-		// 				name: <div>{res.name}</div>
-		// 			})
-		// 		})
+	componentDidMount() {}
+	componentDidUpdate() {
+		let title = this.props.routes[1].title;
+		console.log(title);
+		this.props.onChange({
+			type: 'SETTITLE',
+			title: title
+		})
 	}
 }
 
-export {
-	Index as
-	default
-}
+//组件的改造，捏合
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Index)

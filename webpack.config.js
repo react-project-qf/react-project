@@ -18,10 +18,11 @@ module.exports = {
 		historyApiFallback: false,
 		proxy: {
 			'/api': {
-				target: "http://localhost:3000",
+				target: "http://m.leyou.com.cn",
 				pathRewrite: {
-					'^/api': ''
-				}
+					'^/api': '',
+				},
+				changeOrigin: true
 			}
 		}
 	},
@@ -84,5 +85,7 @@ module.exports = {
 		'react': 'window.React',
 		'react-dom': 'window.ReactDOM',
 		'react-router': 'window.ReactRouter',
+		'react-redux': 'window.ReactRedux',
+		'redux': 'window.Redux'
 	}
 }
