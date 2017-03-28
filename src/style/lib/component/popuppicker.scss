@@ -1,4 +1,5 @@
 @charset "utf-8";
+<<<<<<< HEAD
 @import "./modal";
 @import "../fragment/yo-popup";
 @import "./picker";
@@ -11,3 +12,7 @@
         @include flex;
     }
 }
+=======
+@import "./popup";
+@import "./picker";
+>>>>>>> master

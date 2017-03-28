@@ -1,5 +1,6 @@
 import React from 'react'
 
+<<<<<<< HEAD
 class My extends React.Component {
   render() {
     return (
@@ -11,9 +12,19 @@ class My extends React.Component {
 			<li><p>空空如也，去装满它</p></li>
 			<li><span>随意逛逛~</span></li>
         </ul>
+=======
+class My extends React.Component{
+  render(){
+    return(
+      <div>
+        <h2>我的</h2>
+>>>>>>> master
       </div>
     )
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 export default My

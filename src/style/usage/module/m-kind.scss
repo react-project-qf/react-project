@@ -1,0 +1,52 @@
+section{
+	@include border($border-width :1px 0 0 0, $border-color: #eee);
+}
+.kindList{
+	height: 100%;
+	.yo-multilist{
+		height: 100%;
+		> .item {
+			background: #fff;
+			&:first-child{
+				background: #f2f2f2;
+				.yo-list{
+					> .item{
+						background: #fff;
+					} 
+					.item.spread{
+						background: #fafafa;
+						border:none ;
+						color: #f8ac00;
+						border-left: .02rem #f8ac00 solid;
+						z-index: 100;
+					}
+				}
+			}
+			.yo-scroller {
+				@include border($border-width:0 0 0 0) ;
+				position: absolute;
+			}
+		}
+	}
+}
+.kindLists{
+
+
+	overflow-y:auto !important;
+	background: #fafafa;
+	li{
+		width: 33.3333%;
+		float: left;
+		margin: .10rem 0;
+		text-align: center;
+		img{
+			width: .7rem;
+			height: .8rem;
+		}
+		p{
+			margin-top:.07rem ;
+			text-align: center;
+			color: #6c6c6c;
+		}
+	}
+}

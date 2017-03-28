@@ -10,7 +10,11 @@
 // 基本设置
 $_setting: (
     // {String} 版本号
+<<<<<<< HEAD
     version:             "3.0.7",
+=======
+    version:             "3.0.5",
+>>>>>>> master
     // {Boolean} 是否开启厂商前缀
     is-vendor-prefix:    true,
     // {String} 厂商前缀
@@ -691,6 +695,7 @@ $_table: (
     on-bgcolor:          null
 );
 
+<<<<<<< HEAD
 // Fragment timeline(12)
 $_timeline: (
     // {Length} timeline元件内边距
@@ -719,6 +724,8 @@ $_timeline: (
     border-color:       #ddd
 );
 
+=======
+>>>>>>> master
 // Fragment toolbar(11)
 $_toolbar: (
     // {Length} 宽度
