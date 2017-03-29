@@ -9,12 +9,12 @@ class Home extends React.Component {
     };
   }
   renderData(data) {
-    console.log("data", data)
+    // console.log("data", data)
     var arr = [];
     data.map(function(m) {
       arr.push(<li className='item'><img className='img' src={m.Pic}/></li>)
     })
-    console.log("arr", arr[0])
+    // console.log("arr", arr[0])
     this.setState({
       bannerList: arr
     });
@@ -23,7 +23,7 @@ class Home extends React.Component {
     fetch('./api/mall/postIndexData')
       .then(response => response.json())
       .then(data => {
-        console.log("sds", data)
+        // console.log("sds", data)
         this.renderData(data.slider);
       })
       .catch(e => console.log("Oops, error", e))
@@ -81,7 +81,7 @@ class Home extends React.Component {
       .then(response => response.json())
       .then(
         res => {
-          console.log(res.slider);
+          // console.log(res.slider);
           let bList = res.slider.map(function(item, index) {
             return <li className="item"><img className="img" src={item.Pic}/></li>
           });

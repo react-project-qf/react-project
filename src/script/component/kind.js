@@ -47,7 +47,7 @@ class Kind extends React.Component {
                         }
                     }}
                     renderContent={({type}) => {
-                        console.log(type);
+                        // console.log(type);
                         return <Product data={type} />;
                     }}
 

@@ -5,6 +5,7 @@ import Modal from '../../component_dev/modal/src';
 import { browserHistory,Link } from 'react-router';
 import fetchData from '../util/util.fetch.js'
 import Dialog from '../../component_dev/dialog/src'
+import {loading} from '../../component_dev/loading/src'
 
 class Register extends React.Component{
   constructor(props) {
@@ -46,7 +47,9 @@ class Register extends React.Component{
       window.localStorage.setItem("ly-phone",phone);
       window.localStorage.setItem("ly-babyBirthday",babyBirthday);
       let url='http://datainfo.duapp.com/shopdata/userinfo.php?status=register&userID='+phone+'&password='+password;
+      loading.show();
       fetchData(url,(data)=>{
+        loading.hide();
         if (data==0) {
           this.setState({
             dialogShow:true,

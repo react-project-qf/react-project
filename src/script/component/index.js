@@ -14,9 +14,10 @@ import {
 class Index extends React.Component {
 	constructor(props) {
 		super(props)
+		console.log('init');
 		this.state = {
 			title: '首页',
-			topHeader: <Header></Header>
+			topHeader: ""
 		}
 	}
 
@@ -64,8 +65,7 @@ class Index extends React.Component {
 			</div>
 		)
 	}
-	componentDidMount() {}
-	componentWillReceiveProps() {
+	switchRoutes(){
 		switch (this.props.routes[1].title) {
 			case "2":
 				this.setState({
@@ -89,9 +89,21 @@ class Index extends React.Component {
 				break;
 		}
 	}
-	componentDidUpdate() {
+	componentWillReceiveProps() {
+		this.switchRoutes();
+	}
+	componentDidMount(){
 		let title = this.props.routes[1].title;
-		console.log(title);
+		console.log('mount');
+		this.props.onChange({
+			type: 'SETTITLE',
+			title: title
+		})
+		this.switchRoutes();
+	}
+	componentDidUpdate() {
+		console.log('update');
+		let title = this.props.routes[1].title;
 		this.props.onChange({
 			type: 'SETTITLE',
 			title: title

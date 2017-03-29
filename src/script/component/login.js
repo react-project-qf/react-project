@@ -2,7 +2,9 @@ import React from 'react'
 import MHeader from './m-header'
 import { Link } from 'react-router'
 import Dialog from '../../component_dev/dialog/src'
+import Toast from '../../component_dev/toast/src'
 import fetchData from '../util/util.fetch.js'
+import {loading} from '../../component_dev/loading/src'
 
 class Login extends React.Component{
   constructor(props) {
@@ -27,15 +29,28 @@ class Login extends React.Component{
   submit(){
     let phone=this.state.phone;
     let password=this.state.password;
-    if(!(/^1[34578]\d{9}$/.test(phone))){
+    if (phone==""||phone==null) {
+      this.setState({
+        dialogShow:true,
+        dialogContent:"手机号忘填啦"
+      })
+      return 0
+    }else if(password==null||password==""){
+      this.setState({
+        dialogShow:true,
+        dialogContent:"密码忘填啦"
+      })
+    }else if(!(/^1[34578]\d{9}$/.test(phone))){
       this.setState({
         dialogShow:true,
         dialogContent:"手机号格式有误"
       })
     }else{
+      loading.show();
       window.localStorage.setItem("ly-phone",phone);
       let url='http://datainfo.duapp.com/shopdata/userinfo.php?status=login&userID='+phone+'&password='+password;
       fetchData(url,(data)=>{
+        loading.hide();
         if (data==0) {
           this.setState({
             dialogShow:true,
@@ -46,10 +61,16 @@ class Login extends React.Component{
             dialogShow:true,
             dialogContent:"用户名密码不符"
           })
-        }else if(data){
-          console.log(data);
+        }else if(data instanceof Object){
+          Toast.show('登陆成功', 3000);
           //先这样存着，有时间的话加上加密算法
           window.localStorage.setItem("ly-auth",phone+password);
+          location.href='#/my';
+        }else{
+          this.setState({
+            dialogShow:true,
+            dialogContent:"服务器忙，请稍后重试"
+          })
         }
       })
     }
