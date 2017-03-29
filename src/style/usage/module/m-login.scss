@@ -1,0 +1,77 @@
+@import "../element/yo-btn";
+.login{
+	font-family: "黑体";
+	position: relative;
+	height: 100%;
+	.content{
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include yo-btn(
+			$width:90%,
+			$height:.5rem,
+			$radius:2px
+		);
+
+		.label{
+			height: .15rem;
+		}
+		.yo-btn{
+			margin:.2rem auto;
+		}
+		.item{
+			input{
+				padding-top:.05rem;
+				width: 100%;
+			}
+			.ico{
+				font-size: .22rem;
+			}
+		}
+		.p1{
+			color: #606060;
+			width: 90%;
+			margin: .2rem auto;
+			.register{
+				float: left;
+				color: #606060;
+			}
+			.callpassword{
+				float: right;
+				color: #606060;
+			}
+		}
+	}
+	.buttom{
+		position: absolute;
+		bottom:.2rem;
+		width: 100%;
+		@include flexbox();
+		@include flex-direction(column);
+		@include align-items(center);
+		.liner{
+			/* @include border($border-width:1px 0 0 0,$border-color:#aaa);*/
+			border: 1px #aaa solid;
+			height: 1px;
+			width: 90%;
+		}
+		.otherlogin{
+			margin-bottom: .4rem;
+			color: #8f8f8f;
+			width: 1.21rem;
+			line-height: .14rem;
+			background: #eee;
+			margin-top: -.07rem;
+			text-align: center;
+			position: relative;
+			z-index: 100;
+		}
+		img{
+			width: .6rem;
+			margin-bottom: .2rem;
+		}
+		.hfistlogin{
+			bottom:0px;
+		}
+	}
+}

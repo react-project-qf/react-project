@@ -255,7 +255,9 @@ export default class RealModal extends Component {
             <div
                 ref="container"
                 className={containerClass}
-                onTouchTap={(evt) => {
+                // 手机端采用onTouchTap，在浏览器端使用onClick
+                // onTouchTap={(evt) => {
+                onClick={(evt) => {
                     if (evt.target === this.refs.container) {
                         onMaskTap(evt);
                     }

@@ -22,7 +22,9 @@ import Kind from './component/kind'
 import Friends from './component/friends'
 import Cart from './component/cart'
 import My from './component/my'
-
+import Login from './component/login'
+import Register1 from './component/register-1'
+import Register2 from './component/register-2'
 ReactDom.render(
 	<Provider store={store}>
 		<Router history={hashHistory}>
@@ -34,6 +36,9 @@ ReactDom.render(
 				<Route path="cart" title="3" component={Cart}></Route>
 				<Route path="my" title="4" component={My}></Route>
 			</Route>
+			<Route path="/login" component={Login}></Route>
+			<Route path="/register-1" component={Register1}></Route>
+			<Route path="/register-2" component={Register2}></Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')

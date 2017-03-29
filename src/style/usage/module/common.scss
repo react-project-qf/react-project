@@ -3,6 +3,9 @@
 #root{
 	height:100%;
 }
+input{
+	border: none;
+}
 header{
     height:.44rem;
     color:#333;
@@ -59,9 +62,11 @@ header{
 @include yo-header(
   $bgcolor: #fff,
   $color:#333,
-  $border-width: 0,
-  $font-size: .25rem,
-  $item-ico-size: .3rem
+  $border-width:0 0 1px 0,
+	$border-color:#dddddd,
+  $font-size: .18rem,
+  $item-ico-size: .18rem,
+	$item-ico-color:#1c1c1c
 )
 @include yo-search(
   $bgcolor:#fff,
