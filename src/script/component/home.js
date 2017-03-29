@@ -33,19 +33,19 @@ class Home extends React.Component {
       <div id="content" className="container">
 			<Scroller ref="scroller" usePullRefresh={true}  useLoadMore={true}
 			extraClass={'yo-scroller-fullscreen'} scrollY={true}>
-				<span className="guang">广告</span>
 				<Carousel>
 				    {this.state.bannerList}
+            <span className="guang">广告</span>
 				</Carousel>
 				<div className="homeTitle">
 					<ul>
 						<li><i><img src="./images/index_sea.png"/></i><b>乐海淘</b></li>
-						<li><i><img src="./images/index_sea.png"/></i><b>乐乐闪</b></li>
+						<li><i><img src="./images/san.jpg"/></i><b>乐乐闪</b></li>
 						<li><i><img src="./images/index_store.png"/></i><b>身边门店</b></li>
 						<li><i><img src="./images/index_activity.png"/></i><b>乐活动</b></li>
-						<li><i><img src="./images/index_sea.png"/></i><b>福利驾到</b></li>
-						<li><i><img src="./images/index_sea.png"/></i><b>乐友顾问</b></li>
-						<li><i><img src="./images/index_sea.png"/></i><b>新生儿必备</b></li>
+						<li><i><img src="./images/fli.jpg"/></i><b>福利驾到</b></li>
+						<li><i><img src="./images/kef.jpg"/></i><b>乐友顾问</b></li>
+						<li><i><img src="./images/bib.jpg"/></i><b>新生儿必备</b></li>
 						<li><i><img src="./images/index_sign.png"/></i><b>签到</b></li>
 					</ul>
 				</div>
