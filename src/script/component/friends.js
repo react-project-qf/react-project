@@ -1,4 +1,5 @@
 import React from 'react'
+import Carousel from '../../component_dev/carousel/src'
 
 class Friends extends React.Component{
   render(){
