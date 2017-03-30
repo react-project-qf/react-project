@@ -6,6 +6,9 @@
 input{
 	border: none;
 }
+section{
+  height: 100%;
+}
 header{
     height:.44rem;
     color:#333;
@@ -48,6 +51,20 @@ header{
       }
     }
   }
+  .guang{
+      display:block;
+      font-size:.12rem;
+      background:rgba(0,0,0,0.3);
+      color:#fff;
+      width:.3rem;
+      height:.14rem;
+      position:absolute;
+      z-index: 999;
+      right:0;
+      bottom: 0;
+      text-align: center;
+      line-height:.14rem;
+    }
 @font-face {
   font-family: yofont;
   src: url(/iconfont/iconfont.woff) format("woff"),

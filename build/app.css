@@ -519,7 +519,11 @@ body {
 html {
   background-color: #eee;
   color: #212121;
+<<<<<<< HEAD
+  font-size: 100px;
+=======
   font-size: 26.66667vw;
+>>>>>>> master
   -webkit-user-select: none;
   user-select: none; }
 
@@ -1412,7 +1416,11 @@ body {
 html {
   background-color: #eee;
   color: #212121;
+<<<<<<< HEAD
+  font-size: 100px;
+=======
   font-size: 26.66667vw;
+>>>>>>> master
   -webkit-user-select: none;
   user-select: none; }
 
@@ -1695,6 +1703,546 @@ a {
   right: 0;
   bottom: 0;
   left: 0; }
+<<<<<<< HEAD
+
+/**
+ * @module fragment
+ * @method yo-list
+ * @version 3.0.0
+ * @description 构造列表的自定义使用方法
+ * @demo http://ued.qunar.com/hy2/yo/demo/src/html/fragment/yo-list.html
+ * @param {String} $name 定义扩展名称 <3.0.0>
+ * @param {Length} $margin 外边距 <3.0.0>
+ * @param {Length} $radius 圆角半径长度 <3.0.0>
+ * @param {Length} $border-width 外边框厚度 <3.0.0>
+ * @param {Color} $border-color 边框色 <3.0.0>
+ * @param {Length} $item-padding 子项的内补白 <3.0.0>
+ * @param {Length} $label-padding 列表组头内补白 <3.0.0>
+ * @param {Color} $label-bgcolor 列表组头背景色 <3.0.0>
+ * @param {Color} $touch-bgcolor 子项点击反馈背景色 <3.0.0>
+ * @param {Color} $on-bgcolor 子项选中背景色 <3.0.0>
+ * @param {Color} $on-color 子项选中文本色 <3.0.0>
+ * @param {Color} $item-border-color 子项边框色 <3.0.0>
+ * @param {Color} $label-border-color 列表组头边框色 <3.0.0>
+ * @param {Length} $item-font-size 子项字号 <3.0.0>
+ * @param {Length} $label-font-size 列表组头字号 <3.0.0>
+ * @param {Length} $item-border-space 子项边线左侧偏移量 <3.0.0>
+ * @param {Length} $more-font-size 更多区域字号 <3.0.0>
+ * @param {Color} $more-color 更多区域文本色 <3.0.0>
+ */
+.yo-list {
+  position: relative;
+  z-index: 0; }
+  .yo-list::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    content: " ";
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0 0 1px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .yo-list::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .yo-list::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .yo-list::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+  .yo-list > .label,
+  .yo-list > .item,
+  .yo-list .front {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    .yo-list > .label > .flex,
+    .yo-list > .item > .flex,
+    .yo-list .front > .flex {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      width: .1px;
+      margin: 0 .1rem; }
+      .yo-list > .label > .flex:first-child,
+      .yo-list > .item > .flex:first-child,
+      .yo-list .front > .flex:first-child {
+        margin-left: 0; }
+      .yo-list > .label > .flex:last-child,
+      .yo-list > .item > .flex:last-child,
+      .yo-list .front > .flex:last-child {
+        margin-right: 0; }
+    .yo-list > .label > .yo-ico,
+    .yo-list > .item > .yo-ico,
+    .yo-list .front > .yo-ico {
+      display: block; }
+      .yo-list > .label > .yo-ico:last-child,
+      .yo-list > .item > .yo-ico:last-child,
+      .yo-list .front > .yo-ico:last-child {
+        color: #aaa;
+        font-size: 0.12rem; }
+    .yo-list > .label.tr,
+    .yo-list > .item.tr,
+    .yo-list .front.tr {
+      padding: 0; }
+  .yo-list > .label {
+    padding: 0.03rem 0.1rem;
+    position: relative;
+    background-color: #eee;
+    color: #666;
+    font-size: 0.13rem;
+    font-weight: normal; }
+    .yo-list > .label::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      content: " ";
+      border-color: #eee;
+      border-style: solid;
+      border-width: 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .yo-list > .label::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .yo-list > .label::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .yo-list > .label::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    .yo-list > .label:first-child::after {
+      border-width: 0 0 1px; }
+    .yo-list > .label + .item::after {
+      border-width: 0; }
+    .yo-list > .label > .col {
+      padding: 0.03rem 0.1rem; }
+  .yo-list > .item,
+  .yo-list .front {
+    padding: 0.11rem 0.1rem 0.12rem; }
+  .yo-list > .item {
+    overflow: hidden;
+    background-color: #fff;
+    color: #212121;
+    position: relative; }
+    .yo-list > .item::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      content: " ";
+      border-color: #ddd;
+      border-style: solid;
+      border-width: 1px 0 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .yo-list > .item::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .yo-list > .item::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .yo-list > .item::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    .yo-list > .item::after {
+      left: 0.1rem; }
+    .yo-list > .item:first-child::after {
+      border-width: 0; }
+    .yo-list > .item-input > .input {
+      -webkit-appearance: none;
+      appearance: none;
+      display: block;
+      width: 100%;
+      min-height: .21rem;
+      border: 0; }
+      .yo-list > .item-input > .input::-webkit-input-placeholder {
+        color: #bbb; }
+    .yo-list > .item-stacked {
+      display: block; }
+      .yo-list > .item-stacked > .mark {
+        padding-bottom: .05rem; }
+    .yo-list > .item.item-active:active,
+    .yo-list > .item.item-active:active .front, .yo-list > .item.item-touch,
+    .yo-list > .item.item-touch .front {
+      background-color: #f8f8f8; }
+    .yo-list > .item > .col {
+      padding: 0.11rem 0.1rem 0.12rem; }
+  .yo-list-infinite::after {
+    border-width: 0; }
+  .yo-list-infinite > .label,
+  .yo-list-infinite > .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+  .yo-list-infinite > .item:last-child::after {
+    border-width: 1px 0; }
+
+/**
+ * @module element
+ * @method yo-checked
+ * @version 3.0.0
+ * @description 构造单选多选的自定义使用方法，可同时作用于 checkbox 与 radio
+ * @demo http://ued.qunar.com/hy2/yo/demo/src/html/element/yo-checked.html
+ * @param {String} $name 定义扩展名称 <3.0.0>
+ * @param {String} $content 标记符号（使用iconfont编码，可以是对勾，圆点或任意字符） <3.0.0>
+ * @param {Length} $size 元件大小 <3.0.0>
+ * @param {Length} $font-size 标记符号大小 <3.0.0>
+ * @param {Length} $border-width 元件边框厚度 <3.0.0>
+ * @param {Color} $border-color 元件边框色 <3.0.0>
+ * @param {Color} $bgcolor 元件背景色 <3.0.0>
+ * @param {Color} $color 标记符号颜色 <3.0.0>
+ * @param {Color} $on-border-color 选中时的元件边框色 <3.0.0>
+ * @param {Color} $on-bgcolor 选中时的元件背景色 <3.0.0>
+ * @param {Color} $on-color 选中时的标记符号颜色 <3.0.0>
+ * @param {Length} $radius 元件外框圆角半径 <3.0.0>
+ */
+.yo-checked {
+  display: inline-block;
+  position: relative;
+  width: 0.2rem;
+  height: 0.2rem;
+  font-size: 0.12rem;
+  font-family: yofont;
+  vertical-align: middle; }
+  .yo-checked > input,
+  .yo-checked > .type {
+    width: 100%;
+    height: 100%; }
+  .yo-checked > input {
+    position: absolute;
+    opacity: 0; }
+  .yo-checked > .type {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative;
+    border-radius: 0.05rem; }
+    .yo-checked > .type::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      content: " ";
+      border-style: solid;
+      border-width: 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .yo-checked > .type::after {
+          width: 100%;
+          height: 100%;
+          border-radius: 0.05rem; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .yo-checked > .type::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+          border-radius: 0.1rem; } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .yo-checked > .type::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333);
+          border-radius: 0.15rem; } }
+    .yo-checked > .type::before {
+      content: "\F078";
+      color: transparent; }
+  .yo-checked > input:checked + .type::before {
+    color: #2b94ff; }
+  .yo-checked > input:disabled + .type::before {
+    color: rgba(77, 77, 77, 0); }
+  .yo-checked > input:checked:disabled + .type::before {
+    color: #c4e1ff; }
+
+/**
+ * Yo框架动画解决方案
+ * Yo内置了超过60种动画形态，不同的动画可以任意组合
+ */
+.ani {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.ani.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+/**
+ * @module fade
+ * @description 定义从右侧淡入动画
+ * @method fade-in-right
+ */
+@-webkit-keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0); } }
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+.ani.fade-in-right {
+  -webkit-animation-name: fade-in-right;
+  animation-name: fade-in-right; }
+
+.yo-multilist {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: auto; }
+  .yo-multilist .multiList-container-tip {
+    margin-top: 45%;
+    color: #333; }
+  .yo-multilist > .item {
+    position: relative;
+    width: 25%;
+    min-width: 90px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    background-color: #fff; }
+    .yo-multilist > .item .yo-checked-radio {
+      margin-right: 0.1rem; }
+      .yo-multilist > .item .yo-checked-radio > input:checked + .type::before {
+        color: #0faad6; }
+      .yo-multilist > .item .yo-checked-radio > input:checked:disabled + .type::before {
+        color: #87def7; }
+    .yo-multilist > .item .yo-checked-checkbox {
+      margin-right: 0.1rem; }
+      .yo-multilist > .item .yo-checked-checkbox > .type {
+        background-color: #fff; }
+        .yo-multilist > .item .yo-checked-checkbox > .type::after {
+          border-width: 1px;
+          border-color: #0faad6; }
+      .yo-multilist > .item .yo-checked-checkbox > input:checked + .type::after {
+        border-color: #0faad6; }
+      .yo-multilist > .item .yo-checked-checkbox > input:checked + .type::before {
+        color: #0faad6; }
+      .yo-multilist > .item .yo-checked-checkbox > input:disabled + .type {
+        background-color: white; }
+        .yo-multilist > .item .yo-checked-checkbox > input:disabled + .type::after {
+          border-color: #32c6f1; }
+      .yo-multilist > .item .yo-checked-checkbox > input:checked:disabled + .type::after {
+        border-color: #32c6f1; }
+      .yo-multilist > .item .yo-checked-checkbox > input:checked:disabled + .type::before {
+        color: #87def7; }
+    .yo-multilist > .item .yo-checked-dot {
+      margin-left: -0.1rem; }
+      .yo-multilist > .item .yo-checked-dot > .type::before {
+        content: "\F083"; }
+      .yo-multilist > .item .yo-checked-dot > input:checked + .type::before {
+        color: #0faad6; }
+      .yo-multilist > .item .yo-checked-dot > input:checked:disabled + .type::before {
+        color: #87def7; }
+    .yo-multilist > .item .yo-list > .item label {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex; }
+    .yo-multilist > .item .yo-list > .item:after {
+      left: 0.18rem; }
+    .yo-multilist > .item .yo-scroller {
+      position: relative;
+      position: absolute; }
+      .yo-multilist > .item .yo-scroller::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        content: " ";
+        border-color: #ccc;
+        border-style: solid;
+        border-width: 0 1px 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .yo-multilist > .item .yo-scroller::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .yo-multilist > .item .yo-scroller::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .yo-multilist > .item .yo-scroller::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+    .yo-multilist > .item .yo-list > .item.spread {
+      position: relative;
+      overflow: visible; }
+      .yo-multilist > .item .yo-list > .item.spread::before {
+        position: absolute;
+        top: 50%;
+        right: -3px;
+        content: ' ';
+        width: 6px;
+        height: 6px;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        background-color: #ccc;
+        -webkit-transform: rotate(-45deg) translate(50%, -50%);
+        transform: rotate(-45deg) translate(50%, -50%); }
+    .yo-multilist > .item:first-child {
+      background-color: #fafafa; }
+      .yo-multilist > .item:first-child .yo-list > .item {
+        background-color: #fafafa; }
+        .yo-multilist > .item:first-child .yo-list > .item::after {
+          left: 0; }
+        .yo-multilist > .item:first-child .yo-list > .item.spread {
+          background-color: #fff;
+          position: relative; }
+          .yo-multilist > .item:first-child .yo-list > .item.spread::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            content: " ";
+            border-color: #ccc #fff #ccc #ccc;
+            border-style: solid;
+            border-width: 1px 1px 0 0;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              .yo-multilist > .item:first-child .yo-list > .item.spread::after {
+                width: 100%;
+                height: 100%; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              .yo-multilist > .item:first-child .yo-list > .item.spread::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5); } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              .yo-multilist > .item:first-child .yo-list > .item.spread::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333); } }
+          .yo-multilist > .item:first-child .yo-list > .item.spread::before {
+            content: none; }
+          .yo-multilist > .item:first-child .yo-list > .item.spread:after {
+            content: ''; }
+    .yo-multilist > .item:last-child {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      width: .1px;
+      width: auto;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center; }
+      .yo-multilist > .item:last-child .yo-scroller {
+        position: relative;
+        position: absolute; }
+        .yo-multilist > .item:last-child .yo-scroller::after {
+          pointer-events: none;
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          content: " ";
+          border-color: transparent;
+          border-style: solid;
+          border-width: 0 0 0 0;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+            .yo-multilist > .item:last-child .yo-scroller::after {
+              width: 100%;
+              height: 100%; } }
+          @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+            .yo-multilist > .item:last-child .yo-scroller::after {
+              width: 200%;
+              height: 200%;
+              -webkit-transform: scale(0.5);
+              transform: scale(0.5); } }
+          @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+            .yo-multilist > .item:last-child .yo-scroller::after {
+              width: 300%;
+              height: 300%;
+              -webkit-transform: scale(0.33333);
+              transform: scale(0.33333); } }
+      .yo-multilist > .item:last-child .yo-list > .item .checked {
+        color: #0faad6; }
+      .yo-multilist > .item:last-child .yo-list > .item::after {
+        left: 0.35rem; }
+
+.select-checkbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .select-checkbox .yo-checked {
+    display: block; }
+  .select-checkbox .content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    width: .1px;
+    width: auto; }
+=======
+>>>>>>> master
 @charset "UTF-8";
 /**
  * Yo框架全局base定义
@@ -2216,7 +2764,11 @@ body {
 html {
   background-color: #eee;
   color: #212121;
+<<<<<<< HEAD
+  font-size: 100px;
+=======
   font-size: 26.66667vw;
+>>>>>>> master
   -webkit-user-select: none;
   user-select: none; }
 
@@ -2394,6 +2946,18 @@ a {
   height: 0;
   content: " "; }
 
+<<<<<<< HEAD
+@font-face {
+  font-family: yofont;
+  src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype"); }
+
+.yo-ico {
+  font-family: yofont !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle; }
+=======
 @font-face {
   font-family: yofont;
   src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype"); }
@@ -2794,6 +3358,7 @@ a {
     color: rgba(77, 77, 77, 0); }
   .yo-checked > input:checked:disabled + .type::before {
     color: #c4e1ff; }
+>>>>>>> master
 
 /**
  * Yo框架动画解决方案
@@ -2803,6 +3368,94 @@ a {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
+<<<<<<< HEAD
+  animation-fill-mode: both; }
+
+.ani.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+/**
+ * @module rotate
+ * @description 定义旋转动画
+ * @method rotate
+ */
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotatez(0); }
+  to {
+    -webkit-transform: rotatez(360deg); } }
+
+@keyframes rotate {
+  from {
+    transform: rotatez(0); }
+  to {
+    transform: rotatez(360deg); } }
+
+.ani.rotate {
+  -webkit-animation-name: rotate;
+  animation-name: rotate; }
+
+/**
+ * @module element
+ * @method yo-loadtip
+ * @version 3.0.0
+ * @description 构造加载提示的自定义使用方法
+ * @demo http://ued.qunar.com/hy2/yo/demo/src/html/element/yo-loadtip.html
+ * @param {String} $name 定义扩展名称 <3.0.0>
+ * @param {Color} $color 文本色 <3.0.0>
+ * @param {Length} $font-size 字号大小 <3.0.0>
+ * @param {Color} $ico-color ico颜色 <3.0.0>
+ */
+.yo-loadtip {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  color: #666; }
+  .yo-loadtip > .yo-ico {
+    display: block;
+    color: #00afc7;
+    -webkit-transition: -webkit-transform .3s;
+    transition: transform .3s;
+    -webkit-transform: rotatez(0deg);
+    transform: rotatez(0deg); }
+    .yo-loadtip > .yo-ico-flip {
+      -webkit-transform: rotatez(180deg);
+      transform: rotatez(180deg); }
+  .yo-loadtip > .yo-ico-loading {
+    position: relative;
+    z-index: 1000;
+    -webkit-animation: rotate 1s infinite linear;
+    animation: rotate 1s infinite linear; }
+  .yo-loadtip > .text {
+    margin-left: .1rem; }
+    .yo-loadtip > .text > .time {
+      display: block;
+      font-size: .12rem; }
+
+.yo-load {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: absolute;
+  width: 100%; }
+
+.yo-scroller-fullscreen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+=======
   animation-fill-mode: both; }
 
 .ani.infinite {
@@ -3036,6 +3689,7 @@ a {
     flex: 1;
     width: .1px;
     width: auto; }
+>>>>>>> master
 @charset "UTF-8";
 /**
  * Yo框架全局base定义
@@ -3557,7 +4211,11 @@ body {
 html {
   background-color: #eee;
   color: #212121;
+<<<<<<< HEAD
+  font-size: 100px;
+=======
   font-size: 26.66667vw;
+>>>>>>> master
   -webkit-user-select: none;
   user-select: none; }
 
@@ -4569,7 +5227,11 @@ body {
 html {
   background-color: #eee;
   color: #212121;
+<<<<<<< HEAD
+  font-size: 100px;
+=======
   font-size: 26.66667vw;
+>>>>>>> master
   -webkit-user-select: none;
   user-select: none; }
 
@@ -4850,6 +5512,11 @@ a {
 /**
  * yo-header通用或全局扩展
  */
+<<<<<<< HEAD
+#root {
+  height: 100%; }
+
+=======
 /**
  * @module element
  * @method yo-btn
@@ -5089,12 +5756,32 @@ header {
     display: inline-block;
     margin: 0 0.1rem; }
 
+>>>>>>> master
 @font-face {
   font-family: yofont;
   src: url(/iconfont/iconfont.woff) format("woff"), url(/iconfont/iconfont.ttf) format("truetype"); }
 
 @font-face {
   font-family: yofont;
+<<<<<<< HEAD
+  src: url(/iconfont/iconfont-more.woff) format("woff"), url(/iconfont/iconfont-more.ttf) format("truetype"); }
+
+.yo-header-a {
+  background-color: #35495e;
+  font-size: 0.16rem; }
+  .yo-header-a::after {
+    border-width: 0; }
+  .yo-header-a > .regret.yo-ico,
+  .yo-header-a > .regret > .yo-ico,
+  .yo-header-a > .affirm.yo-ico,
+  .yo-header-a > .affirm > .yo-ico {
+    color: #fff; }
+  .yo-header-a .regret {
+    right: 0;
+    left: auto; }
+
+.m-index {
+=======
   src: url(/iconfont/iconfont-le.woff) format("woff"), url(/iconfont/iconfont-le.ttf) format("truetype"); }
 
 .yo-header {
@@ -5117,12 +5804,61 @@ header {
 
 .m-index {
   height: 100%;
+>>>>>>> master
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
+<<<<<<< HEAD
+  flex-direction: column;
+  height: 100%; }
+  .m-index header {
+    height: .44rem;
+    background: green; }
+  .m-index section {
+    flex: 1; }
+  .m-index footer {
+    height: .5rem;
+    background: #eee;
+    position: relative; }
+    .m-index footer::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      content: " ";
+      border-color: #fff;
+      border-style: solid;
+      border-width: 1px 0 0 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .m-index footer::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .m-index footer::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .m-index footer::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    .m-index footer ul {
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex; }
+=======
   flex-direction: column; }
   .m-index header {
     height: .44rem;
@@ -5147,10 +5883,15 @@ header {
       display: -webkit-flex;
       display: flex;
       line-height: .5rem; }
+>>>>>>> master
       .m-index footer ul li {
         -webkit-box-flex: 1;
         -webkit-flex: 1;
         flex: 1;
+<<<<<<< HEAD
+        width: .1px; }
+        .m-index footer ul li a {
+=======
         width: .1px;
         display: -webkit-box;
         display: -webkit-flex;
@@ -5177,6 +5918,7 @@ header {
           color: rgba(0, 0, 0, 0.5); }
         .m-index footer ul li a {
           width: 100%;
+>>>>>>> master
           height: 100%;
           display: -webkit-box;
           display: -webkit-flex;
@@ -5191,10 +5933,25 @@ header {
           -webkit-box-pack: center;
           -webkit-justify-content: center;
           justify-content: center; }
+<<<<<<< HEAD
+          .m-index footer ul li a i, .m-index footer ul li a b {
+            color: rgba(0, 0, 0, 0.5); }
+          .m-index footer ul li a i {
+            font-size: .25rem;
+            line-height: .25rem; }
+          .m-index footer ul li a b {
+            font-weight: normal;
+            font-size: .12rem; }
+          .m-index footer ul li a.active i,
+          .m-index footer ul li a.active b {
+            font-weight: bold;
+            color: black; }
+=======
           .m-index footer ul li a.active i,
           .m-index footer ul li a.active b {
             font-weight: bold;
             color: #feaf00; }
+>>>>>>> master
 
 /**
  * Yo框架全局base定义
@@ -5716,7 +6473,11 @@ body {
 html {
   background-color: #eee;
   color: #212121;
+<<<<<<< HEAD
+  font-size: 100px;
+=======
   font-size: 26.66667vw;
+>>>>>>> master
   -webkit-user-select: none;
   user-select: none; }
 
@@ -6089,6 +6850,32 @@ a {
   -webkit-transition: -webkit-transform 0.5s ease-in;
   transition: transform 0.5s ease-in; }
 
+<<<<<<< HEAD
+.yo-carousel {
+  height: 100%; }
+  .yo-carousel ul.cont {
+    height: 100%; }
+    .yo-carousel ul.cont li {
+      height: 100%; }
+      .yo-carousel ul.cont li img {
+        height: 100%; }
+
+.m-board div.swiper {
+  height: 1.9rem;
+  background: #f9efd4; }
+  .m-board div.swiper .yo-carousel {
+    height: 100%; }
+    .m-board div.swiper .yo-carousel li {
+      height: 100%; }
+      .m-board div.swiper .yo-carousel li img {
+        height: 100%; }
+
+.m-board > ul {
+  height: 1.87rem;
+  margin: .2rem 0;
+  padding: .1rem;
+  background: #fff; }
+=======
 section {
   overflow-y: auto; }
   section #content {
@@ -6331,3 +7118,4 @@ section {
   line-height: .3rem;
   color: #EEC900;
   margin: .3rem auto; }
+>>>>>>> master

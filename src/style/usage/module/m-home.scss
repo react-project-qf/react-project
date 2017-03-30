@@ -7,14 +7,14 @@
 }
 section{
 	overflow-y:auto;
+	height:100%;
 	#content{
 		position:relative;
-		background:#eee;
 		overflow:hidden;
 		height:100%;
 		.guang{
 			display:block;
-			font-size:.12rem;
+			font-size:.1rem;
 			background:rgba(0,0,0,0.3);
 			color:#fff;
 			width:.3rem;
@@ -22,7 +22,7 @@ section{
 			position:absolute;
 			z-index: 999;
 			right:0;
-			top:1.2rem;
+			bottom:0;
 			text-align: center;
 			line-height:.14rem;
 		}
@@ -43,17 +43,25 @@ section{
          			@include justify-content(center);
       				i{
       					border-radius:50%;
-      					background:red;
       					width:.4rem;
       					height:.4rem;
             			font-size: .25rem;
             			line-height: .25rem;
+            			img{
+            				width: 100%;
+            				height: 100%;
+            			}
+      				}
+      				b{
+      					font-weight: normal;
+      					font-size: .12rem;
       				}
 				}
 			}
 		}
+
 		.char{
-			height:12rem;
+			height:2.76rem;
 			background:#fff;
 			margin-top:.2rem;
 			.module-title-box{
@@ -91,14 +99,14 @@ section{
 				    top: .06rem;
 				    right: .3rem;
 				    padding: .05rem;
-				    border: 1px solid #efefef;
+				    @include border($border-width :1px 1px 1px 1px, $border-color: #efefef);
 				    border-radius: .05rem;
 					float:right;
 					font-size: .14rem;
 					.count-down-txt{
 						color: #6C6C6C;
     					padding-right: .05rem;
-    					border-right: 1px solid #c4c1c1;
+    					@include border($border-width :0 1px 0 0, $border-color: #c4c1c1);
 					}
 					#orderAndStart2{
 						padding-left: 5px;
@@ -106,7 +114,478 @@ section{
 					}
 				}
 			}
+			.homeList1{
+			        width: .93rem;
+				    overflow: hidden;
+				    margin-left: .15rem;
+				    float: left;
+			    .product-img1{
+			    	    width: .88rem;
+					    height: .88rem;
+					    margin: 0 auto;
+					    overflow: hidden;
+			    		img{
+						    display: block;
+    						width: 100%;
+				    	}
+				    }
+				 .product{
+				 	    font-size: .12rem;
+					    text-align: left;
+					    margin: 5px 0;
+					    height: .14rem;
+					    line-height: .14rem;
+					    overflow: hidden;
+				 	}
+				 #product1-price{
+					    display: block;
+					    width: 50%;
+					    color: #f2622d;
+					    margin-bottom: 2px
+				 }
+			}
+
+			.center_tu{
+				position: relative;
+				width: 100%;
+				height: .86rem;
+			    margin: 0 auto;
+			    overflow: hidden;
+			    font-size: .14rem;
+				img{
+					width: 100%;
+					border: none;
+				}
+				.guang1{
+					    position: absolute;
+					    right: 0;
+					    bottom: -.36rem;
+					    z-index: 99;
+					    color: #fff;
+					    font-size: .1rem;
+					    line-height: .1rem;
+					    padding: 1px 2px;
+					    text-align: center;
+					    background-color: rgba(0,0,0,0.2);
+					}
+			}
+			
 		}
+
+			.te_are{
+
+				width: 100%;
+				height: 3.75rem;
+				background: #fff;
+				padding-bottom: .1rem;
+				margin-top:.2rem; 
+				color: red;
+				.te_jie{
+					width: 100%;
+					height: 2.8rem;
+    				background: #fff;
+    				@include border($border-width :1px 0 1px 0, $border-color: #f6f6f6);
+    				.module-title-box {
+    					width: 100%;
+    					height: .39rem;
+					 	position: relative;
+						padding: .1rem 0;
+						display: block;
+						.module-title-left-icon {
+						    background: #36a9e0;
+						    display: block;
+						    position: absolute;
+						    left: .1rem;
+						    top: .13rem;
+						    width: .05rem;
+						    height: .13rem;
+						}
+						.module-title-txt{
+						    padding-left: .2rem;
+						    font-size: .14rem;
+						    color: #000;
+						}
+					}
+					.te_lei{
+						width: 100%;
+					    margin: 0 auto;
+					    padding-bottom: 10px;
+					    height: 2.7rem;
+					    .module-content-box {
+						    width: 94%;
+						    margin: 0 auto;
+						    height: 100%;
+						    padding-bottom: .1rem;
+						    .special-market-box {
+						    	width:100%;
+						    	height: 100%;
+							    @include border($border-width :1px 1px 1px 1px, $border-color: #e5e5e5);
+							    .fangxin {
+									height: 100%;
+								    display: block;
+								    width: 40%;
+								    position: relative;
+								    @include border($border-width :0 1px 0 0, $border-color: #e5e5e5);
+								    color: #f1622d;
+								    float: left;
+								    .class_title {
+									    text-align: center;
+									    font-size: .14rem;
+									    color: #f1622d;
+									    padding: .15rem 0 .05rem;
+									}
+									.class_des {
+									    text-align: center;
+									    font-size: .12rem;
+									    color: #b2b2b2;
+									}
+									.fangxin_tu{
+										
+										display: block;
+									    width: 100%;
+									    height: 1.65rem;
+									    overflow: hidden;
+									    margin: .13rem auto .07rem;
+									    img{
+									    	display: block;
+	   										width: 100%;
+									    }
+									}
+								}
+							}
+							.te_you{
+								width: 60%;
+		    					float: right;
+		    					.te_yous{
+		    						width: 100%;
+		    						float: left;
+		    						 @include border($border-width :0 0 1px 0, $border-color: #e5e5e5);
+		    						.you_ti{
+		    							width: 60%;
+		    							float: left;
+		    							.class_title{
+		    								text-align: center;
+										    font-size: .14rem;
+										    padding: .15rem 0 .05rem;
+		    							}
+		    							.class-des {
+										    text-align: center;
+										    font-size: .12rem;
+										    color: #b2b2b2;
+										}
+
+									}
+									.niu{
+										float: right;
+										display: block;
+										width: 40%;
+										text-align: center;
+										img{
+										  width: .5rem;
+
+										}
+		    						}
+		    					}
+		    					.youx{
+		    						width: 100%;
+		    						float: left;
+		    						overflow: hidden;
+		    						.youx1{
+		    							width: 50%;
+		    							float:left;
+		    							position: relative;
+		    							@include border($border-width :0 1px 0 0, $border-color: #e5e5e5);
+		    							.class_title{
+		    								text-align: center;
+										    font-size: .14rem;
+										    padding: .15rem 0 .05rem;
+										    color: #fbb900;
+		    							}
+		    							.class-des {
+										    text-align: center;
+										    font-size: .12rem;
+										    color: #b2b2b2;
+										}
+										.youx1_tu{
+											display: block;
+										    width: .7rem;
+										    min-height: .7rem;
+										    margin: .05rem auto;
+										    img{
+										    	width:.7rem;
+										    	margin: .05rem auto;
+										    }
+										}
+		    						}
+		    						.youx2{
+		    							width: 50%;
+		    							float: left;
+		    							position: relative;
+		    							.class_title{
+		    								text-align: center;
+										    font-size: .14rem;
+										    padding: .15rem 0 .05rem;
+										    color: #c5d200;
+		    							}
+		    							.class-des {
+										    text-align: center;
+										    font-size: .12rem;
+										    color: #b2b2b2;
+										}
+										.youx2_tu{
+											display: block;
+										    width: .7rem;
+										    min-height: .7rem;
+										    margin: .05rem auto;
+										    img{
+										    	width:.7rem;
+										    	margin: .05rem auto;
+										    }
+										}
+		    						}
+		    					}
+							}
+						}
+					}	
+				}
+				.center_tu2{
+					margin-top:.2rem; 
+					position: relative;
+					width:100%;
+					height: .85rem;
+					img{
+						width: 100%;
+						height: 100%;
+					}
+				}	
+			}
+
+
+
+
+			.pin{
+				width: 100%;
+				height: 2.9rem;
+				background: #fff;
+				padding-bottom: .1rem;
+				margin-top:.2rem; 
+				color: red;
+				.module-title-box {
+    					width: 100%;
+    					height: .39rem;
+					 	position: relative;
+						padding: .1rem 0;
+						display: block;
+						.module-title-left-icon {
+						    background: #fbb900;
+						    display: block;
+						    position: absolute;
+						    left: .1rem;
+						    top: .13rem;
+						    width: .05rem;
+						    height: .13rem;
+						}
+						.module-title-txt{
+						    padding-left: .2rem;
+						    font-size: .14rem;
+						    color: #000;
+						}
+					}
+
+				.pin_lei{
+					width: 100%;
+				    margin: 0 auto;
+				    padding-bottom: .1rem;
+				    height: 100%;
+				    .lei{
+				    	width:94%;
+				    	margin: 0 auto;
+				    	height: 100%;
+				    	.lei_nai{
+							display: block;
+						    width: 1.05rem;
+						    margin-right: .1rem;
+						    margin-bottom: .03rem;
+						    background: #f8f7f3;
+						    position: relative;
+						    height: 1.37rem;
+						    float: left;
+						    .class_title{
+		    					font-size: .14rem;
+    							padding: .1rem 0 .05rem .05rem;
+    							color: #000;
+		    				}
+		    				.class-des {
+								font-size: .12rem;
+							    color: #b2b2b2;
+							    padding-left: .05rem;
+							}
+							.pin1{
+								width:.84rem;
+								margin: 0 auto;
+								height: .84rem;
+								display: block;
+								img{
+									width: 100%;
+								}
+							}
+				    	}
+				    	.lei_yun{
+				    		display: block;
+						    width: 1.05rem;
+						    margin-right: .1rem;
+						    margin-bottom: .03rem;
+						    background: #f8f7f3;
+						    position: relative;
+						    height: 1.37rem;
+						    float: left;
+						    .class_title{
+		    					font-size: .14rem;
+    							padding: .1rem 0 .05rem .05rem;
+    							color: #000;
+		    				}
+		    				.class-des {
+								font-size: .12rem;
+							    color: #b2b2b2;
+							    padding-left: .05rem;
+							}
+							.pin2{
+								width:.84rem;
+								margin: 0 auto;
+								height: .84rem;
+								display: block;
+								img{
+									width: 100%;
+								}
+							}
+
+				    	}
+				    	.lei_niao{
+				    		display: block;
+						    width: 1.05rem;
+						    margin-right: .1rem;
+						    margin-bottom: .03rem;
+						    background: #f8f7f3;
+						    position: relative;
+						    height: 1.37rem;
+						    float: left;
+						    .class_title{
+		    					font-size: .14rem;
+    							padding: .1rem 0 .05rem .05rem;
+    							color: #000;
+		    				}
+		    				.class-des {
+								font-size: .12rem;
+							    color: #b2b2b2;
+							    padding-left: .05rem;
+							}
+							.pin3{
+								width:.84rem;
+								margin: 0 auto;
+								height: .84rem;
+								display: block;
+								img{
+									width: 100%;
+								}
+							}
+
+				    	}
+				    	.lei_tong{
+				    		width:1.63rem;
+				    		height: .98rem;
+				    		 background: #f8f7f3;
+				    		float: left;
+				    		margin-right: .1rem;
+				    		position: relative;
+				    		.class_title{
+		    					font-size: .14rem;
+    							padding: .1rem 0 .05rem .05rem;
+    							color: #000;
+		    				}
+		    				.class-des {
+								font-size: .12rem;
+							    color: #b2b2b2;
+							    padding-left: .05rem;
+							}
+							.pin4{
+								display: block;
+							    width: 70px;
+							    min-height: 98px;
+							    margin: 0 auto;
+							    position: absolute;
+							    top: 0;
+							    right: 0;
+							    img{
+							    	width:100%;
+							    	display: block;
+							    }
+							}
+
+				    	}
+				    	.lei_yi{
+				    		width:1.63rem;
+				    		height: .98rem;
+				    		 background: #f8f7f3;
+				    		float: left;
+				    		margin-right: .1rem;
+				    		position: relative;
+				    		.class_title{
+		    					font-size: .14rem;
+    							padding: .1rem 0 .05rem .05rem;
+    							color: #000;
+		    				}
+		    				.class-des {
+								font-size: .12rem;
+							    color: #b2b2b2;
+							    padding-left: .05rem;
+							}
+							.pin5{
+								display: block;
+							    width: 70px;
+							    min-height: 98px;
+							    margin: 0 auto;
+							    position: absolute;
+							    top: 0;
+							    right: 0;
+							    img{
+							    	width:100%;
+							    	display: block;
+							    }
+							}
+
+				    	}
+				    }
+				}
+
+			}
+
+			
+			.tui{
+				width:100%;
+				margin: .15rem auto .15rem;
+				position: relative;
+				.tui_zi{
+					display: block;
+				    width: .95rem;
+				    margin: 0 auto;
+				    position: relative;
+				    z-index: 2;
+				    background: #f5f3f4;
+				    font-size: .14rem;
+				    text-align: center;
+				}
+				.tui_xian{
+					height: .01rem;
+				    width: 100%;
+				    position: absolute;
+				    top: .10rem;
+				    left: 0;
+				    background: #d9d9d9;
+				}
+			}
+
+
+
 		.yo-carousel{
 			width:100%;
 			height:1.35rem;
