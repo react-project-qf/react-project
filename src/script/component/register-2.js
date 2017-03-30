@@ -82,7 +82,7 @@ class Register extends React.Component{
     if (this.state.registerState==0) {
       location.href='#/login';
     }else if(this.state.registerState==1){
-      location.href='#/my';
+      location.href='#/user';
     }
   }
   render(){

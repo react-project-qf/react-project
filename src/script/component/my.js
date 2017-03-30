@@ -3,15 +3,17 @@ import React from 'react'
 class My extends React.Component{
   constructor(props) {
       super(props);
-      this.state = {}
+      this.state = {
+        auth:window.localStorage.getItem("ly-auth")
+      }
+      if (this.state.auth==""||this.state.auth==null) {
+      }else{
+        location.href='#/user';
+      }
   }
-  // onChangeRouter(route){
-  //   console.log(route);
-  //   console.log(0);
-  // }
   render(){
     return(
-      <div className="user">
+      <div className="my">
         <div className="top">
           <a href="#/login"><img src="/images/bt_unlogined.png"/></a>
           <p>买母婴，来乐友</p>

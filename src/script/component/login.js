@@ -65,7 +65,7 @@ class Login extends React.Component{
           Toast.show('登陆成功', 3000);
           //先这样存着，有时间的话加上加密算法
           window.localStorage.setItem("ly-auth",phone+password);
-          location.href='#/my';
+          location.href='#/user';
         }else{
           this.setState({
             dialogShow:true,
