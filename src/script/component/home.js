@@ -67,7 +67,7 @@ class Home extends React.Component {
                    <a className="homeList1">
                         <div className="product-img1">
                              <img src="./images/ms.JPG"/>
-                        </div> 
+                        </div>
                         <p className="product">玛力--森林健身</p>
                         <div classname="product1-price">
                             <span id="product1-price">￥38.00</span>
@@ -76,7 +76,7 @@ class Home extends React.Component {
                      <a className="homeList1">
                         <div className="product-img1">
                            <img src="./images/ms.JPG"/>
-                        </div> 
+                        </div>
                         <p className="product">玛力--森林健身</p>
                         <div classname="product1-price">
                             <span id="product1-price">￥38.00</span>
@@ -85,7 +85,7 @@ class Home extends React.Component {
                      <a className="homeList1">
                         <div className="product-img1">
                              <img src="./images/ms.JPG"/>
-                        </div> 
+                        </div>
                         <p className="product">玛力--森林健身</p>
                         <div classname="product1-price">
                             <span id="product1-price">￥38.00</span>
@@ -114,7 +114,7 @@ class Home extends React.Component {
                       <img src="./images/fangx2.png"/>
                       <span className="guang">广告</span>
                     </span>
-                    
+
                   </a>
                   <div className="te_you">
                     <a className="te_yous">
@@ -156,7 +156,7 @@ class Home extends React.Component {
             </div>
         </div>
 
-        
+
         <div className="pin">
           <a className="module-title-box">
               <span className="module-title-left-icon"></span>

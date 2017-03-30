@@ -1,0 +1,109 @@
+$base-color:#ffab00;
+.user{
+	color: #4a4a4a;
+	font-family: "黑体";
+	.top{
+		height: 2rem;
+		width: 100%;
+		background: url(/images/bg_login_head.png);
+		background-size: 100% 2rem;
+		position: relative;
+		text-align: center;
+		.yo-header-user{
+			position: fixed;
+			width: 100%;
+			top: 0;
+			background: rgba(255,255,255,0.3);
+			img{
+				width: .2rem;
+				height: .2rem;
+			}
+		}
+		@include yo-header($border-width:0);
+		.babyNumber{
+			position: absolute;
+			left: .32rem;
+			top: .5rem;
+			img{
+				width: .4rem;
+			}
+			span{
+				display: inline-block;
+				margin-left: .1rem;
+				position: absolute;
+				bottom: -.02rem;
+				width: 1rem;
+				color: #9fa09b;
+			}
+		}
+		p{
+			position: absolute;
+			bottom: .4rem;
+			right: .2rem;
+			line-height: .25rem;
+			span{
+				color: #ffab00;
+			}
+		}
+	}
+	.order{
+		ul{
+			@include flexbox();
+			@include flex-direction(row);
+			@include align-items(center);
+			@include justify-content(space-around);
+			background-color: #fff;
+			margin-top: .01rem;
+			height: .72rem;
+			li{
+				@include flexbox();
+				@include flex-direction(column);
+				@include align-items(center);
+				@include justify-content(space-around);
+				b{
+					margin-top: .03rem;
+				}
+			}
+		}
+	}
+	.wallet{
+		ul{
+			@include flexbox();
+			@include flex-direction(row);
+			@include align-items(center);
+			@include justify-content(space-around);
+			margin-top: .01rem;
+			background-color: #fff;
+			height: .42rem;
+			font-size: .15rem;
+			span{
+				color: #ffc700;
+			}
+			li{
+				@include flex();
+				text-align: center;
+				b{
+					margin-top: .03rem;
+				}
+			}
+		}
+	}
+	.yo-list{
+		.label{
+			height: .12rem;
+		}
+		.phone{
+			margin-right: .08rem;
+			color:$base-color;
+		}
+		i{
+			img{
+				width: .31rem;
+				height: .31rem;
+			}
+		}
+		.flex{
+			font-size: .17rem;
+		}
+	}
+}

@@ -55,7 +55,7 @@ class Index extends React.Component {
 							</Link>
 						</li>
 						<li>
-							<Link to="/my" activeClassName="active">
+							<Link to="/user" activeClassName="active">
 								<i className="yo-ico">&#xe60f;</i>
 								<b>我的</b>
 							</Link>
@@ -82,6 +82,11 @@ class Index extends React.Component {
 					topHeader: null
 				});
 				break;
+				case "5":
+					this.setState({
+						topHeader: null
+					});
+					break;
 			default:
 				this.setState({
 					topHeader: <Header></Header>

@@ -11081,6 +11081,10 @@ a {
 /**
  * yo-search通用或全局扩展
  */
+<<<<<<< HEAD
+=======
+/* * { -ms-touch-action: none; touch-action: none; }*/
+>>>>>>> react-project-rumengkai
 #root {
   height: 100%; }
 
@@ -12091,6 +12095,217 @@ a {
   100% {
     opacity: 1; } }
 
+<<<<<<< HEAD
+=======
+fieldset,
+img {
+  border: 0;
+  vertical-align: middle; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: " "; }
+
+textarea,
+pre,
+xmp {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+textarea {
+  resize: vertical; }
+
+input,
+textarea,
+button,
+select
+a {
+  outline: 0 none; }
+
+input,
+textarea,
+button,
+select {
+  color: inherit; }
+  input:disabled,
+  textarea:disabled,
+  button:disabled,
+  select:disabled {
+    opacity: 1; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none; }
+
+mark {
+  background-color: transparent; }
+
+a,
+ins,
+s,
+u,
+del {
+  text-decoration: none; }
+
+a,
+img {
+  -webkit-touch-callout: none; }
+
+a {
+  color: #00afc7; }
+
+.g-clear::after,
+.g-mod::after {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+  content: " "; }
+
+@font-face {
+  font-family: yofont;
+  src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype"); }
+
+.yo-ico {
+  font-family: yofont !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle; }
+
+/**
+ * @module fragment
+ * @method yo-carousel
+ * @version 3.0.0
+ * @description 构造yo-carousel的自定义使用方法
+ * @demo http://ued.qunar.com/hy2/yo/demo/src/html/fragment/yo-carousel.html
+ * @param {String} $name 定义扩展名称 <3.0.0>
+ * @param {Length} $btn-size 按钮大小 <3.0.0>
+ * @param {Color} $btn-bgcolor 按钮背景色 <3.0.0>
+ * @param {Color} $btn-color 按钮文本色 <3.0.0>
+ * @param {Color} $touch-btn-bgcolor 按钮按下背景色 <3.0.0>
+ * @param {Color} $touch-btn-color 按钮按下文本色 <3.0.0>
+ * @param {Length} $index-size 索引大小 <3.0.0>
+ * @param {Color} $index-bgcolor 索引背景色 <3.0.0>
+ * @param {Color} $on-index-bgcolor 索引当前项背景色 <3.0.0>
+ */
+.yo-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  text-align: center; }
+  .yo-carousel > .cont {
+    position: relative;
+    white-space: nowrap;
+    font-size: 0;
+    font-family: arial; }
+    .yo-carousel > .cont > .item {
+      display: inline-block;
+      font-size: 0.14rem;
+      font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif; }
+    .yo-carousel > .cont > .item {
+      width: 100%;
+      background-color: #eee; }
+    .yo-carousel > .cont .img {
+      max-width: 100%;
+      max-height: 100%;
+      height: auto; }
+  .yo-carousel > .index {
+    position: absolute;
+    bottom: .05rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+    .yo-carousel > .index > li {
+      float: left;
+      margin: 0 .05rem;
+      width: 0.1rem;
+      height: 0.1rem;
+      border-radius: 50%;
+      background-color: #85c8d1; }
+      .yo-carousel > .index > li.on {
+        background-color: #09a5c4; }
+  .yo-carousel > .yo-ico {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    width: 0.44rem;
+    height: 0.44rem;
+    border-radius: 50%;
+    background-color: rgba(9, 165, 196, 0.8);
+    color: #fff;
+    line-height: 0.44rem;
+    cursor: pointer; }
+    .yo-carousel > .yo-ico:active, .yo-carousel > .yo-ico-touch {
+      background-color: rgba(9, 165, 196, 0.5); }
+  .yo-carousel > .yo-ico-prev {
+    left: 0; }
+  .yo-carousel > .yo-ico-next {
+    right: 0; }
+
+/**
+ * Yo框架动画解决方案
+ * Yo内置了超过60种动画形态，不同的动画可以任意组合
+ */
+.ani {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.ani.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+/**
+ * @module fade
+ * @description 定义淡入动画
+ * @method fade-in
+ */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+>>>>>>> react-project-rumengkai
 .ani.fade-in {
   -webkit-animation-name: fade-in;
   animation-name: fade-in; }
@@ -12154,6 +12369,7 @@ a {
 .yo-carousel-scale > .cont > .on {
   -webkit-transform: scale(1);
   transform: scale(1); }
+<<<<<<< HEAD
 
 .yo-carousel > .cont {
   -webkit-transition: -webkit-transform 0.5s ease-in;
@@ -13001,6 +13217,887 @@ section {
 .user {
   font-family: "\9ED1\4F53"; }
   .user .top {
+=======
+
+.yo-carousel > .cont {
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  width: 100%; }
+  .yo-carousel > .cont .item {
+    z-index: 2; }
+    .yo-carousel > .cont .item > img {
+      max-height: none; }
+  .yo-carousel > .cont .top {
+    z-index: 5; }
+
+.yo-carousel .extra-item {
+  margin-left: -100%; }
+
+.yo-carousel .transition {
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in; }
+
+section {
+  overflow-y: auto;
+  height: 100%; }
+  section #content {
+    position: relative;
+    overflow: hidden;
+    height: 100%; }
+    section #content .guang {
+      display: block;
+      font-size: .1rem;
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      width: .3rem;
+      height: .14rem;
+      position: absolute;
+      z-index: 999;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      line-height: .14rem; }
+    section #content .homeTitle {
+      width: 100%;
+      height: 1.8rem;
+      background: #fff; }
+      section #content .homeTitle ul {
+        width: 100%;
+        height: 100%; }
+        section #content .homeTitle ul li {
+          float: left;
+          width: 25%;
+          height: 50%;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center; }
+          section #content .homeTitle ul li i {
+            border-radius: 50%;
+            width: .4rem;
+            height: .4rem;
+            font-size: .25rem;
+            line-height: .25rem; }
+            section #content .homeTitle ul li i img {
+              width: 100%;
+              height: 100%; }
+          section #content .homeTitle ul li b {
+            font-weight: normal;
+            font-size: .12rem; }
+    section #content .char {
+      height: 2.76rem;
+      background: #fff;
+      margin-top: .2rem; }
+      section #content .char .module-title-box {
+        position: relative;
+        width: 100%;
+        display: block;
+        padding: .1rem 0;
+        font-size: .14rem;
+        color: #000; }
+        section #content .char .module-title-box .module-title-left-icon {
+          background: #f1622d;
+          display: block;
+          position: absolute;
+          left: .1rem;
+          top: .13rem;
+          width: .05rem;
+          height: .13rem; }
+        section #content .char .module-title-box .module-title-right-icon {
+          display: block;
+          position: absolute;
+          right: .1rem;
+          top: .13rem;
+          width: .1rem;
+          height: .11rem;
+          background-size: .09rem .1rem;
+          color: #333; }
+        section #content .char .module-title-box .module-title-txt {
+          font-size: .14rem;
+          padding-left: .22rem; }
+        section #content .char .module-title-box .module-title-countdown {
+          position: absolute;
+          top: .06rem;
+          right: .3rem;
+          padding: .05rem;
+          position: relative;
+          border-radius: .05rem;
+          float: right;
+          font-size: .14rem; }
+          section #content .char .module-title-box .module-title-countdown::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            content: " ";
+            border-color: #efefef;
+            border-style: solid;
+            border-width: 1px 1px 1px 1px;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              section #content .char .module-title-box .module-title-countdown::after {
+                width: 100%;
+                height: 100%; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              section #content .char .module-title-box .module-title-countdown::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5); } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              section #content .char .module-title-box .module-title-countdown::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333); } }
+          section #content .char .module-title-box .module-title-countdown .count-down-txt {
+            color: #6C6C6C;
+            padding-right: .05rem;
+            position: relative; }
+            section #content .char .module-title-box .module-title-countdown .count-down-txt::after {
+              pointer-events: none;
+              position: absolute;
+              z-index: 999;
+              top: 0;
+              left: 0;
+              overflow: hidden;
+              content: " ";
+              border-color: #c4c1c1;
+              border-style: solid;
+              border-width: 0 1px 0 0;
+              -webkit-transform-origin: 0 0;
+              transform-origin: 0 0; }
+              @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+                section #content .char .module-title-box .module-title-countdown .count-down-txt::after {
+                  width: 100%;
+                  height: 100%; } }
+              @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+                section #content .char .module-title-box .module-title-countdown .count-down-txt::after {
+                  width: 200%;
+                  height: 200%;
+                  -webkit-transform: scale(0.5);
+                  transform: scale(0.5); } }
+              @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+                section #content .char .module-title-box .module-title-countdown .count-down-txt::after {
+                  width: 300%;
+                  height: 300%;
+                  -webkit-transform: scale(0.33333);
+                  transform: scale(0.33333); } }
+          section #content .char .module-title-box .module-title-countdown #orderAndStart2 {
+            padding-left: 5px;
+            color: #f1622d; }
+      section #content .char .homeList1 {
+        width: .93rem;
+        overflow: hidden;
+        margin-left: .15rem;
+        float: left; }
+        section #content .char .homeList1 .product-img1 {
+          width: .88rem;
+          height: .88rem;
+          margin: 0 auto;
+          overflow: hidden; }
+          section #content .char .homeList1 .product-img1 img {
+            display: block;
+            width: 100%; }
+        section #content .char .homeList1 .product {
+          font-size: .12rem;
+          text-align: left;
+          margin: 5px 0;
+          height: .14rem;
+          line-height: .14rem;
+          overflow: hidden; }
+        section #content .char .homeList1 #product1-price {
+          display: block;
+          width: 50%;
+          color: #f2622d;
+          margin-bottom: 2px; }
+      section #content .char .center_tu {
+        position: relative;
+        width: 100%;
+        height: .86rem;
+        margin: 0 auto;
+        overflow: hidden;
+        font-size: .14rem; }
+        section #content .char .center_tu img {
+          width: 100%;
+          border: none; }
+        section #content .char .center_tu .guang1 {
+          position: absolute;
+          right: 0;
+          bottom: -.36rem;
+          z-index: 99;
+          color: #fff;
+          font-size: .1rem;
+          line-height: .1rem;
+          padding: 1px 2px;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.2); }
+    section #content .te_are {
+      width: 100%;
+      height: 3.75rem;
+      background: #fff;
+      padding-bottom: .1rem;
+      margin-top: .2rem;
+      color: red; }
+      section #content .te_are .te_jie {
+        width: 100%;
+        height: 2.8rem;
+        background: #fff;
+        position: relative; }
+        section #content .te_are .te_jie::after {
+          pointer-events: none;
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          content: " ";
+          border-color: #f6f6f6;
+          border-style: solid;
+          border-width: 1px 0 1px 0;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+            section #content .te_are .te_jie::after {
+              width: 100%;
+              height: 100%; } }
+          @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+            section #content .te_are .te_jie::after {
+              width: 200%;
+              height: 200%;
+              -webkit-transform: scale(0.5);
+              transform: scale(0.5); } }
+          @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+            section #content .te_are .te_jie::after {
+              width: 300%;
+              height: 300%;
+              -webkit-transform: scale(0.33333);
+              transform: scale(0.33333); } }
+        section #content .te_are .te_jie .module-title-box {
+          width: 100%;
+          height: .39rem;
+          position: relative;
+          padding: .1rem 0;
+          display: block; }
+          section #content .te_are .te_jie .module-title-box .module-title-left-icon {
+            background: #36a9e0;
+            display: block;
+            position: absolute;
+            left: .1rem;
+            top: .13rem;
+            width: .05rem;
+            height: .13rem; }
+          section #content .te_are .te_jie .module-title-box .module-title-txt {
+            padding-left: .2rem;
+            font-size: .14rem;
+            color: #000; }
+        section #content .te_are .te_jie .te_lei {
+          width: 100%;
+          margin: 0 auto;
+          padding-bottom: 10px;
+          height: 2.7rem; }
+          section #content .te_are .te_jie .te_lei .module-content-box {
+            width: 94%;
+            margin: 0 auto;
+            height: 100%;
+            padding-bottom: .1rem; }
+            section #content .te_are .te_jie .te_lei .module-content-box .special-market-box {
+              width: 100%;
+              height: 100%;
+              position: relative; }
+              section #content .te_are .te_jie .te_lei .module-content-box .special-market-box::after {
+                pointer-events: none;
+                position: absolute;
+                z-index: 999;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                content: " ";
+                border-color: #e5e5e5;
+                border-style: solid;
+                border-width: 1px 1px 1px 1px;
+                -webkit-transform-origin: 0 0;
+                transform-origin: 0 0; }
+                @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+                  section #content .te_are .te_jie .te_lei .module-content-box .special-market-box::after {
+                    width: 100%;
+                    height: 100%; } }
+                @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+                  section #content .te_are .te_jie .te_lei .module-content-box .special-market-box::after {
+                    width: 200%;
+                    height: 200%;
+                    -webkit-transform: scale(0.5);
+                    transform: scale(0.5); } }
+                @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+                  section #content .te_are .te_jie .te_lei .module-content-box .special-market-box::after {
+                    width: 300%;
+                    height: 300%;
+                    -webkit-transform: scale(0.33333);
+                    transform: scale(0.33333); } }
+              section #content .te_are .te_jie .te_lei .module-content-box .special-market-box .fangxin {
+                height: 100%;
+                display: block;
+                width: 40%;
+                position: relative;
+                position: relative;
+                color: #f1622d;
+                float: left; }
+                section #content .te_are .te_jie .te_lei .module-content-box .special-market-box .fangxin::after {
+                  pointer-events: none;
+                  position: absolute;
+                  z-index: 999;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+                  content: " ";
+                  border-color: #e5e5e5;
+                  border-style: solid;
+                  border-width: 0 1px 0 0;
+                  -webkit-transform-origin: 0 0;
+                  transform-origin: 0 0; }
+                  @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+                    section #content .te_are .te_jie .te_lei .module-content-box .special-market-box .fangxin::after {
+                      width: 100%;
+                      height: 100%; } }
+                  @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+                    section #content .te_are .te_jie .te_lei .module-content-box .special-market-box .fangxin::after {
+                      width: 200%;
+                      height: 200%;
+                      -webkit-transform: scale(0.5);
+                      transform: scale(0.5); } }
+                  @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+                    section #content .te_are .te_jie .te_lei .module-content-box .special-market-box .fangxin::after {
+                      width: 300%;
+                      height: 300%;
+                      -webkit-transform: scale(0.33333);
+                      transform: scale(0.33333); } }
+                section #content .te_are .te_jie .te_lei .module-content-box .special-market-box .fangxin .class_title {
+                  text-align: center;
+                  font-size: .14rem;
+                  color: #f1622d;
+                  padding: .15rem 0 .05rem; }
+                section #content .te_are .te_jie .te_lei .module-content-box .special-market-box .fangxin .class_des {
+                  text-align: center;
+                  font-size: .12rem;
+                  color: #b2b2b2; }
+                section #content .te_are .te_jie .te_lei .module-content-box .special-market-box .fangxin .fangxin_tu {
+                  display: block;
+                  width: 100%;
+                  height: 1.65rem;
+                  overflow: hidden;
+                  margin: .13rem auto .07rem; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .special-market-box .fangxin .fangxin_tu img {
+                    display: block;
+                    width: 100%; }
+            section #content .te_are .te_jie .te_lei .module-content-box .te_you {
+              width: 60%;
+              float: right; }
+              section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous {
+                width: 100%;
+                float: left;
+                position: relative; }
+                section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous::after {
+                  pointer-events: none;
+                  position: absolute;
+                  z-index: 999;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+                  content: " ";
+                  border-color: #e5e5e5;
+                  border-style: solid;
+                  border-width: 0 0 1px 0;
+                  -webkit-transform-origin: 0 0;
+                  transform-origin: 0 0; }
+                  @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+                    section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous::after {
+                      width: 100%;
+                      height: 100%; } }
+                  @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+                    section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous::after {
+                      width: 200%;
+                      height: 200%;
+                      -webkit-transform: scale(0.5);
+                      transform: scale(0.5); } }
+                  @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+                    section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous::after {
+                      width: 300%;
+                      height: 300%;
+                      -webkit-transform: scale(0.33333);
+                      transform: scale(0.33333); } }
+                section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous .you_ti {
+                  width: 60%;
+                  float: left; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous .you_ti .class_title {
+                    text-align: center;
+                    font-size: .14rem;
+                    padding: .15rem 0 .05rem; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous .you_ti .class-des {
+                    text-align: center;
+                    font-size: .12rem;
+                    color: #b2b2b2; }
+                section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous .niu {
+                  float: right;
+                  display: block;
+                  width: 40%;
+                  text-align: center; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .te_yous .niu img {
+                    width: .5rem; }
+              section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx {
+                width: 100%;
+                float: left;
+                overflow: hidden; }
+                section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx1 {
+                  width: 50%;
+                  float: left;
+                  position: relative;
+                  position: relative; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx1::after {
+                    pointer-events: none;
+                    position: absolute;
+                    z-index: 999;
+                    top: 0;
+                    left: 0;
+                    overflow: hidden;
+                    content: " ";
+                    border-color: #e5e5e5;
+                    border-style: solid;
+                    border-width: 0 1px 0 0;
+                    -webkit-transform-origin: 0 0;
+                    transform-origin: 0 0; }
+                    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+                      section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx1::after {
+                        width: 100%;
+                        height: 100%; } }
+                    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+                      section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx1::after {
+                        width: 200%;
+                        height: 200%;
+                        -webkit-transform: scale(0.5);
+                        transform: scale(0.5); } }
+                    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+                      section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx1::after {
+                        width: 300%;
+                        height: 300%;
+                        -webkit-transform: scale(0.33333);
+                        transform: scale(0.33333); } }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx1 .class_title {
+                    text-align: center;
+                    font-size: .14rem;
+                    padding: .15rem 0 .05rem;
+                    color: #fbb900; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx1 .class-des {
+                    text-align: center;
+                    font-size: .12rem;
+                    color: #b2b2b2; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx1 .youx1_tu {
+                    display: block;
+                    width: .7rem;
+                    min-height: .7rem;
+                    margin: .05rem auto; }
+                    section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx1 .youx1_tu img {
+                      width: .7rem;
+                      margin: .05rem auto; }
+                section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx2 {
+                  width: 50%;
+                  float: left;
+                  position: relative; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx2 .class_title {
+                    text-align: center;
+                    font-size: .14rem;
+                    padding: .15rem 0 .05rem;
+                    color: #c5d200; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx2 .class-des {
+                    text-align: center;
+                    font-size: .12rem;
+                    color: #b2b2b2; }
+                  section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx2 .youx2_tu {
+                    display: block;
+                    width: .7rem;
+                    min-height: .7rem;
+                    margin: .05rem auto; }
+                    section #content .te_are .te_jie .te_lei .module-content-box .te_you .youx .youx2 .youx2_tu img {
+                      width: .7rem;
+                      margin: .05rem auto; }
+      section #content .te_are .center_tu2 {
+        margin-top: .2rem;
+        position: relative;
+        width: 100%;
+        height: .85rem; }
+        section #content .te_are .center_tu2 img {
+          width: 100%;
+          height: 100%; }
+    section #content .pin {
+      width: 100%;
+      height: 2.9rem;
+      background: #fff;
+      padding-bottom: .1rem;
+      margin-top: .2rem;
+      color: red; }
+      section #content .pin .module-title-box {
+        width: 100%;
+        height: .39rem;
+        position: relative;
+        padding: .1rem 0;
+        display: block; }
+        section #content .pin .module-title-box .module-title-left-icon {
+          background: #fbb900;
+          display: block;
+          position: absolute;
+          left: .1rem;
+          top: .13rem;
+          width: .05rem;
+          height: .13rem; }
+        section #content .pin .module-title-box .module-title-txt {
+          padding-left: .2rem;
+          font-size: .14rem;
+          color: #000; }
+      section #content .pin .pin_lei {
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: .1rem;
+        height: 100%; }
+        section #content .pin .pin_lei .lei {
+          width: 94%;
+          margin: 0 auto;
+          height: 100%; }
+          section #content .pin .pin_lei .lei .lei_nai {
+            display: block;
+            width: 1.05rem;
+            margin-right: .1rem;
+            margin-bottom: .03rem;
+            background: #f8f7f3;
+            position: relative;
+            height: 1.37rem;
+            float: left; }
+            section #content .pin .pin_lei .lei .lei_nai .class_title {
+              font-size: .14rem;
+              padding: .1rem 0 .05rem .05rem;
+              color: #000; }
+            section #content .pin .pin_lei .lei .lei_nai .class-des {
+              font-size: .12rem;
+              color: #b2b2b2;
+              padding-left: .05rem; }
+            section #content .pin .pin_lei .lei .lei_nai .pin1 {
+              width: .84rem;
+              margin: 0 auto;
+              height: .84rem;
+              display: block; }
+              section #content .pin .pin_lei .lei .lei_nai .pin1 img {
+                width: 100%; }
+          section #content .pin .pin_lei .lei .lei_yun {
+            display: block;
+            width: 1.05rem;
+            margin-right: .1rem;
+            margin-bottom: .03rem;
+            background: #f8f7f3;
+            position: relative;
+            height: 1.37rem;
+            float: left; }
+            section #content .pin .pin_lei .lei .lei_yun .class_title {
+              font-size: .14rem;
+              padding: .1rem 0 .05rem .05rem;
+              color: #000; }
+            section #content .pin .pin_lei .lei .lei_yun .class-des {
+              font-size: .12rem;
+              color: #b2b2b2;
+              padding-left: .05rem; }
+            section #content .pin .pin_lei .lei .lei_yun .pin2 {
+              width: .84rem;
+              margin: 0 auto;
+              height: .84rem;
+              display: block; }
+              section #content .pin .pin_lei .lei .lei_yun .pin2 img {
+                width: 100%; }
+          section #content .pin .pin_lei .lei .lei_niao {
+            display: block;
+            width: 1.05rem;
+            margin-right: .1rem;
+            margin-bottom: .03rem;
+            background: #f8f7f3;
+            position: relative;
+            height: 1.37rem;
+            float: left; }
+            section #content .pin .pin_lei .lei .lei_niao .class_title {
+              font-size: .14rem;
+              padding: .1rem 0 .05rem .05rem;
+              color: #000; }
+            section #content .pin .pin_lei .lei .lei_niao .class-des {
+              font-size: .12rem;
+              color: #b2b2b2;
+              padding-left: .05rem; }
+            section #content .pin .pin_lei .lei .lei_niao .pin3 {
+              width: .84rem;
+              margin: 0 auto;
+              height: .84rem;
+              display: block; }
+              section #content .pin .pin_lei .lei .lei_niao .pin3 img {
+                width: 100%; }
+          section #content .pin .pin_lei .lei .lei_tong {
+            width: 1.63rem;
+            height: .98rem;
+            background: #f8f7f3;
+            float: left;
+            margin-right: .1rem;
+            position: relative; }
+            section #content .pin .pin_lei .lei .lei_tong .class_title {
+              font-size: .14rem;
+              padding: .1rem 0 .05rem .05rem;
+              color: #000; }
+            section #content .pin .pin_lei .lei .lei_tong .class-des {
+              font-size: .12rem;
+              color: #b2b2b2;
+              padding-left: .05rem; }
+            section #content .pin .pin_lei .lei .lei_tong .pin4 {
+              display: block;
+              width: 70px;
+              min-height: 98px;
+              margin: 0 auto;
+              position: absolute;
+              top: 0;
+              right: 0; }
+              section #content .pin .pin_lei .lei .lei_tong .pin4 img {
+                width: 100%;
+                display: block; }
+          section #content .pin .pin_lei .lei .lei_yi {
+            width: 1.63rem;
+            height: .98rem;
+            background: #f8f7f3;
+            float: left;
+            margin-right: .1rem;
+            position: relative; }
+            section #content .pin .pin_lei .lei .lei_yi .class_title {
+              font-size: .14rem;
+              padding: .1rem 0 .05rem .05rem;
+              color: #000; }
+            section #content .pin .pin_lei .lei .lei_yi .class-des {
+              font-size: .12rem;
+              color: #b2b2b2;
+              padding-left: .05rem; }
+            section #content .pin .pin_lei .lei .lei_yi .pin5 {
+              display: block;
+              width: 70px;
+              min-height: 98px;
+              margin: 0 auto;
+              position: absolute;
+              top: 0;
+              right: 0; }
+              section #content .pin .pin_lei .lei .lei_yi .pin5 img {
+                width: 100%;
+                display: block; }
+    section #content .tui {
+      width: 100%;
+      margin: .15rem auto .15rem;
+      position: relative; }
+      section #content .tui .tui_zi {
+        display: block;
+        width: .95rem;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        background: #f5f3f4;
+        font-size: .14rem;
+        text-align: center; }
+      section #content .tui .tui_xian {
+        height: .01rem;
+        width: 100%;
+        position: absolute;
+        top: .10rem;
+        left: 0;
+        background: #d9d9d9; }
+    section #content .yo-carousel {
+      width: 100%;
+      height: 1.35rem; }
+      section #content .yo-carousel .cont {
+        height: 100%; }
+        section #content .yo-carousel .cont li {
+          height: 100%; }
+          section #content .yo-carousel .cont li .img {
+            height: 100%;
+            width: 100%; }
+
+section {
+  position: relative; }
+  section::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    content: " ";
+    border-color: #eee;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      section::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      section::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      section::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+
+.kindList {
+  height: 100%; }
+  .kindList .yo-multilist {
+    height: 100%; }
+    .kindList .yo-multilist > .item {
+      background: #fff; }
+      .kindList .yo-multilist > .item:first-child {
+        background: #f2f2f2; }
+        .kindList .yo-multilist > .item:first-child .yo-list > .item {
+          background: #fff; }
+        .kindList .yo-multilist > .item:first-child .yo-list .item.spread {
+          background: #fafafa;
+          border: none;
+          color: #f8ac00;
+          border-left: .02rem #f8ac00 solid;
+          z-index: 100; }
+      .kindList .yo-multilist > .item .yo-scroller {
+        position: relative;
+        position: absolute; }
+        .kindList .yo-multilist > .item .yo-scroller::after {
+          pointer-events: none;
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          content: " ";
+          border-color: #ccc;
+          border-style: solid;
+          border-width: 0 0 0 0;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+            .kindList .yo-multilist > .item .yo-scroller::after {
+              width: 100%;
+              height: 100%; } }
+          @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+            .kindList .yo-multilist > .item .yo-scroller::after {
+              width: 200%;
+              height: 200%;
+              -webkit-transform: scale(0.5);
+              transform: scale(0.5); } }
+          @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+            .kindList .yo-multilist > .item .yo-scroller::after {
+              width: 300%;
+              height: 300%;
+              -webkit-transform: scale(0.33333);
+              transform: scale(0.33333); } }
+
+.kindLists {
+  overflow-y: auto !important;
+  background: #fafafa; }
+  .kindLists li {
+    width: 33.3333%;
+    float: left;
+    margin: .10rem 0;
+    text-align: center; }
+    .kindLists li img {
+      width: .7rem;
+      height: .8rem; }
+    .kindLists li p {
+      margin-top: .07rem;
+      text-align: center;
+      color: #6c6c6c; }
+
+.m-cat img:nth-child(1) {
+  height: 1rem;
+  width: 100%; }
+
+.m-cat .cartNone {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center; }
+  .m-cat .cartNone img:nth-child() {
+    height: 1rem;
+    width: 100%; }
+  .m-cat .cartNone img:nth-child(1) {
+    margin-top: .35rem;
+    height: .8rem;
+    width: .8rem; }
+  .m-cat .cartNone p {
+    margin-top: .36rem; }
+  .m-cat .cartNone .btn {
+    position: relative;
+    border-radius: 5px;
+    margin-top: .32rem;
+    color: #fab300;
+    height: .48rem;
+    width: 1.66rem;
+    line-height: .48rem;
+    text-align: center; }
+    .m-cat .cartNone .btn::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      content: " ";
+      border-color: #fab300;
+      border-style: solid;
+      border-width: 4px;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .m-cat .cartNone .btn::after {
+          width: 100%;
+          height: 100%;
+          border-radius: 5px; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .m-cat .cartNone .btn::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+          border-radius: 10px; } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .m-cat .cartNone .btn::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333);
+          border-radius: 15px; } }
+
+.my {
+  font-family: "\9ED1\4F53"; }
+  .my .top {
+>>>>>>> react-project-rumengkai
     height: 2.27rem;
     width: 100%;
     background: url(/images/bg_login_head.png);
@@ -13019,6 +14116,7 @@ section {
     -webkit-justify-content: center;
     justify-content: center;
     text-align: center; }
+<<<<<<< HEAD
     .user .top img {
       width: .8rem;
       margin-bottom: .2rem; }
@@ -13026,6 +14124,122 @@ section {
       line-height: .25rem; }
       .user .top p span {
         color: #ffab00; }
+=======
+    .my .top img {
+      width: .8rem;
+      margin-bottom: .2rem; }
+    .my .top p {
+      line-height: .25rem; }
+      .my .top p span {
+        color: #ffab00; }
+  .my .yo-list .label {
+    height: .12rem; }
+  .my .yo-list .phone {
+    margin-right: .08rem;
+    color: #ffab00; }
+  .my .yo-list i img {
+    width: .31rem;
+    height: .31rem; }
+
+.user {
+  color: #4a4a4a;
+  font-family: "\9ED1\4F53"; }
+  .user .top {
+    height: 2rem;
+    width: 100%;
+    background: url(/images/bg_login_head.png);
+    background-size: 100% 2rem;
+    position: relative;
+    text-align: center; }
+    .user .top .yo-header-user {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(255, 255, 255, 0.3); }
+      .user .top .yo-header-user img {
+        width: .2rem;
+        height: .2rem; }
+    .user .top .yo-header::after {
+      border-width: 0; }
+    .user .top .babyNumber {
+      position: absolute;
+      left: .32rem;
+      top: .5rem; }
+      .user .top .babyNumber img {
+        width: .4rem; }
+      .user .top .babyNumber span {
+        display: inline-block;
+        margin-left: .1rem;
+        position: absolute;
+        bottom: -.02rem;
+        width: 1rem;
+        color: #9fa09b; }
+    .user .top p {
+      position: absolute;
+      bottom: .4rem;
+      right: .2rem;
+      line-height: .25rem; }
+      .user .top p span {
+        color: #ffab00; }
+  .user .order ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    background-color: #fff;
+    margin-top: .01rem;
+    height: .72rem; }
+    .user .order ul li {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: space-around;
+      justify-content: space-around; }
+      .user .order ul li b {
+        margin-top: .03rem; }
+  .user .wallet ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    margin-top: .01rem;
+    background-color: #fff;
+    height: .42rem;
+    font-size: .15rem; }
+    .user .wallet ul span {
+      color: #ffc700; }
+    .user .wallet ul li {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      width: .1px;
+      text-align: center; }
+      .user .wallet ul li b {
+        margin-top: .03rem; }
+>>>>>>> react-project-rumengkai
   .user .yo-list .label {
     height: .12rem; }
   .user .yo-list .phone {
@@ -13034,6 +14248,11 @@ section {
   .user .yo-list i img {
     width: .31rem;
     height: .31rem; }
+<<<<<<< HEAD
+=======
+  .user .yo-list .flex {
+    font-size: .17rem; }
+>>>>>>> react-project-rumengkai
 
 /**
  * @module element

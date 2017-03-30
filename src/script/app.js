@@ -22,6 +22,7 @@ import Kind from './component/kind'
 import Friends from './component/friends'
 import Cart from './component/cart'
 import My from './component/my'
+import User from './component/user'
 import Login from './component/login'
 import Register1 from './component/register-1'
 import Register2 from './component/register-2'
@@ -35,6 +36,7 @@ ReactDom.render(
 				<Route path="friends" title="2" component={Friends}></Route>
 				<Route path="cart" title="3" component={Cart}></Route>
 				<Route path="my" title="4" component={My}></Route>
+				<Route path="user" title="5" component={User}></Route>
 			</Route>
 			<Route path="/login" component={Login}></Route>
 			<Route path="/register-1" component={Register1}></Route>
