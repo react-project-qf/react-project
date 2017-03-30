@@ -70,7 +70,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/index.ejs',
 			filename: 'index.html',
-			title: '豆瓣电影'
+			title: '乐友'
 		}),
 		new ExtractTextPlugin({
 			// filename: 'app_[hash].css',
