@@ -1,0 +1,39 @@
+@import "../element/yo-btn";
+.register{
+	font-family: "黑体";
+	position: relative;
+	height: 100%;
+	.content{
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include yo-btn(
+			$width:90%,
+			$height:.5rem,
+			$radius:2px
+		);
+		.label{
+			height: .15rem;
+		}
+		.yo-btn{
+			margin:.1rem auto;
+		}
+		.item{
+			input{
+				padding-top:.05rem;
+				width: 100%;
+			}
+			.ico{
+				font-size: .22rem;
+			}
+			.info{
+				border-left:1px #eee solid;
+				padding-left: .2rem;
+				padding-right: .1rem;
+			}
+		}
+	}
+}
+.datePicker{
+	width: 3.2rem;
+}

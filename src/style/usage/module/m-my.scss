@@ -1,0 +1,40 @@
+$base-color:#ffab00;
+.user{
+	font-family: "黑体";
+	.top{
+		height: 2.27rem;
+		width: 100%;
+		background: url(/images/bg_login_head.png);
+		background-size: 100% 2.27rem;
+		@include flexbox();
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		text-align: center;
+		img{
+			width: .8rem;
+			margin-bottom: .2rem;
+		}
+		p{
+			line-height: .25rem;
+			span{
+				color: #ffab00;
+			}
+		}
+	}
+	.yo-list{
+		.label{
+			height: .12rem;
+		}
+		.phone{
+			margin-right: .08rem;
+			color:$base-color;
+		}
+		i{
+			img{
+				width: .31rem;
+				height: .31rem;
+			}
+		}
+	}
+}
