@@ -12174,16 +12174,30 @@ a {
   transition: transform 0.5s ease-in; }
 
 section {
+  position: relative;
   overflow-y: auto;
   height: 100%; }
   section #content {
     position: relative;
     overflow: hidden;
     height: 100%; }
+    section #content .BannerGuang {
+      display: block;
+      font-size: .1rem;
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #fff;
+      width: .3rem;
+      height: .14rem;
+      position: fixed;
+      z-index: 999;
+      right: 0;
+      top: 1.2rem;
+      text-align: center;
+      line-height: .14rem; }
     section #content .guang {
       display: block;
       font-size: .1rem;
-      background: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.2);
       color: #fff;
       width: .3rem;
       height: .14rem;
@@ -12237,7 +12251,7 @@ section {
         position: relative;
         width: 100%;
         display: block;
-        padding: .1rem 0;
+        padding: .05rem 0;
         font-size: .14rem;
         color: #000; }
         section #content .char .module-title-box .module-title-left-icon {
@@ -12863,6 +12877,48 @@ section {
           section #content .yo-carousel .cont li .img {
             height: 100%;
             width: 100%; }
+    section #content .homeListUl {
+      height: 94.1rem;
+      background: #d9d9d9; }
+      section #content .homeListUl ul {
+        width: 3.4rem;
+        height: 100%;
+        margin: 0.1rem auto;
+        padding-bottom: .1rem; }
+        section #content .homeListUl ul li {
+          width: 1.6rem;
+          height: 2.23rem;
+          margin-left: .04rem;
+          margin-right: .06rem;
+          margin-top: .06rem;
+          margin-bottom: .06rem;
+          overflow: hidden;
+          background: #fff;
+          float: left; }
+          section #content .homeListUl ul li a {
+            color: #333; }
+            section #content .homeListUl ul li a img {
+              width: 100%;
+              display: block;
+              margin: .01 auto; }
+            section #content .homeListUl ul li a .HomeListTitle {
+              width: 100%;
+              ext-overflow: -o-ellipsis-lastline;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              text-indent: 0.1rem;
+              padding: .04rem .02rem; }
+            section #content .homeListUl ul li a .homeListPrice .homeListPrice1 {
+              display: inline-block;
+              text-indent: 0.1rem;
+              color: #f2622d; }
+            section #content .homeListUl ul li a .homeListPrice .homeListPrice2 {
+              display: inline-block;
+              color: #b2b2b2;
+              text-indent: 0.1rem; }
 
 section {
   position: relative; }

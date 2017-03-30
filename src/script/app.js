@@ -25,6 +25,7 @@ import My from './component/my'
 import Login from './component/login'
 import Register1 from './component/register-1'
 import Register2 from './component/register-2'
+import Detail from './component/detail'
 ReactDom.render(
 	<Provider store={store}>
 		<Router history={hashHistory}>
@@ -39,6 +40,7 @@ ReactDom.render(
 			<Route path="/login" component={Login}></Route>
 			<Route path="/register-1" component={Register1}></Route>
 			<Route path="/register-2" component={Register2}></Route>
+			<Route path="/detail" component={Detail}></Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')

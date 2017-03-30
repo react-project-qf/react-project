@@ -1,41 +1,89 @@
 import React from 'react'
+import {
+  Link
+} from 'react-router'
 import Carousel from '../../component_dev/carousel/src'
-import Scroller from '../../component_dev/scroller/src/index';
+import Scroller from '../../component_dev/scroller/src/index'
+import fetchData from '../util/util.fetch.js'
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bannerList: [<li/>]
+      bannerList: [<li/>],
+      homeList: [],
+      time: "00:00:00"
     };
   }
   renderData(data) {
-    // console.log("data", data)
-    var arr = [];
+    console.log("遍历banner")
+    var arr = []
     data.map(function(m) {
       arr.push(<li className='item'><img className='img' src={m.Pic}/></li>)
     })
-    // console.log("arr", arr[0])
     this.setState({
       bannerList: arr
     });
   }
+  renderHomeData(data) {
+    console.log("遍历homeList")
+    var list = []
+    data.map(function(m) {
+      list.push(<li>
+        <a href={'#/detail/?n='+m.sku}><img src={m.pic}/>
+        <p className="HomeListTitle">{m.title}</p>
+          <p className="homeListPrice"><span className="homeListPrice1">￥{m.sale_price}</span>
+          <span className="homeListPrice2">查看详情&gt;&gt;</span></p>
+        </a>
+      </li>)
+    })
+    this.setState({
+      homeList: list
+    });
+  }
   componentWillMount() {
-    fetch('./api/mall/postIndexData')
-      .then(response => response.json())
-      .then(data => {
-        // console.log("sds", data)
-        this.renderData(data.slider);
+    let url = './api/mall/postIndexData'
+    fetchData(url, (data) => {
+      this.renderData(data.slider)
+      this.renderHomeData(data.recommend)
+    })
+    var _timer = 0;
+    var that = this
+
+    function timer() {
+      window.clearTimeout(_timer);
+      var o_date = new Date("2017/4/6");
+      var s_date = new Date();
+      var _milli = o_date.getTime() - s_date.getTime();
+      var _date = new Date(_milli);
+      that.setState({
+        time: _date.getHours() + ":" + _date.getMinutes() + ":" + _date.getSeconds()
       })
-      .catch(e => console.log("Oops, error", e))
+      _timer = window.setTimeout(timer, 1000);
+    }
+    window.onload = function() {
+      timer();
+    }
   }
   render() {
     return (
       <div id="content" className="container">
-			<Scroller ref="scroller" usePullRefresh={true}  useLoadMore={true}
-			extraClass={'yo-scroller-fullscreen'} scrollY={true}>
+			<Scroller ref="scroller" usePullRefresh={true}  useLoadMore={false}
+			extraClass={'yo-scroller-fullscreen'} scrollY={true} onRefresh={() => {
+        console.log("上拉刷新")
+        this.setState({
+          bannerList: [<li/>],
+          homeList: []
+        })
+        let url = './api/mall/postIndexData'
+        fetchData(url,(data) => {
+          this.renderData(data.slider)
+          this.renderHomeData(data.recommend)
+          this.refs.scroller.stopRefreshing(true)
+        })
+      }}> 
+        <span className="BannerGuang">广告</span>
 				<Carousel>
 				    {this.state.bannerList}
-            <span className="guang">广告</span>
 				</Carousel>
 				<div className="homeTitle">
 					<ul>
@@ -49,54 +97,50 @@ class Home extends React.Component {
 						<li><i><img src="./images/index_sign.png"/></i><b>签到</b></li>
 					</ul>
 				</div>
-
-
-
 				<div className="char">
 					<a className="module-title-box">
-                        <span className="module-title-left-icon"></span>
-                        <span className="module-title-right-icon yo-ico">&#xf07f;</span>
-                        <span className="module-title-txt">秒杀</span>
-                        <div className="module-title-countdown">
-                            <span className="count-down-txt" id="orderAndStart">距离结束</span>
-                            <span id="orderAndStart2">
-                                00:11:05
-                            </span>
-                        </div>
-                    </a>
-                   <a className="homeList1">
-                        <div className="product-img1">
-                             <img src="./images/ms.JPG"/>
-                        </div> 
-                        <p className="product">玛力--森林健身</p>
-                        <div classname="product1-price">
-                            <span id="product1-price">￥38.00</span>
-                        </div>
-                    </a>
-                     <a className="homeList1">
-                        <div className="product-img1">
-                           <img src="./images/ms.JPG"/>
-                        </div> 
-                        <p className="product">玛力--森林健身</p>
-                        <div classname="product1-price">
-                            <span id="product1-price">￥38.00</span>
-                        </div>
-                    </a>
-                     <a className="homeList1">
-                        <div className="product-img1">
-                             <img src="./images/ms.JPG"/>
-                        </div> 
-                        <p className="product">玛力--森林健身</p>
-                        <div classname="product1-price">
-                            <span id="product1-price">￥38.00</span>
-                        </div>
-                    </a>
-                    <a className="center_tu">
-                      <img src="./images/tu1.jpg"/>
-                      <span className="guang1">广告</span>
-                    </a>
+              <span className="module-title-left-icon"></span>
+              <span className="module-title-right-icon yo-ico">&#xf07f;</span>
+              <span className="module-title-txt">秒杀</span>
+              <div className="module-title-countdown">
+                  <span className="count-down-txt" id="orderAndStart">距离结束</span>
+                  <span id="orderAndStart2">
+                      {this.state.time}
+                  </span>
+              </div>
+          </a>
+         <a className="homeList1">
+              <div className="product-img1">
+                   <img src="./images/ms.JPG"/>
+              </div> 
+              <p className="product">玛力--森林健身</p>
+              <div classname="product1-price">
+                  <span id="product1-price">￥38.00</span>
+              </div>
+          </a>
+           <a className="homeList1">
+              <div className="product-img1">
+                 <img src="./images/ms.JPG"/>
+              </div> 
+              <p className="product">玛力--森林健身</p>
+              <div classname="product1-price">
+                  <span id="product1-price">￥38.00</span>
+              </div>
+          </a>
+           <a className="homeList1">
+              <div className="product-img1">
+                   <img src="./images/ms.JPG"/>
+              </div> 
+              <p className="product">玛力--森林健身</p>
+              <div classname="product1-price">
+                  <span id="product1-price">￥38.00</span>
+              </div>
+          </a>
+          <a className="center_tu">
+            <img src="./images/tu1.jpg"/>
+            <span className="guang1">广告</span>
+          </a>
         </div>
-
 
         <div className="te_are">
           <div className="te_jie">
@@ -111,8 +155,8 @@ class Home extends React.Component {
                     <h3 className="class_title">乐海淘全球购</h3>
                     <p className="class_des">官方授权 保税区发货</p>
                     <span className="fangxin_tu">
+                    <span className="guang guang3">广告</span>
                       <img src="./images/fangx2.png"/>
-                      <span className="guang">广告</span>
                     </span>
                     
                   </a>
@@ -207,14 +251,16 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-
-
         <div className="tui">
           <span className="tui_zi">为你推荐</span>
           <span className="tui_xian"></span>
         </div>
 
-
+        <div className="homeListUl">
+          <ul>
+           {this.state.homeList}
+          </ul>
+        </div>
       </Scroller>
     	</div>
     )
