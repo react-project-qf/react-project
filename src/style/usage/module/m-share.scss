@@ -1,0 +1,32 @@
+@import "../component/modal";
+.share{
+	width:100%;
+	height:100%;
+	.actionsheet-up {
+	  -webkit-animation-name: actionsheet-up;
+	  animation-name: actionsheet-up;
+	}
+
+	.actionsheet-down {
+	  -webkit-animation-name: actionsheet-down;
+	  animation-name: actionsheet-down;
+	}
+
+	@keyframes actionsheet-up {
+	    from {
+	        transform: translate3d(0, 100%, 0);
+	    }
+	    to {
+	        transform: translate3d(0, 0, 0);
+	    }
+	}
+
+	@keyframes actionsheet-down {
+	    from {
+	        transform: translate3d(0, 0, 0);
+	    }
+	    to {
+	        transform: translate3d(0, 100%, 0);
+	    }
+	}
+}

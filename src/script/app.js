@@ -25,6 +25,9 @@ import My from './component/my'
 import Login from './component/login'
 import Register1 from './component/register-1'
 import Register2 from './component/register-2'
+import Setup from './component/setup'
+import Anenst from './component/anenst'
+import Share from './component/share'
 ReactDom.render(
 	<Provider store={store}>
 		<Router history={hashHistory}>
@@ -39,6 +42,9 @@ ReactDom.render(
 			<Route path="/login" component={Login}></Route>
 			<Route path="/register-1" component={Register1}></Route>
 			<Route path="/register-2" component={Register2}></Route>
+			<Route path="/setup" component={Setup}></Route>
+			<Route path="/anenst" component={Anenst}></Route>
+			<Route path="/share" component={Share}></Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')

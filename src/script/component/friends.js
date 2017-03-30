@@ -88,6 +88,7 @@ class Friends extends React.Component{
 						</ul>
 					</div>
 				</div>
+
 			</Scroller>
     	</div>
     )
