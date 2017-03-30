@@ -29,6 +29,7 @@ import Register2 from './component/register-2'
 import Setup from './component/setup'
 import Anenst from './component/anenst'
 import Share from './component/share'
+import Detail from './component/detail'
 ReactDom.render(
 	<Provider store={store}>
 		<Router history={hashHistory}>
@@ -47,6 +48,7 @@ ReactDom.render(
 			<Route path="/setup" component={Setup}></Route>
 			<Route path="/anenst" component={Anenst}></Route>
 			<Route path="/share" component={Share}></Route>
+			<Route path="/detail" component={Detail}></Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')

@@ -65,7 +65,8 @@ class Index extends React.Component {
 			</div>
 		)
 	}
-	switchRoutes(){
+	switchRoutes() {
+		console.log("props", this.props.routes[1].title)
 		switch (this.props.routes[1].title) {
 			case "2":
 				this.setState({
@@ -95,11 +96,11 @@ class Index extends React.Component {
 		}
 	}
 	componentWillReceiveProps() {
-		this.switchRoutes();
+		this.switchRoutes()
 	}
-	componentDidMount(){
+	componentDidMount() {
 		let title = this.props.routes[1].title;
-		console.log('mount');
+		// console.log('mount');
 		this.props.onChange({
 			type: 'SETTITLE',
 			title: title
@@ -107,7 +108,7 @@ class Index extends React.Component {
 		this.switchRoutes();
 	}
 	componentDidUpdate() {
-		console.log('update');
+		// console.log('update');
 		let title = this.props.routes[1].title;
 		this.props.onChange({
 			type: 'SETTITLE',
