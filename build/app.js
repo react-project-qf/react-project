@@ -5276,40 +5276,44 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Cart = function (_React$Component) {
   _inherits(Cart, _React$Component);
 
-  function Cart() {
+  function Cart(props) {
     _classCallCheck(this, Cart);
 
-    return _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).call(this, props));
+
+    _this.state = {
+      cartNone: false,
+      goodList: window.localStorage.getItem("ly-goodList")
+    };
+
+    return _this;
   }
 
   _createClass(Cart, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      //控制显示
+      if (this.state.goodList == "" || this.state.goodList == null) {
+        this.setState({
+          cartNone: false
+        });
+      } else {
+        this.setState({
+          cartNone: true
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "div",
         { className: "m-cat" },
+        _react2.default.createElement("img", { src: "./images/bg_cart.jpg", alt: "" }),
         _react2.default.createElement(
           "div",
-          { className: "beforCat" },
-          _react2.default.createElement(
-            "div",
-            { className: "cat-top" },
-            _react2.default.createElement(
-              "a",
-              { href: "/login" },
-              "\u767B\u9646\u540E\u53EF\u5C06\u7535\u8111\u548C\u624B\u673A\u4E0A\u8D2D\u7269\u8F66\u7684\u5546\u54C1\u540C\u6B65\u8FC7\u6765",
-              _react2.default.createElement(
-                "span",
-                null,
-                "\u53BB\u767B\u5F55"
-              )
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "yo-ico cat-img" },
-            " \uE64A"
-          ),
+          { className: "cartNone", style: { display: this.state.cartNone ? "none" : "" } },
+          _react2.default.createElement("img", { src: "./images/shopping_empty_icon.png", alt: "" }),
           _react2.default.createElement(
             "p",
             null,
@@ -5317,7 +5321,9 @@ var Cart = function (_React$Component) {
           ),
           _react2.default.createElement(
             "div",
-            { className: "btn" },
+            { className: "btn", onClick: function onClick() {
+                location.href = '#/home';
+              } },
             "\u968F\u610F\u901B\u901B"
           )
         )
@@ -7526,7 +7532,8 @@ var My = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (My.__proto__ || Object.getPrototypeOf(My)).call(this, props));
 
     _this.state = {
-      auth: window.localStorage.getItem("ly-auth")
+      auth: window.localStorage.getItem("ly-auth"),
+      babyNumber: 1
     };
     if (_this.state.auth == "" || _this.state.auth == null) {
       location.href = '#/my';
@@ -7544,25 +7551,41 @@ var My = function (_React$Component) {
           "div",
           { className: "top" },
           _react2.default.createElement(
-            "a",
-            { href: "#/login" },
-            _react2.default.createElement("img", { src: "/images/bt_unlogined.png" })
+            "div",
+            { className: "yo-header yo-header-user" },
+            _react2.default.createElement("h2", { className: "title" }),
+            _react2.default.createElement(
+              "span",
+              { className: "regret" },
+              _react2.default.createElement("img", { src: "./images/set_up.png", alt: "" })
+            ),
+            _react2.default.createElement(
+              "span",
+              { className: "affirm" },
+              _react2.default.createElement("img", { src: "./images/toolbar_message_black.png", alt: "" })
+            )
           ),
           _react2.default.createElement(
-            "p",
-            null,
-            "\u4E70\u6BCD\u5A74\uFF0C\u6765\u4E50\u53CB"
-          ),
-          _react2.default.createElement(
-            "p",
-            null,
-            "\u5168\u56FD",
+            "div",
+            { className: "babyNumber" },
+            _react2.default.createElement("img", { src: "/images/head_portrait.png" }),
             _react2.default.createElement(
               "span",
               null,
-              "500\u5BB6\u95E8\u5E97"
-            ),
-            "\uFF0C\u54C1\u8D28\u4FDD\u771F"
+              "\u60A8\u6709",
+              this.state.babyNumber,
+              "\u4E2A\u5B9D\u5B9D"
+            )
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "\u8D26\u6237\u7BA1\u7406 ",
+            _react2.default.createElement(
+              "i",
+              { className: "yo-ico" },
+              "\uF07F"
+            )
           )
         ),
         _react2.default.createElement(
@@ -7574,7 +7597,7 @@ var My = function (_React$Component) {
             _react2.default.createElement(
               "i",
               { className: "yo-ico" },
-              _react2.default.createElement("img", { src: "/images/about.png" })
+              _react2.default.createElement("img", { src: "/images/order.png" })
             ),
             _react2.default.createElement(
               "div",
@@ -7592,6 +7615,56 @@ var My = function (_React$Component) {
               "\uF07F"
             )
           ),
+          _react2.default.createElement(
+            "div",
+            { className: "order" },
+            _react2.default.createElement(
+              "ul",
+              null,
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "i",
+                  null,
+                  _react2.default.createElement("img", { src: "./images/pay.png", alt: "" })
+                ),
+                _react2.default.createElement(
+                  "b",
+                  null,
+                  "\u5F85\u652F\u4ED8"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "i",
+                  null,
+                  _react2.default.createElement("img", { src: "./images/goods.png", alt: "" })
+                ),
+                _react2.default.createElement(
+                  "b",
+                  null,
+                  "\u5F85\u6536\u8D27"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "i",
+                  null,
+                  _react2.default.createElement("img", { src: "./images/evaluate.png", alt: "" })
+                ),
+                _react2.default.createElement(
+                  "b",
+                  null,
+                  "\u5F85\u8BC4\u4EF7"
+                )
+              )
+            )
+          ),
           _react2.default.createElement("h3", { className: "label" }),
           _react2.default.createElement(
             "div",
@@ -7599,7 +7672,7 @@ var My = function (_React$Component) {
             _react2.default.createElement(
               "i",
               { className: "yo-ico" },
-              _react2.default.createElement("img", { src: "/images/call.png" })
+              _react2.default.createElement("img", { src: "/images/wallet.png" })
             ),
             _react2.default.createElement(
               "div",
@@ -7612,6 +7685,51 @@ var My = function (_React$Component) {
               "\uF07F"
             )
           ),
+          _react2.default.createElement(
+            "div",
+            { className: "wallet" },
+            _react2.default.createElement(
+              "ul",
+              null,
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "i",
+                  null,
+                  "\u8D26\u6237\u4F59\u989D"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "i",
+                  null,
+                  "\u79EF\u5206 "
+                ),
+                _react2.default.createElement(
+                  "span",
+                  null,
+                  "1000"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "i",
+                  null,
+                  "\u4F18\u60E0\u5238 "
+                ),
+                _react2.default.createElement(
+                  "span",
+                  null,
+                  "2"
+                )
+              )
+            )
+          ),
           _react2.default.createElement("h3", { className: "label" }),
           _react2.default.createElement(
             "div",
@@ -7619,7 +7737,7 @@ var My = function (_React$Component) {
             _react2.default.createElement(
               "i",
               { className: "yo-ico" },
-              _react2.default.createElement("img", { src: "/images/call.png" })
+              _react2.default.createElement("img", { src: "/images/follow.png" })
             ),
             _react2.default.createElement(
               "div",
@@ -7638,7 +7756,7 @@ var My = function (_React$Component) {
             _react2.default.createElement(
               "i",
               { className: "yo-ico" },
-              _react2.default.createElement("img", { src: "/images/ic_version.png" })
+              _react2.default.createElement("img", { src: "/images/guanzhu.png" })
             ),
             _react2.default.createElement(
               "div",
@@ -7657,7 +7775,7 @@ var My = function (_React$Component) {
             _react2.default.createElement(
               "i",
               { className: "yo-ico" },
-              _react2.default.createElement("img", { src: "/images/ic_version.png" })
+              _react2.default.createElement("img", { src: "/images/invitation.png" })
             ),
             _react2.default.createElement(
               "div",
@@ -7676,7 +7794,7 @@ var My = function (_React$Component) {
             _react2.default.createElement(
               "i",
               { className: "yo-ico" },
-              _react2.default.createElement("img", { src: "/images/ic_version.png" })
+              _react2.default.createElement("img", { src: "/images/account_daogou.png" })
             ),
             _react2.default.createElement(
               "div",
@@ -7688,7 +7806,27 @@ var My = function (_React$Component) {
               { className: "yo-ico" },
               "\uF07F"
             )
-          )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "item" },
+            _react2.default.createElement(
+              "i",
+              { className: "yo-ico" },
+              _react2.default.createElement("img", { src: "/images/shake.png" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "flex" },
+              "\u6447\u4E00\u6447"
+            ),
+            _react2.default.createElement(
+              "i",
+              { className: "yo-ico" },
+              "\uF07F"
+            )
+          ),
+          _react2.default.createElement("h3", { className: "label" })
         )
       );
     }
