@@ -48,7 +48,7 @@ ReactDom.render(
 			<Route path="/setup" component={Setup}></Route>
 			<Route path="/anenst" component={Anenst}></Route>
 			<Route path="/share" component={Share}></Route>
-			<Route path="/detail" component={Detail}></Route>
+			<Route path="/detail/:id" component={Detail}></Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')

@@ -37,6 +37,7 @@ class Detail extends React.Component {
        <li className='item'><img className='img' src="http://leyouimage.leyou.com.cn/images_db/b0/f9/b0f97ad7a50346d95e0e235b94fc06be.JPG"/></li>
        <li className='item'><img className='img' src="http://leyouimage.leyou.com.cn/images_db/b0/f9/b0f97ad7a50346d95e0e235b94fc06be.JPG"/></li>
       </Carousel>
+      {this.parmas.id}
       </div>
     )
   }
