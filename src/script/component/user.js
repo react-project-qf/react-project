@@ -1,4 +1,6 @@
 import React from 'react'
+import Scroller from '../../component_dev/scroller/src/index'
+
 
 class My extends React.Component{
   constructor(props) {
@@ -17,7 +19,7 @@ class My extends React.Component{
         <div className="top">
           <div className="yo-header yo-header-user">
             <h2 className="title"></h2>
-            <span className="regret">
+            <span className="regret" onClick={()=>{location.href='#/setup';}}>
               <img src="./images/set_up.png" alt=""/>
             </span>
             <span className="affirm">
@@ -28,16 +30,16 @@ class My extends React.Component{
             <img src="/images/head_portrait.png"/>
             <span>您有{this.state.babyNumber}个宝宝</span>
           </div>
-          <p>账户管理 <i className="yo-ico">&#xf07f;</i></p>
+          <p onClick={()=>{location.href='#/account';}}>账户管理 <i className="yo-ico">&#xf07f;</i></p>
         </div>
         <div className="yo-list yo-list-group">
-          <div className="item">
+          <div className="item" onClick={()=>{location.href='#/payment';}}>
             <i className="yo-ico"><img src="/images/order.png"/></i>
             <div className="flex">我的订单</div>
             <div className="info">查看全部订单</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
-          <div className="order">
+          <div className="order" onClick={()=>{location.href='#/payment';}}>
             <ul>
               <li>
                 <i><img src="./images/pay.png" alt=""/></i>
@@ -54,7 +56,7 @@ class My extends React.Component{
             </ul>
           </div>
           <h3 className="label"></h3>
-          <div className="item">
+          <div className="item" onClick={()=>{location.href='#/wallet';}}>
             <i className="yo-ico"><img src="/images/wallet.png"/></i>
             <div className="flex">我的钱包</div>
             <i className="yo-ico">&#xf07f;</i>
@@ -73,27 +75,27 @@ class My extends React.Component{
             </ul>
           </div>
           <h3 className="label"></h3>
-          <div className="item">
+          <div className="item"onClick={()=>{location.href='#/concerned';}}>
             <i className="yo-ico"><img src="/images/follow.png"/></i>
             <div className="flex">关注的商品</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
-          <div className="item">
+          <div className="item" onClick={()=>{location.href='#/circle';}}>
             <i className="yo-ico"><img src="/images/guanzhu.png"/></i>
             <div className="flex">我的圈儿</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
-          <div className="item">
+          <div className="item" onClick={()=>{location.href='#/invitation';}}>
             <i className="yo-ico"><img src="/images/invitation.png"/></i>
             <div className="flex">邀请闺蜜赚小钱</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
-          <div className="item">
+          <div className="item" onClick={()=>{location.href='#/adviser';}}>
             <i className="yo-ico"><img src="/images/account_daogou.png"/></i>
             <div className="flex">乐友顾问</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
-          <div className="item">
+          <div className="item" onClick={()=>{location.href='#/shake';}}>
             <i className="yo-ico"><img src="/images/shake.png"/></i>
             <div className="flex">摇一摇</div>
             <i className="yo-ico">&#xf07f;</i>

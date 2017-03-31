@@ -6,6 +6,7 @@ import {
 	Router,
 	Route,
 	IndexRoute,
+	IndexRedirect,
 	hashHistory
 } from 'react-router'
 
@@ -30,6 +31,18 @@ import Setup from './component/setup'
 import Anenst from './component/anenst'
 import Share from './component/share'
 import Detail from './component/detail'
+import Account from './component/account'
+import Concerned from './component/concerned'
+import Wallet from './component/wallet'
+import Adviser from './component/adviser'
+import Shake from './component/shake'
+import Invitation from './component/invitation'
+import Circle from './component/circle'
+import Payment from './component/payment'
+import Now from './component/now'
+import Come from './component/come'
+import Collect from './component/collect'
+import Evaluate from './component/evaluate'
 ReactDom.render(
 	<Provider store={store}>
 		<Router history={hashHistory}>
@@ -49,6 +62,20 @@ ReactDom.render(
 			<Route path="/anenst" component={Anenst}></Route>
 			<Route path="/share" component={Share}></Route>
 			<Route path="/detail" component={Detail}></Route>
+			<Route path="/account" component={Account}></Route>
+			<Route path="/concerned" component={Concerned}></Route>
+			<Route path="/wallet" component={Wallet}></Route>
+			<Route path="/adviser" component={Adviser}></Route>
+			<Route path="/shake" component={Shake}></Route>
+			<Route path="/invitation" component={Invitation}></Route>
+			<Route path="/circle" component={Circle}></Route>
+			<Route path="/payment" component={Payment}>
+				<IndexRedirect to="/Payment/now"/>
+          		<Route path="now" component={Now}/>
+          		<Route path="come" component={Come}/>
+          		<Route path="collect" component={Collect}/>
+          		<Route path="evaluate" component={Evaluate}/>
+			</Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')
