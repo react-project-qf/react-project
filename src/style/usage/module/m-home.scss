@@ -622,16 +622,19 @@ section{
 		    margin: 0.1rem auto;
 		    padding-bottom: .1rem;
 			li{
+				float:left;
 				width:1.6rem;
 				height:2.23rem;
 				margin-left:.04rem;
 				margin-right:.06rem;
 				margin-top:.06rem;
 				margin-bottom:.06rem;
-				overflow:hidden;
-				background: #fff;
-				float:left;
 				a{
+					display:block;
+					width:1.6rem;
+					height:2.23rem;
+					background:#fff;
+					overflow:hidden;
 					color:#333;
 					img{
 					width:100%;

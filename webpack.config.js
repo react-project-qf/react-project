@@ -58,7 +58,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		// //压缩js
+		// 压缩js
 		// new webpack.optimize.UglifyJsPlugin({
 		// 	compress: {
 		// 		warnings: false
@@ -76,6 +76,7 @@ module.exports = {
       //   "removeComments": true,
       //   "removeEmptyAttributes": true,
 	    // },
+
 			title: '乐友商城'
 		}),
 		new ExtractTextPlugin({

@@ -54,6 +54,7 @@ ReactDom.render(
 			<Route path="/detail" component={Detail}></Route>
 			<Route path="/carthave" component={CartHave}></Route>
 			<Route path="/gopay" component={GoPay}></Route>
+			<Route path="/detail/:id" component={Detail}></Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')
