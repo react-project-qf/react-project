@@ -1,4 +1,5 @@
 import React from 'react'
+import $ from 'jquery'
 
 class Cart extends React.Component{
   constructor(props) {
@@ -20,6 +21,24 @@ class Cart extends React.Component{
         cartNone:true
       })
     }
+    $.ajax({
+      // offset:0,
+      // rating:1,
+      // reviewType:1,
+      // prodid:423440,
+      // productId:"S030000301",
+      // ctgy_code:20,
+      // brand_id:"S03",
+      url:"/api/Product/single_ajax/type/skuInfo",
+      type:"POST",
+      dataType:"JSON",
+      data:{
+        sku:"S030000301"
+      },
+      success:function (data) {
+        console.log(data);
+      },
+    })
   }
   render(){
     return(

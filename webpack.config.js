@@ -58,7 +58,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		//压缩
+		//压缩js
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false
@@ -94,5 +94,6 @@ module.exports = {
 		'react-router': 'window.ReactRouter',
 		'react-redux': 'window.ReactRedux',
 		'redux': 'window.Redux'
+		'jquery': 'window.jQuery'
 	}
 }
