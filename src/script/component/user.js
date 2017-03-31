@@ -25,14 +25,14 @@ class My extends React.Component{
             </span>
           </div>
           <div className="babyNumber">
-            <img src="/images/head_portrait.png"/>
+            <img src="./images/head_portrait.png"/>
             <span>您有{this.state.babyNumber}个宝宝</span>
           </div>
           <p>账户管理 <i className="yo-ico">&#xf07f;</i></p>
         </div>
         <div className="yo-list yo-list-group">
           <div className="item">
-            <i className="yo-ico"><img src="/images/order.png"/></i>
+            <i className="yo-ico"><img src="./images/order.png"/></i>
             <div className="flex">我的订单</div>
             <div className="info">查看全部订单</div>
             <i className="yo-ico">&#xf07f;</i>
@@ -55,7 +55,7 @@ class My extends React.Component{
           </div>
           <h3 className="label"></h3>
           <div className="item">
-            <i className="yo-ico"><img src="/images/wallet.png"/></i>
+            <i className="yo-ico"><img src="./images/wallet.png"/></i>
             <div className="flex">我的钱包</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
@@ -74,27 +74,27 @@ class My extends React.Component{
           </div>
           <h3 className="label"></h3>
           <div className="item">
-            <i className="yo-ico"><img src="/images/follow.png"/></i>
+            <i className="yo-ico"><img src="./images/follow.png"/></i>
             <div className="flex">关注的商品</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
           <div className="item">
-            <i className="yo-ico"><img src="/images/guanzhu.png"/></i>
+            <i className="yo-ico"><img src="./images/guanzhu.png"/></i>
             <div className="flex">我的圈儿</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
           <div className="item">
-            <i className="yo-ico"><img src="/images/invitation.png"/></i>
+            <i className="yo-ico"><img src="./images/invitation.png"/></i>
             <div className="flex">邀请闺蜜赚小钱</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
           <div className="item">
-            <i className="yo-ico"><img src="/images/account_daogou.png"/></i>
+            <i className="yo-ico"><img src="./images/account_daogou.png"/></i>
             <div className="flex">乐友顾问</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
           <div className="item">
-            <i className="yo-ico"><img src="/images/shake.png"/></i>
+            <i className="yo-ico"><img src="./images/shake.png"/></i>
             <div className="flex">摇一摇</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>

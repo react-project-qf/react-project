@@ -41,7 +41,7 @@ class Home extends React.Component {
     });
   }
   componentWillMount() {
-    let url = './api/mall/postIndexData'
+    let url = 'http://rumengkai.com:88/api/mall/postIndexData'
     fetchData(url, (data) => {
       this.renderData(data.slider)
       this.renderHomeData(data.recommend)

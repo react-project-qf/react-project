@@ -21,6 +21,8 @@ import Home from './component/home'
 import Kind from './component/kind'
 import Friends from './component/friends'
 import Cart from './component/cart'
+import CartHave from './component/carthave'
+import GoPay from './component/go-pay'
 import My from './component/my'
 import User from './component/user'
 import Login from './component/login'
@@ -30,6 +32,7 @@ import Setup from './component/setup'
 import Anenst from './component/anenst'
 import Share from './component/share'
 import Detail from './component/detail'
+
 ReactDom.render(
 	<Provider store={store}>
 		<Router history={hashHistory}>
@@ -49,6 +52,8 @@ ReactDom.render(
 			<Route path="/anenst" component={Anenst}></Route>
 			<Route path="/share" component={Share}></Route>
 			<Route path="/detail" component={Detail}></Route>
+			<Route path="/carthave" component={CartHave}></Route>
+			<Route path="/gopay" component={GoPay}></Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')
