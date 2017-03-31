@@ -1,0 +1,52 @@
+$base-color:#ffab00;
+.wallet{
+	font-family: "黑体";
+	.content{
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		.gap{
+			height:.12rem;
+		}
+		.yo-list{
+			.label{
+				height: .12rem;
+			}
+			.lian{
+				width:100%;
+				height:100%;
+				color:#000;
+				margin-left:.08rem;
+			}
+			.bol{
+				color:#aaaaaa;
+			}
+			.phone{
+				margin-right: .08rem;
+				color:$base-color;
+			}
+			i{
+				img{
+					width: .31rem;
+					height: .31rem;
+				}
+			}
+		}
+		.exit{
+			margin-top:.2rem;
+			width:100%;
+			height:.4rem;
+			.btn{
+				display:block;
+				width:90%;
+				height:.4rem;
+				@include border($border-width :1px 1px 1px 1px, $border-color: #ffab00);
+				color:$base-color;
+				margin-left:5%;
+				background:#efefef;
+				text-align:center;
+				line-height:.4rem;
+			}
+		}
+	}
+}
