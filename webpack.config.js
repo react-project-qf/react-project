@@ -59,17 +59,23 @@ module.exports = {
 	},
 	plugins: [
 		//压缩
-		// new webpack.optimize.UglifyJsPlugin({
-		// 	compress: {
-		// 		warnings: false
-		// 	},
-		// 	output: {
-		// 		comments: false
-		// 	}
-		// }),
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false
+			},
+			output: {
+				comments: false
+			}
+		}),
 		new HtmlWebpackPlugin({
 			template: './src/index.ejs',
 			filename: 'index.html',
+			// css压缩
+			minify: {
+        "removeAttributeQuotes": true,
+        "removeComments": true,
+        "removeEmptyAttributes": true,
+	    },
 			title: '乐友商城'
 		}),
 		new ExtractTextPlugin({
