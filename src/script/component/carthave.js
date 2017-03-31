@@ -6,29 +6,7 @@ class Cart extends React.Component{
     this.state = {
       goodList:window.localStorage.getItem("ly-goodList"),
       comList:[<li></li>],
-      goods:[
-        {
-          "prod_id":1,
-          "name":"歌瑞家(比得兔)A类男童浅蓝梭织衬衫",
-          "count":4,
-          "marketPrace":283.00,
-          "sale_price":188.00,
-          "imgUrl":"",
-          "sku":"P9602508H3",
-          "ischeck":true
-        },
-        {
-          "prod_id":2,
-          "name":"22歌瑞家(比得兔)A类男童浅蓝梭织衬衫",
-          "count":4,
-          "marketPrace":283.01,
-          "sale_price":188.03,
-          "imgUrl":"",
-          "sku":"P9602508H3",
-          "ischeck":true,
-          "isone":false
-        }
-      ],
+      goods:JSON.parse(window.localStorage.getItem("ly-goodList"))||[<li></li>],
       allcheck:true,
       cart_num:0,
       totalmoney:288
@@ -53,7 +31,7 @@ class Cart extends React.Component{
       return (<li>
         <div className="img">
           <img src={self.state.goods[index].ischeck?"./images/public_round_check_on.png":"./images/public_round_check_off.png"} onClick={self.changeCheck.bind(self,index)}/>
-          <img src="./images/pin1.png" alt=""/>
+          <img src={self.state.goods[index].imgUrl} alt=""/>
         </div>
         <div className="info">
           <p>{self.state.goods[index].name}</p>
@@ -77,6 +55,7 @@ class Cart extends React.Component{
     this.state.goods[n].isone=false;
     this.setState({});
     this.loadList();
+    window.localStorage.setItem("ly-goodList", JSON.stringify(this.state.goods));
   }
   //减
   minus(n){
@@ -89,6 +68,7 @@ class Cart extends React.Component{
       this.loadList();
       this.setState({});
     }
+    window.localStorage.setItem("ly-goodList", JSON.stringify(this.state.goods));
   }
   //改变选中状态
   changeCheck(n){

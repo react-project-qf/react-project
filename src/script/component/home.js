@@ -41,7 +41,7 @@ class Home extends React.Component {
     });
   }
   componentWillMount() {
-    let url = 'http://rumengkai.com:88/api/mall/postIndexData'
+    let url = '/api/mall/postIndexData'
     fetchData(url, (data) => {
       this.renderData(data.slider)
       this.renderHomeData(data.recommend)
@@ -80,7 +80,7 @@ class Home extends React.Component {
           this.renderHomeData(data.recommend)
           this.refs.scroller.stopRefreshing(true)
         })
-      }}> 
+      }}>
         <span className="BannerGuang">广告</span>
 				<Carousel>
 				    {this.state.bannerList}
@@ -112,7 +112,7 @@ class Home extends React.Component {
          <a className="homeList1">
               <div className="product-img1">
                    <img src="./images/ms.JPG"/>
-              </div> 
+              </div>
               <p className="product">玛力--森林健身</p>
               <div classname="product1-price">
                   <span id="product1-price">￥38.00</span>
@@ -121,7 +121,7 @@ class Home extends React.Component {
            <a className="homeList1">
               <div className="product-img1">
                  <img src="./images/ms.JPG"/>
-              </div> 
+              </div>
               <p className="product">玛力--森林健身</p>
               <div classname="product1-price">
                   <span id="product1-price">￥38.00</span>
@@ -130,7 +130,7 @@ class Home extends React.Component {
            <a className="homeList1">
               <div className="product-img1">
                    <img src="./images/ms.JPG"/>
-              </div> 
+              </div>
               <p className="product">玛力--森林健身</p>
               <div classname="product1-price">
                   <span id="product1-price">￥38.00</span>
@@ -158,7 +158,7 @@ class Home extends React.Component {
                     <span className="guang guang3">广告</span>
                       <img src="./images/fangx2.png"/>
                     </span>
-                    
+
                   </a>
                   <div className="te_you">
                     <a className="te_yous">
@@ -200,7 +200,7 @@ class Home extends React.Component {
             </div>
         </div>
 
-        
+
         <div className="pin">
           <a className="module-title-box">
               <span className="module-title-left-icon"></span>
