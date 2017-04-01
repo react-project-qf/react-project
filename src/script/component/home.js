@@ -13,7 +13,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       bannerList: [<li/>],
-      homeList: [],
+      homeList: [<li/>],
       time: "00:00:00"
     };
   }
@@ -44,11 +44,7 @@ class Home extends React.Component {
     });
   }
   componentWillMount() {
-    let url = '/api/mall/postIndexData'
-    fetchData(url, (data) => {
-      this.renderData(data.slider)
-      this.renderHomeData(data.recommend)
-    })
+
     var _timer = 0;
     var that = this
 
@@ -285,6 +281,11 @@ class Home extends React.Component {
     )
   }
   componentDidMount() {
+    let url1 = '/api/mall/postIndexData'
+    fetchData(url1, (data) => {
+      this.renderData(data.slider)
+      this.renderHomeData(data.recommend)
+    })
     let url = "/api/mall/postIndexData/";
     fetch(url)
       .then(response => response.json())

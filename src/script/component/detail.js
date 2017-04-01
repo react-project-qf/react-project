@@ -13,6 +13,7 @@ import Scroller from '../../component_dev/scroller/src/index'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
+    this.props.prodDetail=""
     this.state = {
       detailList: [<li/>],
       List: this.props.params.id,
@@ -93,7 +94,11 @@ class Detail extends React.Component {
       dialogShow: false
     })
   }
-  componentWillMount() {
+
+  componentDidMount() {
+    console.log(this);
+    console.log(window.scrollY);
+    console.log(Scroller.prototype);
     var that = this
     Ajax("api/product/getGoodsInfo", {
       sku: this.state.List
@@ -102,6 +107,13 @@ class Detail extends React.Component {
         prodDetail: data.prodDetail
       });
     })
+    // setTimeout(function () {
+    //   that.setState({
+    //     prodDetail: that.state.prodDetail
+    //   });
+    // },6000)
+
+
     Ajax("/api/Product/single_ajax/type/skuInfo", {
       sku: this.state.List
     }, function(data) {
@@ -126,6 +138,9 @@ class Detail extends React.Component {
         prod_id: data.prod_id
       });
     })
+  }
+
+  componentDidUpdate(){
   }
   render() {
     return (
