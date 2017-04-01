@@ -12890,16 +12890,19 @@ section {
         margin: 0.1rem auto;
         padding-bottom: .1rem; }
         section #content .homeListUl ul li {
+          float: left;
           width: 1.6rem;
           height: 2.23rem;
           margin-left: .04rem;
           margin-right: .06rem;
           margin-top: .06rem;
-          margin-bottom: .06rem;
-          overflow: hidden;
-          background: #fff;
-          float: left; }
+          margin-bottom: .06rem; }
           section #content .homeListUl ul li a {
+            display: block;
+            width: 1.6rem;
+            height: 2.23rem;
+            background: #fff;
+            overflow: hidden;
             color: #333; }
             section #content .homeListUl ul li a img {
               width: 100%;
@@ -16815,10 +16818,209 @@ a {
 
 .m-detail {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background-color: #fff; }
   .m-detail .cont {
     width: 100%; }
     .m-detail .cont li.item {
       background-color: #fff; }
     .m-detail .cont img {
       width: 80%; }
+  .m-detail .detaiTitle {
+    border-bottom: 1px dotted #999; }
+    .m-detail .detaiTitle p {
+      text-indent: .2rem;
+      font-size: .12rem;
+      padding: .1rem 0 0 0; }
+    .m-detail .detaiTitle span {
+      display: inline-block;
+      color: #feaf00;
+      margin: .1rem .2rem;
+      font-size: .12rem; }
+  .m-detail .detailFooter {
+    width: 100%;
+    height: .44rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    z-index: 99;
+    border-top: 1px solid #eee;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row; }
+    .m-detail .detailFooter span {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      width: .1px;
+      line-height: .44rem;
+      display: inline-block;
+      height: 100%;
+      text-align: center;
+      border-right: 1px solid #eee;
+      position: relative; }
+      .m-detail .detailFooter span::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        content: " ";
+        border-color: #eee;
+        border-style: solid;
+        border-width: 0 1px 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .m-detail .detailFooter span::after {
+            width: 100%;
+            height: 100%; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .m-detail .detailFooter span::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5); } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .m-detail .detailFooter span::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333); } }
+      .m-detail .detailFooter span img {
+        width: .3rem; }
+    .m-detail .detailFooter span.toCat {
+      -webkit-box-flex: 3;
+      -webkit-flex: 3;
+      flex: 3;
+      width: .1px;
+      border: 0;
+      background: rgba(254, 175, 0, 0.8);
+      color: #fff; }
+  .m-detail .productPrice {
+    background: #fff; }
+    .m-detail .productPrice span {
+      display: block;
+      text-indent: .2rem;
+      font-size: .12rem;
+      color: #999; }
+    .m-detail .productPrice #price {
+      color: #e53569;
+      font-size: .16rem; }
+  .m-detail .ProductInformation {
+    width: 100%;
+    margin-top: .4rem;
+    border-bottom: .1rem; }
+    .m-detail .ProductInformation ul {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      width: 100%;
+      height: .4rem; }
+      .m-detail .ProductInformation ul li {
+        width: 100%;
+        height: 100%;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        width: .1px;
+        text-align: center;
+        width: 100%;
+        line-height: .4rem; }
+        .m-detail .ProductInformation ul li a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          color: #333; }
+      .m-detail .ProductInformation ul .liFirst {
+        position: relative; }
+        .m-detail .ProductInformation ul .liFirst::after {
+          pointer-events: none;
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          content: " ";
+          border-color: red;
+          border-style: solid;
+          border-width: 0 0 3px 0;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; }
+          @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+            .m-detail .ProductInformation ul .liFirst::after {
+              width: 100%;
+              height: 100%; } }
+          @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+            .m-detail .ProductInformation ul .liFirst::after {
+              width: 200%;
+              height: 200%;
+              -webkit-transform: scale(0.5);
+              transform: scale(0.5); } }
+          @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+            .m-detail .ProductInformation ul .liFirst::after {
+              width: 300%;
+              height: 300%;
+              -webkit-transform: scale(0.33333);
+              transform: scale(0.33333); } }
+  .m-detail .Image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+    .m-detail .Image img {
+      width: 100%; }
+  .m-detail .Shopowner {
+    padding-left: .2rem;
+    width: 100%;
+    height: .5rem;
+    margin: .1rem 0;
+    background-color: #fff; }
+    .m-detail .Shopowner .pTitle {
+      width: 100%;
+      margin-left: 3rem;
+      color: #999;
+      margin-bottom: .3rem; }
+    .m-detail .Shopowner .name {
+      color: #999;
+      margin-top: .3rem;
+      margin-left: .03rem;
+      font-size: .12rem; }
+      .m-detail .Shopowner .name span {
+        font-size: .14rem;
+        display: inline-block;
+        text-indent: .1rem;
+        border: 1px solid rgba(254, 175, 0, 0.8);
+        color: #rgba 254, 175, 0, 0.8;
+        width: .8rem;
+        line-height: .2rem;
+        margin-left: .3rem; }
+    .m-detail .Shopowner .img {
+      border: 1px solid #333;
+      border-radius: 50%;
+      width: .5rem;
+      height: .5rem;
+      float: left;
+      margin-right: .1rem; }
+  .m-detail .address {
+    background: #fff;
+    margin: .1rem 0; }
+    .m-detail .address p {
+      padding: .3rem .2rem; }
+      .m-detail .address p span {
+        display: inline-block; }
+      .m-detail .address p .song {
+        float: left; }
+      .m-detail .address p .xie {
+        float: right; }
+        .m-detail .address p .xie img {
+          width: .1rem; }

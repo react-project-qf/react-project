@@ -1,7 +1,10 @@
-import React from 'react'
 import {
   Link
 } from 'react-router'
+import 'babel-polyfill';
+import React, {
+  Component
+} from 'react';
 import Carousel from '../../component_dev/carousel/src'
 import Scroller from '../../component_dev/scroller/src/index'
 import fetchData from '../util/util.fetch.js'

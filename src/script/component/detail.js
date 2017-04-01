@@ -41,49 +41,53 @@ class Detail extends React.Component {
     this.setState({
       detailList: arr
     });
-    console.log(arr)
   }
   getCat() {
     this.setState({
-      dialogShow: true,
+      dialogShow: false,
       dialogContent: "加入购物车"
     })
-    var goods = {
-      "prod_id": this.state.prod_id,
-      "name": this.state.marketing_title,
-      "count": 1,
-      "marketPrace": this.state.sale_price + 10,
-      "sale_price": this.state.sale_price,
-      "imgUrl": this.state.imgUrl,
-      "sku": this.state.sku,
-      "ischeck": 0
-    }
-    var list = JSON.parse(window.localStorage.getItem("ly-goodList"))
-    var flag = 0
-    var str = ""
-    if (list == null) {
-      list = []
-      list.push(goods)
-      str = JSON.stringify(list)
-      window.localStorage.setItem("ly-goodList", str)
-      console.log("dss", goods)
-    } else {
-      for (var i = 0; i < list.length; i++) {
-        if (goods.prod_id == list[i].prod_id) {
-          list[i].count = list[i].count + 1
-          flag = 1
-        }
+    if (this.state.prod_id != "" && this.state.imgUrl != "") {
+      var goods = {
+        "prod_id": this.state.prod_id,
+        "name": this.state.marketing_title,
+        "count": 1,
+        "marketPrace": this.state.sale_price * 1 + 10,
+        "sale_price": this.state.sale_price * 1,
+        "imgUrl": this.state.imgUrl,
+        "sku": this.state.sku,
+        "ischeck": 0
       }
-      if (flag == 1) {
-        console.log("s", "aa")
-        str = JSON.stringify(list)
-        window.localStorage.setItem("ly-goodList", str)
-      } else {
+      var list = JSON.parse(window.localStorage.getItem("ly-goodList"))
+      var flag = 0
+      var str = ""
+      if (list == null) {
+        list = []
         list.push(goods)
         str = JSON.stringify(list)
         window.localStorage.setItem("ly-goodList", str)
+        console.log("dss", goods)
+      } else {
+        for (var i = 0; i < list.length; i++) {
+          if (goods.prod_id == list[i].prod_id) {
+            list[i].count = list[i].count + 1
+            flag = 1
+          }
+        }
+        if (flag == 1) {
+          console.log("s", "aa")
+          str = JSON.stringify(list)
+          window.localStorage.setItem("ly-goodList", str)
+        } else {
+          list.push(goods)
+          str = JSON.stringify(list)
+          window.localStorage.setItem("ly-goodList", str)
+        }
+        Toast.show('加入购物车成功', 3000);
+        console.log(JSON.parse(window.localStorage.getItem("ly-goodList")))
       }
-      console.log(JSON.parse(window.localStorage.getItem("ly-goodList")))
+    } else {
+      Toast.show('网络异常请稍后', 3000);
     }
   }
   dialogOk() {
