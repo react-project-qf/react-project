@@ -46,6 +46,7 @@ import Now from './component/now'
 import Come from './component/come'
 import Collect from './component/collect'
 import Evaluate from './component/evaluate'
+import Page from './component/page'
 ReactDom.render(
 	<Provider store={store}>
 		<Router history={hashHistory}>
@@ -75,6 +76,7 @@ ReactDom.render(
 			<Route path="/shake" component={Shake}></Route>
 			<Route path="/invitation" component={Invitation}></Route>
 			<Route path="/circle" component={Circle}></Route>
+			<Route path="/page" component={Page}></Route>
 			<Route path="/payment" component={Payment}>
 				<IndexRedirect to="/Payment/now"/>
           		<Route path="now" component={Now}/>

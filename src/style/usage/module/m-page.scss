@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+  ul.shop{
+    height:100%;
+    background: #fff;
+      li.item{
+        height:1rem;
+        padding:.1rem;
+        position:relative;
+        @include border($border-width:0 0 2px 0,$border-color:#efefef);
+        div.logo{
+          float: left;
+          width: .8rem;
+          height:.8rem;
+          display:inline-block;
+          img{
+            width:100%;
+          }
+        }
+        div.shop-msg{
+          margin-left: .9rem;
+          height: 100%;
+          div.shop-name{
+            height:.6rem;
+            div.name{
+              font-size: .14rem;
+              max-height: .48rem;
+              width: 95%;
+              line-height: .14rem;
+            }
+            div.subName{
+              font-size: .12px;
+              color: #000;
+              opacity: .5;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              display: inline-block;
+              width: 90%;
+              margin-top: .06rem;
+            }
+          }
+          div.content{
+            height:.2rem;
+            line-height: .2rem;
+            width: 95%;
+            div.price{
+              float: left;
+              font-size: .16rem;
+              color: #ff5000
+            }
+            div.inventory{
+              float: right;
+              font-size: .12rem;
+              opacity: .3;
+            }
+          }
+        }
+      }
+  }

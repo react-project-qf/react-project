@@ -20,7 +20,7 @@ class My extends React.Component{
           <p>全国<span>500家门店</span>，品质保真</p>
         </div>
         <div className="yo-list yo-list-group">
-          <div className="item">
+          <div className="item" onClick={()=>{location.href='#/anenst';}}>
             <i className="yo-ico"><img src="./images/about.png"/></i>
             <div className="flex">关于乐友</div>
             <i className="yo-ico">&#xf07f;</i>
