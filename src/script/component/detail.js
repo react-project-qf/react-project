@@ -157,7 +157,7 @@ class Detail extends React.Component {
           </div>
 
         <div className="productPrice">
-            <span id="price">￥{this.state.price}</span>
+            <span id="price">￥{(this.state.price*1).toFixed(2)}</span>
             <span>送{this.state.price}积分</span>
             <div className="Shopowner">
               <div className="img"><img src="./images/noavatar.png" alt=""/></div>

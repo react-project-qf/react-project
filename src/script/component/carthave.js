@@ -37,7 +37,7 @@ class Cart extends React.Component{
         <div className="info">
           <p>{self.state.goods[index].name}</p>
           <div>
-            <span className="price">￥{self.state.goods[index].marketPrace}</span>
+            <span className="price">￥{self.state.goods[index].marketPrace.toFixed(2)}</span>
             <div className="number">
               <span className={self.state.goods[index].isone ? "minus disable" : "minus"} onClick={self.minus.bind(self,index)}>-</span>
               <input type="text" class="input" value={self.state.goods[index].count}/>
@@ -135,7 +135,7 @@ class Cart extends React.Component{
             <img src={this.state.allcheck?"./images/public_round_check_on.png":"./images/public_round_check_off.png"} onClick={this.changeAllcheck.bind(this)} alt=""/>
             <span>全选</span>
             <div className="heji">
-              <p>合计：<span>￥{this.state.totalmoney}</span></p>
+              <p>合计：<span>￥{this.state.totalmoney.toFixed(2)}</span></p>
               <p>已优惠：<span>￥0.00</span></p>
             </div>
             <div className="js" onClick={this.goPay}>
