@@ -66,7 +66,6 @@ class Detail extends React.Component {
         list.push(goods)
         str = JSON.stringify(list)
         window.localStorage.setItem("ly-goodList", str)
-        console.log("dss", goods)
       } else {
         for (var i = 0; i < list.length; i++) {
           if (goods.prod_id == list[i].prod_id) {
@@ -75,7 +74,6 @@ class Detail extends React.Component {
           }
         }
         if (flag == 1) {
-          console.log("s", "aa")
           str = JSON.stringify(list)
           window.localStorage.setItem("ly-goodList", str)
         } else {
@@ -84,7 +82,6 @@ class Detail extends React.Component {
           window.localStorage.setItem("ly-goodList", str)
         }
         Toast.show('加入购物车成功', 3000);
-        console.log(JSON.parse(window.localStorage.getItem("ly-goodList")))
       }
     } else {
       Toast.show('网络异常请稍后', 3000);
@@ -147,7 +144,7 @@ class Detail extends React.Component {
             <span id="price">￥{this.state.price}</span>
             <span>送{this.state.price}积分</span>
             <div className="Shopowner">
-              <div className="img"></div>
+              <div className="img"><img src="./images/noavatar.png" alt=""/></div>
               <p clssName="pTitle">乐友品质,甄选奉上</p>
               <p className="name">王春兰<span>店长推荐</span><span>品质保障</span></p>
             </div>
