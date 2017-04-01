@@ -17,6 +17,7 @@ class Cart extends React.Component{
     //判断购物车是否为空
     if (this.state.goodList==""||this.state.goodList==null) {
       location.href='#/cart';
+      return
     }
     this.loadList();
   }

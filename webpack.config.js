@@ -59,14 +59,14 @@ module.exports = {
 	},
 	plugins: [
 		// 压缩js
-		// new webpack.optimize.UglifyJsPlugin({
-		// 	compress: {
-		// 		warnings: false
-		// 	},
-		// 	output: {
-		// 		comments: false
-		// 	}
-		// }),
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false
+			},
+			output: {
+				comments: false
+			}
+		}),
 		new HtmlWebpackPlugin({
 			template: './src/index.ejs',
 			filename: 'index.html',
