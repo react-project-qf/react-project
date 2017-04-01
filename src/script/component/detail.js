@@ -133,7 +133,7 @@ class Detail extends React.Component {
     return (
       <div className="container m-detail" id="content" >
       <Scroller ref="scroller" usePullRefresh={false}  useLoadMore={false}
-      extraClass={'yo-scroller-fullscreen'} scrollY={true}> 
+      extraClass={'yo-scroller-fullscreen'} scrollY={true}>
       <div className="firstDIV">
         <Carousel>
            {this.state.detailList}
@@ -161,11 +161,11 @@ class Detail extends React.Component {
         </div>
         <div dangerouslySetInnerHTML={{__html:this.state.prodDetail}} className="Image">
         </div>
-      </div> 
+      </div>
       </Scroller>
         <div className="detailFooter">
           <span><img src="./images/nav_follow_no.png" alt=""/></span>
-          <span><img src="./images/nav_shop_off.png" alt=""/></span>
+          <span><Link to="/cart"><img src="./images/nav_shop_off.png" alt=""/></Link></span>
           <span className="toCat" onClick={this.getCat.bind(this)}>加入购物车</span>
         </div>
         <Dialog  title="提示" show={this.state.dialogShow} onOk={() => this.dialogOk()} onCancel={() => this.dialogOk()}>

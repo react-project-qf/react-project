@@ -8,6 +8,7 @@ class Setup extends React.Component{
     }
     clear(){
     	 window.localStorage.setItem("ly-auth","");
+    	 location.href='#/my';
     }
     render(){
     	return(
@@ -16,10 +17,10 @@ class Setup extends React.Component{
     			 <div className="content">
     			 <h2 className="gap"></h2>
     			 	<div className="yo-list yo-list-group">
-				        <div className="item">
-				            <a href="#/anenst"><i className="yo-ico"><img src="/images/about.png"/></i></a>
-				            <a href="#/anenst" className="lian"><div className="flex">关于乐友</div></a>
-				            <a href="#/anenst" className="bol"><i className="yo-ico">&#xf07f;</i></a>
+				        <div className="item" onClick={()=>{location.href='#/anenst';}}>
+				            <i className="yo-ico"><img src="/images/about.png"/></i>
+				            <div className="flex">关于乐友</div>
+				            <i className="yo-ico">&#xf07f;</i>
 				          
 				        </div>
 				        
@@ -42,7 +43,7 @@ class Setup extends React.Component{
 			          </div>
 			        </div>
 			        <div className="exit">
-			        	<a href="#/my"><botton className="btn" onClick={this.clear}>退出登录</botton></a>
+			        	<botton className="btn" onClick={this.clear}>退出登录</botton>
 			        </div>
     			 </div>
     		</div>
