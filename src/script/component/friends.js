@@ -4,7 +4,9 @@ import Scroller from '../../component_dev/scroller/src/index';
 class Friends extends React.Component{
 	constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+			bannerList: [<li/>]
+		};
   }
   render(){
     return(
