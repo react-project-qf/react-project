@@ -1,4 +1,21 @@
 .m-cart{
+	.yo-list-fullscreen {
+    top: .44rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+		margin-bottom: .5rem;
+		.yo-list{
+			background: #f3f3f3;
+		}
+		ul{
+			li{
+				background: #f3f3f3;
+				padding: 0;
+			}
+		}
+	}
 	.topimg{
 		height: 1rem;
 		width: 100%;
@@ -40,7 +57,7 @@
 			font-size: .15rem;
 		}
 		.cartList{
-			margin-top: .5rem;
+			margin-top: .2rem;
 			width: 100%;
 			ul{
 				li{
@@ -115,6 +132,7 @@
 	}
 	.bottom{
 		position: absolute;
+		z-index: 1000;
 		bottom: 0;
 		background: #fff;
 		height: .51rem;

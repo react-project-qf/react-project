@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './m-header'
+import List from '../../component_dev/list/src'
 class Cart extends React.Component{
   constructor(props) {
     super(props);
@@ -31,7 +32,7 @@ class Cart extends React.Component{
       return (<li>
         <div className="img">
           <img src={self.state.goods[index].ischeck?"./images/public_round_check_on.png":"./images/public_round_check_off.png"} onClick={self.changeCheck.bind(self,index)}/>
-          <img src={self.state.goods[index].imgUrl} alt=""/>
+          <img src={self.state.goods[index].imgUrl} onClick={self.toDetail.bind(self,self.state.goods[index].sku)}/>
         </div>
         <div className="info">
           <p>{self.state.goods[index].name}</p>
@@ -90,6 +91,10 @@ class Cart extends React.Component{
     this.loadList();
     this.setState({});
   }
+  //去详情
+  toDetail(sku){
+      window.location.href="#/detail/"+sku;
+  }
   //去结算
   goPay(){
     location.href='#/gopay';
@@ -98,35 +103,45 @@ class Cart extends React.Component{
     return(
       <div className="m-cart">
         <Header title="购物车" cbcount="2"></Header>
-        <img className="topimg" src="./images/bg_cart.jpg" alt=""/>
-        <div className="cartHave">
-          <div className="all">
-            <div className="yo-list yo-list-group">
-              <h3 className="label"></h3>
-              <h3 className="label"></h3>
-              <div className="item">
-                <i className="yo-ico"> <img src={this.state.allcheck?"./images/public_round_check_on.png":"./images/public_round_check_off.png"} onClick={this.changeAllcheck.bind(this)}/> </i>
-                <div className="flex">乐商城</div>
-              </div>
+        <List
+        dataSource={[{}]}
+        extraClass = {'yo-list-fullscreen list'}
+        renderItem={(item,i)=>{
+          return (
+               <div>
+                 <img className="topimg" src="./images/bg_cart.jpg" alt=""/>
+                 <div className="cartHave">
+                   <div className="all">
+                     <div className="yo-list yo-list-group">
+                       <h3 className="label"></h3>
+                       <h3 className="label"></h3>
+                       <div className="item">
+                         <i className="yo-ico"> <img src={this.state.allcheck?"./images/public_round_check_on.png":"./images/public_round_check_off.png"} onClick={this.changeAllcheck.bind(this)}/> </i>
+                         <div className="flex">乐商城</div>
+                       </div>
+                     </div>
+                   </div>
+                   <div className="cartList">
+                     <ul>
+                       {this.state.comList}
+                     </ul>
+                   </div>
+                 </div>
+               </div>
+             );
+         }}
+        />
+          <div className="bottom">
+            <img src={this.state.allcheck?"./images/public_round_check_on.png":"./images/public_round_check_off.png"} onClick={this.changeAllcheck.bind(this)} alt=""/>
+            <span>全选</span>
+            <div className="heji">
+              <p>合计：<span>￥{this.state.totalmoney}</span></p>
+              <p>已优惠：<span>￥0.00</span></p>
+            </div>
+            <div className="js" onClick={this.goPay}>
+              去结算({this.state.cart_num})
             </div>
           </div>
-          <div className="cartList">
-            <ul>
-              {this.state.comList}
-            </ul>
-          </div>
-        </div>
-        <div className="bottom">
-          <img src={this.state.allcheck?"./images/public_round_check_on.png":"./images/public_round_check_off.png"} onClick={this.changeAllcheck.bind(this)} alt=""/>
-          <span>全选</span>
-          <div className="heji">
-            <p>合计：<span>￥{this.state.totalmoney}</span></p>
-            <p>已优惠：<span>￥0.00</span></p>
-          </div>
-          <div className="js" onClick={this.goPay}>
-            去结算({this.state.cart_num})
-          </div>
-        </div>
       </div>
     )
   }

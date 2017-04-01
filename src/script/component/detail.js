@@ -41,7 +41,57 @@ class Detail extends React.Component {
     this.setState({
       detailList: arr
     });
-    console.log(arr)
+  }
+  getCat() {
+    this.setState({
+      dialogShow: false,
+      dialogContent: "加入购物车"
+    })
+    if (this.state.prod_id != "" && this.state.imgUrl != "") {
+      var goods = {
+        "prod_id": this.state.prod_id,
+        "name": this.state.marketing_title,
+        "count": 1,
+        "marketPrace": this.state.sale_price * 1 + 10,
+        "sale_price": this.state.sale_price * 1,
+        "imgUrl": this.state.imgUrl,
+        "sku": this.state.sku,
+        "ischeck": true
+      }
+      var list = JSON.parse(window.localStorage.getItem("ly-goodList"))
+      var flag = 0
+      var str = ""
+      if (list == null) {
+        list = []
+        list.push(goods)
+        str = JSON.stringify(list)
+        window.localStorage.setItem("ly-goodList", str);
+        Toast.show('加入购物车成功', 3000);
+      } else {
+        for (var i = 0; i < list.length; i++) {
+          if (goods.prod_id == list[i].prod_id) {
+            list[i].count = list[i].count + 1
+            flag = 1
+          }
+        }
+        if (flag == 1) {
+          str = JSON.stringify(list)
+          window.localStorage.setItem("ly-goodList", str)
+        } else {
+          list.push(goods)
+          str = JSON.stringify(list)
+          window.localStorage.setItem("ly-goodList", str)
+        }
+        Toast.show('加入购物车成功', 3000);
+      }
+    } else {
+      Toast.show('网络异常请稍后', 3000);
+    }
+  }
+  dialogOk() {
+    this.setState({
+      dialogShow: false
+    })
   }
   getCat() {
     this.setState({
@@ -141,7 +191,7 @@ class Detail extends React.Component {
             <span id="price">￥{this.state.price}</span>
             <span>送{this.state.price}积分</span>
             <div className="Shopowner">
-              <div className="img"></div>
+              <div className="img"><img src="./images/noavatar.png" alt=""/></div>
               <p clssName="pTitle">乐友品质,甄选奉上</p>
               <p className="name">王春兰<span>店长推荐</span><span>品质保障</span></p>
             </div>

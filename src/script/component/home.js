@@ -1,7 +1,10 @@
-import React from 'react'
 import {
   Link
 } from 'react-router'
+import 'babel-polyfill';
+import React, {
+  Component
+} from 'react';
 import Carousel from '../../component_dev/carousel/src'
 import Scroller from '../../component_dev/scroller/src/index'
 import fetchData from '../util/util.fetch.js'
@@ -51,18 +54,34 @@ class Home extends React.Component {
 
     function timer() {
       window.clearTimeout(_timer);
+      var Hours = '00'
+      var Minutes = '00'
+      var Seconds = '00'
       var o_date = new Date("2017/4/6");
       var s_date = new Date();
       var _milli = o_date.getTime() - s_date.getTime();
       var _date = new Date(_milli);
+      if (_date.getHours() >= 10) {
+        Hours = _date.getHours()
+      } else {
+        Hours = "0" + _date.getHours()
+      }
+      if (_date.getMinutes() >= 10) {
+        Minutes = _date.getMinutes()
+      } else {
+        Minutes = "0" + _date.getMinutes()
+      }
+      if (_date.getSeconds() >= 10) {
+        Seconds = _date.getSeconds()
+      } else {
+        Seconds = "0" + _date.getSeconds()
+      }
       that.setState({
-        time: _date.getHours() + ":" + _date.getMinutes() + ":" + _date.getSeconds()
+        time: Hours + ":" + Minutes + ":" + Seconds
       })
       _timer = window.setTimeout(timer, 1000);
     }
-    window.onload = function() {
-      timer();
-    }
+    timer();
   }
   render() {
     return (

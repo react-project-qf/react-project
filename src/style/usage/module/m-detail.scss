@@ -18,6 +18,12 @@
 			width:80%;
 		}
 	}
+	div.yo-carousel{
+		height:3.75rem;
+	}
+	.yo-scroller-fullscreen{
+		margin-bottom:.46rem;
+	}
 	.detaiTitle{
 		border-bottom:1px dotted #999;
 		p{
@@ -146,6 +152,11 @@
 			height:.5rem;
 			float:left;
 			margin-right:.1rem;
+			img{
+				border-radius:50%;
+				width:.5rem;
+				height:.5rem;
+			}
 		}
 	}
 	.address{
