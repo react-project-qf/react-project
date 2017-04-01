@@ -1,8 +1,13 @@
 @import "../fragment/yo-header";
+@import "../fragment/yo-number.scss";
 @import '../fragment/yo-search.scss';
 /* * { -ms-touch-action: none; touch-action: none; }*/
 #root{
 	height:100%;
+	width: 100%;
+	position: relative;
+	max-width: 750px;
+	margin: 0 auto;
 }
 input{
 	border: none;

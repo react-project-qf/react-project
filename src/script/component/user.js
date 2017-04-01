@@ -27,12 +27,13 @@ class My extends React.Component{
             </span>
           </div>
           <div className="babyNumber">
-            <img src="/images/head_portrait.png"/>
+            <img src="./images/head_portrait.png"/>
             <span>您有{this.state.babyNumber}个宝宝</span>
           </div>
           <p onClick={()=>{location.href='#/account';}}>账户管理 <i className="yo-ico">&#xf07f;</i></p>
         </div>
         <div className="yo-list yo-list-group">
+
           <div className="item" onClick={()=>{location.href='#/payment';}}>
             <i className="yo-ico"><img src="/images/order.png"/></i>
             <div className="flex">我的订单</div>

@@ -29,11 +29,11 @@ class Home extends React.Component {
     var list = []
     data.map(function(m) {
       list.push(<li>
-        <a href={'#/detail/?n='+m.sku}><img src={m.pic}/>
+        <Link to={'/detail/'+m.sku}><img src={m.pic}/>
         <p className="HomeListTitle">{m.title}</p>
           <p className="homeListPrice"><span className="homeListPrice1">￥{m.sale_price}</span>
           <span className="homeListPrice2">查看详情&gt;&gt;</span></p>
-        </a>
+        </Link>
       </li>)
     })
     this.setState({
@@ -41,7 +41,7 @@ class Home extends React.Component {
     });
   }
   componentWillMount() {
-    let url = './api/mall/postIndexData'
+    let url = '/api/mall/postIndexData'
     fetchData(url, (data) => {
       this.renderData(data.slider)
       this.renderHomeData(data.recommend)
