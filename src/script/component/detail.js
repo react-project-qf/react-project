@@ -56,7 +56,7 @@ class Detail extends React.Component {
         "sale_price": this.state.sale_price * 1,
         "imgUrl": this.state.imgUrl,
         "sku": this.state.sku,
-        "ischeck": 0
+        "ischeck": true
       }
       var list = JSON.parse(window.localStorage.getItem("ly-goodList"))
       var flag = 0
@@ -65,7 +65,8 @@ class Detail extends React.Component {
         list = []
         list.push(goods)
         str = JSON.stringify(list)
-        window.localStorage.setItem("ly-goodList", str)
+        window.localStorage.setItem("ly-goodList", str);
+        Toast.show('加入购物车成功', 3000);
       } else {
         for (var i = 0; i < list.length; i++) {
           if (goods.prod_id == list[i].prod_id) {
