@@ -14,13 +14,9 @@ class Home extends React.Component {
     super(props);
     this.state = {
       bannerList: [<li/>],
-      homeList: [],
+      homeList: [<li/>],
       time: "00:00:00"
     }
-  }
-  toDetail(sku) {
-    console.log("sss");
-    window.location.href = "#/detail/" + sku
   }
   renderData(data) {
     console.log("遍历banner")
@@ -32,17 +28,25 @@ class Home extends React.Component {
       bannerList: arr
     });
   }
+  toDetail(sku) {
+    console.log(sku);
+    window.location.href = "#/detail/" + sku;
+  }
   renderHomeData(data) {
     console.log("遍历homeList")
     var list = []
-    let that = this
+    let that = this;
     data.map(function(m) {
-      list.push(<li onClick={that.toDetail.bind(that,m.sku)}>
-        <a><img src={m.pic}/>
-        <p className="HomeListTitle">{m.title}</p>
-          <p className="homeListPrice"><span className="homeListPrice1">￥{m.sale_price}</span>
-          <span className="homeListPrice2">查看详情&gt;&gt;</span></p>
-        </a>
+      list.push(
+        <li>
+          <a href={"#/detail/"+m.sku}>
+            <img src={m.pic}/>
+            <p className="HomeListTitle">{m.title}</p>
+            <p className="homeListPrice">
+              <span className="homeListPrice1">￥{m.sale_price}</span>
+              <span className="homeListPrice2">查看详情&gt;&gt;</span>
+            </p>
+          </a>
       </li>)
     })
     this.setState({

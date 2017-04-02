@@ -13,6 +13,7 @@ import Scroller from '../../component_dev/scroller/src/index'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
+    this.props.prodDetail = ""
     this.state = {
       detailList: [<li/>],
       List: this.props.params.id,
@@ -89,16 +90,28 @@ class Detail extends React.Component {
         Toast.show('网络异常请稍后', 3000);
       }
     } else {
-      location.href = "#/login"
+      this.setState({
+        dialogShow: true,
+        dialogContent: "您还没有登录,请先登录"
+      })
     }
-
   }
   dialogOk() {
     this.setState({
       dialogShow: false
     })
+    location.href = "#/login"
   }
-  componentWillMount() {
+  dialogCancel() {
+    this.setState({
+      dialogShow: false
+    })
+  }
+
+  componentDidMount() {
+    console.log(this);
+    console.log(window.scrollY);
+    console.log(Scroller.prototype);
     var that = this
     Ajax("api/product/getGoodsInfo", {
       sku: this.state.List
@@ -132,6 +145,8 @@ class Detail extends React.Component {
       });
     })
   }
+
+  componentDidUpdate() {}
   render() {
     return (
       <div className="container m-detail" id="content" >
@@ -147,7 +162,7 @@ class Detail extends React.Component {
           </div>
 
         <div className="productPrice">
-            <span id="price">￥{this.state.price}</span>
+            <span id="price">￥{(this.state.price*1).toFixed(2)}</span>
             <span>送{this.state.price}积分</span>
             <div className="Shopowner">
               <div className="img"><img src="./images/noavatar.png" alt=""/></div>
@@ -171,7 +186,7 @@ class Detail extends React.Component {
           <span><Link to="/cart"><img src="./images/nav_shop_off.png" alt=""/></Link></span>
           <span className="toCat" onClick={this.getCat.bind(this)}>加入购物车</span>
         </div>
-        <Dialog  title="提示" show={this.state.dialogShow} onOk={() => this.dialogOk()} onCancel={() => this.dialogOk()}>
+        <Dialog  title="提示" show={this.state.dialogShow} onOk={() => this.dialogOk()} onCancel={() => this.dialogCancel()}>
             <p>{this.state.dialogContent}</p>
         </Dialog>
       </div>
