@@ -1,60 +1,67 @@
-@charset "UTF-8";
-
-  ul.shop{
-    height:100%;
-    background: #fff;
-      li.item{
-        height:1rem;
-        padding:.1rem;
-        position:relative;
-        @include border($border-width:0 0 2px 0,$border-color:#efefef);
-        div.logo{
-          float: left;
-          width: .8rem;
-          height:.8rem;
-          display:inline-block;
-          img{
-            width:100%;
-          }
-        }
-        div.shop-msg{
-          margin-left: .9rem;
-          height: 100%;
-          div.shop-name{
-            height:.6rem;
-            div.name{
-              font-size: .14rem;
-              max-height: .48rem;
-              width: 95%;
-              line-height: .14rem;
+.homeListUl{
+    width:100%;
+    height:89.4rem;
+    background:#d9d9d9;
+    ul{
+        width:100%;
+        height:100%;
+        margin: 0.1rem auto;
+        padding-bottom: .1rem;
+      li{
+        width:100%;
+        height:1.05rem;
+         @include border($border-width :1px 0px 1px 0px, $border-color: #efefef);
+        a{
+          display:block;
+          width:100%;
+          height:1.05rem;
+          background:#fff;
+          overflow:hidden;
+          color:#333;
+          .lei_tu{
+            float:left;
+            width:40%;
+            height:100%;
+            img{
+              width:1rem;
+              height:1rem;
+              display:block;
+              margin:0 auto;
             }
-            div.subName{
-              font-size: .12px;
-              color: #000;
-              opacity: .5;
+          }
+          .lei_xin{
+            float:left;
+            width:50%;
+            height:100%;
+            padding-top:5%;
+            .HomeListTitle{
+              width:100%;
+              font-size:.1rem;
+              ext-overflow: -o-ellipsis-lastline;
               overflow: hidden;
               text-overflow: ellipsis;
-              white-space: nowrap;
-              display: inline-block;
-              width: 90%;
-              margin-top: .06rem;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              text-indent:0.1rem;
+              padding: .04rem .02rem;
+            }
+            .homeListPrice{
+              .homeListPrice1{
+                display:inline-block;
+                text-indent:0.1rem;
+                color:#f2622d;
+                margin-top:10%;
+                font-size:.1rem;
+              }
             }
           }
-          div.content{
-            height:.2rem;
-            line-height: .2rem;
-            width: 95%;
-            div.price{
-              float: left;
-              font-size: .16rem;
-              color: #ff5000
-            }
-            div.inventory{
-              float: right;
-              font-size: .12rem;
-              opacity: .3;
-            }
-          }
+
+
+
+
+
         }
       }
+    }
   }

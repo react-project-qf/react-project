@@ -1,47 +1,70 @@
-import React from 'react'
-import ReactDom from 'react-dom'
-import fetchData from '../util/util.fetch.js'
+import {
+  Link
+} from 'react-router'
+import 'babel-polyfill';
+import React, {
+  Component
+} from 'react';
+import Carousel from '../../component_dev/carousel/src';
+import Scroller from '../../component_dev/scroller/src/index';
+import fetchData from '../util/util.fetch.js';
 class Page extends React.Component{
-  constructor(props){
-    super(props)
-    this.state={
-      storeListData:[<div/>]
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      homeList: []
+    };
   }
-  render() {
+  renderHomeData(data) {
+    console.log("遍历homeList")
+    var list = []
+    data.map(function(m) {
+      list.push(<li>
+        <Link to={'/detail/'+m.sku}>
+        <span className="lei_tu">
+          <img src={m.pic}/>
+        </span>
+        <p className="lei_xin">
+          <span className="HomeListTitle">{m.title}</span>
+            <span className="homeListPrice">
+              <span className="homeListPrice1">￥{m.sale_price}</span>
+            </span>
+        </p>
+        </Link>
+      </li>)
+    })
+    this.setState({
+      homeList: list
+    });
+  }
+  componentWillMount() {
+    let url = '/api/mall/postIndexData'
+    fetchData(url, (data) => {
+      this.renderHomeData(data.recommend)
+    })
+   
+  }
+  render(){
     return(
-      <ul className="shop">
-        {this.state.storeListData}
-      </ul>
-    )
-  }
-  componentDidMount(){
-    let url='/recommend/home?page=1&num=5'
-    fetchData(url,function(res){
-      console.log(res)
-      let Lis = res.data.list.map(val=>{
-        console.log(val);
-        return(
-          <li className="item">
-              <div className="logo">
-                <img src={val.skuList[0].image} />
-              </div>
-              <div className="shop-msg">
-                <div className='shop-name'>
-                  <div className="name">{val.masterName}</div>
-                  <div className="subName">{val.slaveName}</div>
-                </div>
-                <div className="content">
-                  <div className="price">￥{val.minPrice}</div>
-                </div>
-              </div>
-            </li>
-        )
-      })
-      this.setState({
-        storeListData:Lis
-      })
-    }.bind(this))
+      <Scroller ref="scroller" usePullRefresh={true}  useLoadMore={false}
+      extraClass={'yo-scroller-fullscreen'} scrollY={true} onRefresh={() => {
+        console.log("上拉刷新")
+        this.setState({
+          homeList: []
+        })
+        let url = './api/mall/postIndexData'
+        fetchData(url,(data) => { 
+          this.renderHomeData(data.recommend)
+          this.refs.scroller.stopRefreshing(true)
+        })
+      }}>
+       <div className="homeListUl">
+          <ul>
+           {this.state.homeList}
+          </ul>
+        </div>
+        </Scroller>
+       ) 
   }
 }
 export default Page
