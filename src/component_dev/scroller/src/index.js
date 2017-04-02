@@ -61,8 +61,8 @@ const defaultProps = {
     bounce: true, // 弹性滚动
     bounceTime: 600, // 弹性滚动时间
     bounceEasing: utils.ease.circular, // 弹性滚动easing函数
-    preventDefault: true, // 阻止默认事件
-    preventDefaultException: { tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT)$/ }, // 阻止默认事件的例外
+    preventDefault: false, // 阻止默认事件
+    preventDefaultException: { tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/ }, // 阻止默认事件的例外
     stopPropagation: false, // 阻止冒泡
     HWCompositing: true, // 是否开启硬件加速
     useTransition: true,
