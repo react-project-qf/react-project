@@ -72,10 +72,10 @@ module.exports = {
 			filename: 'index.html',
 			// css压缩
 			// minify: {
-      //   "removeAttributeQuotes": true,
-      //   "removeComments": true,
-      //   "removeEmptyAttributes": true,
-	    // },
+			//   "removeAttributeQuotes": true,
+			//   "removeComments": true,
+			//   "removeEmptyAttributes": true,
+			// },
 
 			title: '乐友商城'
 		}),

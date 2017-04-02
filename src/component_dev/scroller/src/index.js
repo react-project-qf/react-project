@@ -19,10 +19,15 @@
  */
 
 // TODO: 干掉各种 magic number！！！
-import React, { Component, PropTypes } from 'react';
+import React, {
+    Component,
+    PropTypes
+} from 'react';
 import ReactDOM from 'react-dom';
 import utils from './utils';
-import { getElementOffsetY } from '../../common/util';
+import {
+    getElementOffsetY
+} from '../../common/util';
 import classNames from 'classnames';
 import LazyImage from '../../lazyimage';
 import Sticky from '../../sticky';
@@ -42,7 +47,10 @@ const LOADSTATUS = {
     NOMORE: 'loadmore_nomore'
 };
 
-const { rAF, cancelrAF } = utils.getRAF();
+const {
+    rAF,
+    cancelrAF
+} = utils.getRAF();
 
 const defaultProps = {
     extraClass: '',
@@ -61,8 +69,10 @@ const defaultProps = {
     bounce: true, // 弹性滚动
     bounceTime: 600, // 弹性滚动时间
     bounceEasing: utils.ease.circular, // 弹性滚动easing函数
-    preventDefault: true, // 阻止默认事件
-    preventDefaultException: { tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT)$/ }, // 阻止默认事件的例外
+    preventDefault: false, // 阻止默认事件
+    preventDefaultException: {
+        tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT)$/
+    }, // 阻止默认事件的例外
     stopPropagation: false, // 阻止冒泡
     HWCompositing: true, // 是否开启硬件加速
     useTransition: true,
@@ -414,7 +424,10 @@ export default class Scroller extends Component {
     }
 
     getChildContext() {
-        return { scroller: this, isScroller: this.props.enableLazyLoad };
+        return {
+            scroller: this,
+            isScroller: this.props.enableLazyLoad
+        };
     }
 
     componentDidMount() {
@@ -593,7 +606,7 @@ export default class Scroller extends Component {
             }
         }
 
-        if (this.preventDefault) {	// increases performance on Android? TODO: check!
+        if (this.preventDefault) { // increases performance on Android? TODO: check!
             e.preventDefault();
         }
 
@@ -625,11 +638,11 @@ export default class Scroller extends Component {
         // If you are scrolling in one direction lock the other
         if (!this.directionLocked && !this.freeScroll) {
             if (absDistX > absDistY + this.directionLockThreshold) {
-                this.directionLocked = 'h';		// lock horizontally
+                this.directionLocked = 'h'; // lock horizontally
             } else if (absDistY >= absDistX + this.directionLockThreshold) {
-                this.directionLocked = 'v';		// lock vertically
+                this.directionLocked = 'v'; // lock vertically
             } else {
-                this.directionLocked = 'n';		// no lock
+                this.directionLocked = 'n'; // no lock
             }
         }
 
@@ -758,19 +771,17 @@ export default class Scroller extends Component {
             return;
         }
 
-        this.scrollTo(newX, newY);	// ensures that the last position is rounded
+        this.scrollTo(newX, newY); // ensures that the last position is rounded
 
         // start momentum animation if needed
         if (this.props.momentum && duration < 300) {
             momentumX = this.hasHorizontalScroll ?
-                utils.momentum(this.x, this.startX, duration, this.maxScrollX, this.horizontalBounce ? this.wrapperWidth : 0, this.props.deceleration)
-                : {
+                utils.momentum(this.x, this.startX, duration, this.maxScrollX, this.horizontalBounce ? this.wrapperWidth : 0, this.props.deceleration) : {
                     destination: newX,
                     duration: 0
                 };
             momentumY = this.hasVerticalScroll ?
-                utils.momentum(this.y, this.startY, duration, this.maxScrollY, this.verticalBounce ? this.wrapperHeight : 0, this.props.deceleration)
-                : {
+                utils.momentum(this.y, this.startY, duration, this.maxScrollY, this.verticalBounce ? this.wrapperHeight : 0, this.props.deceleration) : {
                     destination: newY,
                     duration: 0
                 };
@@ -835,7 +846,9 @@ export default class Scroller extends Component {
     }
 
     _getCurrentSticky() {
-        const { stickyOffset } = this.props;
+        const {
+            stickyOffset
+        } = this.props;
         let ret = null;
         if (this.y < 0) {
             const absY = Math.abs(this.y - stickyOffset);
@@ -849,9 +862,17 @@ export default class Scroller extends Component {
                 if (nextHeader) {
                     const distToNext = nextHeader.offsetTop - wrapperTop - absY;
                     const adjustOffset = distToNext > currentHeader.height ? 0 : -(currentHeader.height - distToNext);
-                    ret = { currentHeader, adjustOffset, index };
+                    ret = {
+                        currentHeader,
+                        adjustOffset,
+                        index
+                    };
                 } else {
-                    ret = { currentHeader, adjustOffset: 0, index };
+                    ret = {
+                        currentHeader,
+                        adjustOffset: 0,
+                        index
+                    };
                 }
             } else {
                 ret = null;
@@ -868,11 +889,12 @@ export default class Scroller extends Component {
             const stickyNode = this.refs.stickyNode;
 
             if (currentSticky) {
-                const { currentHeader, adjustOffset } = currentSticky;
+                const {
+                    currentHeader,
+                    adjustOffset
+                } = currentSticky;
 
-                if (currentSticky.index !== this.stickyIndex
-                    || currentSticky.adjustOffset !== this.stickyOffset
-                    || forceRefresh) {
+                if (currentSticky.index !== this.stickyIndex || currentSticky.adjustOffset !== this.stickyOffset || forceRefresh) {
                     const transform = `translate(0px,${adjustOffset}px) translateZ(0px)`;
                     stickyNode.style.transform = transform;
                     stickyNode.style.webkitTransform = transform;
@@ -932,7 +954,10 @@ export default class Scroller extends Component {
             y = +matrix.top.replace(/[^-\d.]/g, '');
         }
 
-        return { x, y };
+        return {
+            x,
+            y
+        };
     }
 
     /**
@@ -1275,7 +1300,9 @@ export default class Scroller extends Component {
      * @param {number} [config.duration] 回到顶部的动画时间，默认是300ms
      * @description 停止刷新，停止之后会自动滚动到顶部。
      */
-    stopRefreshing(status, config = { duration: 300 }) {
+    stopRefreshing(status, config = {
+        duration: 300
+    }) {
         if (this.state.usePullRefresh && this.refreshState === REFRESHSTATUS.LOAD) {
             this._setRefreshStatus(status ? REFRESHSTATUS.SUCCESS : REFRESHSTATUS.FAIL);
 
@@ -1326,79 +1353,70 @@ export default class Scroller extends Component {
     }
 
     render() {
-        const { extraClass, containerExtraClass, pullRefreshHeight, loadMoreHeight, stickyOffset } = this.props;
+        const {
+            extraClass,
+            containerExtraClass,
+            pullRefreshHeight,
+            loadMoreHeight,
+            stickyOffset
+        } = this.props;
         let pullRefreshContent;
         let loadMoreContent;
 
         if (this.state.usePullRefresh) {
-            const pullRefreshTpl = (
-                <div
-                    ref="pullrefresh"
-                    className="yo-load"
-                    style={{
+            const pullRefreshTpl = ( < div ref = "pullrefresh"
+                className = "yo-load"
+                style = {
+                    {
                         height: `${pullRefreshHeight}px`,
                         lineHeight: `${pullRefreshHeight}px`,
                         top: `${-pullRefreshHeight}px`
-                    }}
-                >
-                    <div className="yo-loadtip" ref="pullrefresh_pull">
+                    }
+                } >
+                <div className="yo-loadtip" ref="pullrefresh_pull">
                         <i className="yo-ico">&#xf07b;</i>
                         <div className="text">下拉可以刷新</div>
-                    </div>
-                    <div className="yo-loadtip" ref="pullrefresh_release">
-                        <i className="yo-ico">&#xf079;</i>
-                        <div className="text">释放立即更新</div>
-                    </div>
-                    <div className="yo-loadtip" ref="pullrefresh_load">
-                        <i className="yo-ico yo-ico-loading">&#xf089;</i>
-                        <div className="text">努力加载中...</div>
-                    </div>
-                    <div className="yo-loadtip" ref="pullrefresh_success">
-                        <i className="yo-ico yo-ico-succ">&#xf078;</i>
-                        <div className="text">加载成功</div>
-                    </div>
-                    <div className="yo-loadtip" ref="pullrefresh_fail">
-                        <i className="yo-ico yo-ico-fail">&#xf077;</i>
-                        <div className="text">加载失败</div>
-                    </div>
-                </div>
+                    </div> < div className = "yo-loadtip"
+                ref = "pullrefresh_release" >
+                <i className="yo-ico">&#xf079;</i> < div className = "text" > 释放立即更新 < /div> < /div > < div className = "yo-loadtip"
+                ref = "pullrefresh_load" >
+                <i className="yo-ico yo-ico-loading">&#xf089;</i> < div className = "text" > 努力加载中... < /div> < /div > < div className = "yo-loadtip"
+                ref = "pullrefresh_success" >
+                <i className="yo-ico yo-ico-succ">&#xf078;</i> < div className = "text" > 加载成功 < /div> < /div > < div className = "yo-loadtip"
+                ref = "pullrefresh_fail" >
+                <i className="yo-ico yo-ico-fail">&#xf077;</i> < div className = "text" > 加载失败 < /div> < /div > < /div>
             );
 
             pullRefreshContent = this.props.renderPullRefresh ? this.props.renderPullRefresh() : pullRefreshTpl;
         }
 
         if (this.state.useLoadMore) {
-            const loadMoreTpl = (
-                <div
-                    ref="LoadMore"
-                    className="yo-load"
-                    style={{
+            const loadMoreTpl = ( < div ref = "LoadMore"
+                className = "yo-load"
+                style = {
+                    {
                         height: `${loadMoreHeight}px`,
                         lineHeight: `${loadMoreHeight}px`,
                         top: `${-loadMoreHeight}px`
-                    }}
-                >
-                    <div className="yo-loadtip" ref="loadmore_pull">
+                    }
+                } >
+                <div className="yo-loadtip" ref="loadmore_pull">
                         <i className="yo-ico">&#xf079;</i>
                         <div className="text">上拉加载更多</div>
-                    </div>
-                    <div className="yo-loadtip" ref="loadmore_release">
-                        <i className="yo-ico">&#xf07b;</i>
-                        <div className="text">释放立即加载</div>
-                    </div>
-                    <div className="yo-loadtip" ref="loadmore_load">
-                        <i className="yo-ico yo-ico-loading">&#xf089;</i>
-                        <div className="text">正在加载...</div>
-                    </div>
-                    <div className="yo-loadtip" ref="loadmore_nomore">
-                        <div className="text">没有更多了...</div>
-                    </div>
-                </div>);
+                    </div> < div className = "yo-loadtip"
+                ref = "loadmore_release" >
+                <i className="yo-ico">&#xf07b;</i> < div className = "text" > 释放立即加载 < /div> < /div > < div className = "yo-loadtip"
+                ref = "loadmore_load" >
+                <i className="yo-ico yo-ico-loading">&#xf089;</i> < div className = "text" > 正在加载... < /div> < /div > < div className = "yo-loadtip"
+                ref = "loadmore_nomore" >
+                <div className="text">没有更多了...</div> < /div> < /div > );
 
             loadMoreContent = this.props.renderLoadMore ? this.props.renderLoadMore() : loadMoreTpl;
         }
 
-        let wrapperStyle = Object.assign({ overflow: 'hidden' }, this.props.style);
+        let wrapperStyle = Object.assign({
+            overflow: 'hidden'
+        }, this.props.style);
         let scrollerStyle = Object.assign({}, this.props.containerExtraStyle, this._scrollerStyle);
         let scrollerContent;
         let _wrapperClassName = classNames('yo-scroller', extraClass);
@@ -1413,11 +1431,7 @@ export default class Scroller extends Component {
                 onTouchCancel: (evt) => this._handleTouchEnd(evt),
                 onTransitionEnd: (evt) => this._handleTransitionEnd(evt)
             });
-        } else if (this.props.children
-            && !this.props.children.length
-            && typeof this.props.children.type === 'string'
-            && !this.state.usePullRefresh
-            && !this.state.useLoadMore) { // 2. 将内容的最外层节点当做滚动容器
+        } else if (this.props.children && !this.props.children.length && typeof this.props.children.type === 'string' && !this.state.usePullRefresh && !this.state.useLoadMore) { // 2. 将内容的最外层节点当做滚动容器
             if (this.props.children.props && this.props.children.props.className) {
                 _scrollerClassName = classNames('scroller', this.props.children.props.className);
             } else {

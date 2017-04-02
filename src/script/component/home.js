@@ -7,7 +7,8 @@ import React, {
 } from 'react';
 import Carousel from '../../component_dev/carousel/src'
 import Scroller from '../../component_dev/scroller/src/index'
-import fetchData from '../util/util.fetch.js'
+
+import Ajax from './ajax'
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,11 @@ class Home extends React.Component {
       bannerList: [<li/>],
       homeList: [],
       time: "00:00:00"
-    };
+    }
+  }
+  toDetail(sku) {
+    console.log("sss");
+    window.location.href = "#/detail/" + sku
   }
   renderData(data) {
     console.log("遍历banner")
@@ -30,24 +35,26 @@ class Home extends React.Component {
   renderHomeData(data) {
     console.log("遍历homeList")
     var list = []
+    let that = this
     data.map(function(m) {
-      list.push(<li>
-        <Link to={'/detail/'+m.sku}><img src={m.pic}/>
+      list.push(<li onClick={that.toDetail.bind(that,m.sku)}>
+        <a><img src={m.pic}/>
         <p className="HomeListTitle">{m.title}</p>
           <p className="homeListPrice"><span className="homeListPrice1">￥{m.sale_price}</span>
           <span className="homeListPrice2">查看详情&gt;&gt;</span></p>
-        </Link>
+        </a>
       </li>)
     })
     this.setState({
       homeList: list
     });
   }
-  componentWillMount() {
+  componentDidMount() {
     let url = '/api/mall/postIndexData'
-    fetchData(url, (data) => {
-      this.renderData(data.slider)
-      this.renderHomeData(data.recommend)
+    var that = this
+    Ajax(url, {}, function(data) {
+      that.renderData(data.slider)
+      that.renderHomeData(data.recommend)
     })
     var _timer = 0;
     var that = this
@@ -88,16 +95,13 @@ class Home extends React.Component {
       <div id="content" className="container">
 			<Scroller ref="scroller" usePullRefresh={true}  useLoadMore={false}
 			extraClass={'yo-scroller-fullscreen'} scrollY={true} onRefresh={() => {
-        console.log("上拉刷新")
-        this.setState({
-          bannerList: [<li/>],
-          homeList: []
-        })
+        console.log("下拉刷新")
         let url = './api/mall/postIndexData'
-        fetchData(url,(data) => {
-          this.renderData(data.slider)
-          this.renderHomeData(data.recommend)
-          this.refs.scroller.stopRefreshing(true)
+        var that = this
+        Ajax(url, {}, function(data) {
+          that.renderData(data.slider)
+          that.renderHomeData(data.recommend)
+          that.refs.scroller.stopRefreshing(true)
         })
       }}>
         <span className="BannerGuang">广告</span>
@@ -283,21 +287,6 @@ class Home extends React.Component {
       </Scroller>
     	</div>
     )
-  }
-  componentDidMount() {
-    let url = "/api/mall/postIndexData/";
-    fetch(url)
-      .then(response => response.json())
-      .then(
-        res => {
-          // console.log(res.slider);
-          let bList = res.slider.map(function(item, index) {
-            return <li className="item"><img className="img" src={item.Pic}/></li>
-          });
-          this.setState({
-            bannerList: bList
-          })
-        })
   }
 }
 export default Home
