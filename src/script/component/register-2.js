@@ -85,6 +85,9 @@ class Register extends React.Component{
       location.href='#/user';
     }
   }
+  clearInput(e){
+    this.refs[e].value=""
+  }
   render(){
     return(
       <div className="register">
@@ -94,8 +97,8 @@ class Register extends React.Component{
             <h3 className="label"></h3>
             <div className="item">
               <i className="yo-ico">设置密码</i>
-              <div className="flex"><input type="password" value={this.state.password} onChange={this.bindPassword.bind(this)} placeholder="6-20位 建议数字/英文/符号组合"/></div>
-              <i className="yo-ico ico" >&#xf063;</i>
+              <div className="flex"><input ref="password" type="password" value={this.state.password} onChange={this.bindPassword.bind(this)} placeholder="6-20位 建议数字/英文/符号组合"/></div>
+              <i className="yo-ico ico" onClick={this.clearInput.bind(this,"password")}>&#xf063;</i>
             </div>
             <div className="item">
               <i className="yo-ico">宝宝生日</i>

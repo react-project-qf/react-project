@@ -80,6 +80,9 @@ class Login extends React.Component{
       dialogShow:false
     })
   }
+  clearInput(e){
+    this.refs[e].value=""
+  }
   render(){
     return(
       <div className="login">
@@ -89,14 +92,14 @@ class Login extends React.Component{
             <h3 className="label"></h3>
             <div className="item">
               <i className="yo-ico">账号</i>
-              <div className="flex"><input type="text" value={this.state.phone} onChange={this.bindPhone.bind(this)} placeholder="用户名/手机号"/></div>
-              <i className="yo-ico ico">&#xf063;</i>
+              <div className="flex"><input type="text" ref="username" value={this.state.phone} onChange={this.bindPhone.bind(this)} placeholder="用户名/手机号"/></div>
+              <i className="yo-ico ico" onClick={this.clearInput.bind(this,"username")}>&#xf063;</i>
             </div>
             <div className="item">
               <i className="yo-ico">密码</i>
-              <div className="flex"><input value={this.state.password} onChange={this.bindPassword.bind(this)} type="password" placeholder="6-10位密码"/></div>
+              <div className="flex"><input ref="password" value={this.state.password} onChange={this.bindPassword.bind(this)} type="password" placeholder="6-10位密码"/></div>
               <div className="info"></div>
-              <i className="yo-ico ico">&#xf063;</i>
+              <i className="yo-ico ico" onClick={this.clearInput.bind(this,"password")}>&#xf063;</i>
             </div>
           </div>
           <button className="yo-btn yo-btn-stacked" onClick={this.submit.bind(this)}>登录</button>
