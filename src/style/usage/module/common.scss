@@ -1,14 +1,20 @@
 @import "../fragment/yo-header";
+@import "../fragment/yo-number.scss";
 @import '../fragment/yo-search.scss';
 /* * { -ms-touch-action: none; touch-action: none; }*/
 #root{
 	height:100%;
+	width: 100%;
+	position: relative;
+	max-width: 750px;
+	margin: 0 auto;
 }
 input{
 	border: none;
 }
 section{
   height: 100%;
+	position: relative;
 }
 header{
     height:.44rem;
@@ -22,6 +28,10 @@ header{
          -webkit-box-flex:1;
              -ms-flex:1;
                  flex:1;
+                 img{
+                    width:.2rem;
+                    margin-bottom:.1rem;
+                 }
       }
       li:nth-child(2){
          -webkit-box-flex:7;
@@ -32,6 +42,10 @@ header{
          -webkit-box-flex:1;
              -ms-flex:1;
                  flex:1;
+                img{
+                    width:.2rem;
+                    margin-bottom:.1rem;
+                 }
       }
     }
     @include border(1px 0 0 0, #fff);

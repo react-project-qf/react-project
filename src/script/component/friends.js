@@ -4,28 +4,31 @@ import Scroller from '../../component_dev/scroller/src/index';
 class Friends extends React.Component{
 	constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+			bannerList: [<li/>]
+		};
   }
 	renderData(data) {
-    console.log("data", data)
-    var arr = [];
-    data.map(function(m) {
-      arr.push(<li className='item'><img className='img' src={m.Pic}/></li>)
-    })
-    console.log("arr", arr[0])
-    this.setState({
-      bannerList: arr
-    });
-  }
-  componentWillMount() {
-    fetch('./api/mall/postIndexData')
-      .then(response => response.json())
-      .then(data => {
-        console.log("sds", data)
-        this.renderData(data.slider);
-      })
-      .catch(e => console.log("Oops, error", e))
-  }
+
+		console.log("data", data)
+		var arr = [];
+		data.map(function(m) {
+			arr.push(<li className='item'><img className='img' src={m.Pic}/></li>)
+		})
+		console.log("arr", arr[0])
+		this.setState({
+			bannerList: arr
+		});
+	}
+	componentWillMount() {
+		fetch('./api/mall/postIndexData')
+			.then(response => response.json())
+			.then(data => {
+				console.log("sds", data)
+				this.renderData(data.slider);
+			})
+			.catch(e => console.log("Oops, error", e))
+	}
   render(){
     return(
       <div id="content" className="container">

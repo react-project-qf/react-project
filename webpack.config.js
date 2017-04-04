@@ -58,7 +58,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		//压缩
+		// 压缩js
 		// new webpack.optimize.UglifyJsPlugin({
 		// 	compress: {
 		// 		warnings: false
@@ -70,6 +70,13 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/index.ejs',
 			filename: 'index.html',
+			// css压缩
+			// minify: {
+      //   "removeAttributeQuotes": true,
+      //   "removeComments": true,
+      //   "removeEmptyAttributes": true,
+	    // },
+
 			title: '乐友商城'
 		}),
 		new ExtractTextPlugin({
@@ -87,6 +94,7 @@ module.exports = {
 		'react-dom': 'window.ReactDOM',
 		'react-router': 'window.ReactRouter',
 		'react-redux': 'window.ReactRedux',
-		'redux': 'window.Redux'
+		'redux': 'window.Redux',
+		'jquery': 'window.jQuery'
 	}
 }

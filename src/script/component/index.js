@@ -66,7 +66,7 @@ class Index extends React.Component {
 		)
 	}
 	switchRoutes() {
-		console.log("props", this.props.routes[1].title)
+		// console.log("props", this.props.routes[1].title)
 		switch (this.props.routes[1].title) {
 			case "2":
 				this.setState({
@@ -83,11 +83,11 @@ class Index extends React.Component {
 					topHeader: null
 				});
 				break;
-				case "5":
-					this.setState({
-						topHeader: null
-					});
-					break;
+			case "5":
+				this.setState({
+					topHeader: null
+				});
+				break;
 			default:
 				this.setState({
 					topHeader: <Header></Header>

@@ -5,6 +5,8 @@
 	header{
 		height: .44rem;
 		background: #fff;
+		position: relative;
+		z-index: 1000;
 	}
 	section{
 		-webkit-box-flex: 1;
@@ -15,6 +17,8 @@
 	footer{
 		height: .5rem;
 		background: #fff;
+		position: relative;
+		z-index: 1000;
 		@include flexbox();
 		ul{
 			@include flex();

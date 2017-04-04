@@ -1,0 +1,26 @@
+.come{
+	width:100%;
+	.cartNone{
+			@include flexbox();
+			@include flex-direction(column);
+			@include align-items(center);
+			@include justify-content(center);
+			img{
+				margin-top: 40%;
+				height: .8rem;
+				width: .8rem;
+			}
+			p{
+				margin-top: .36rem;
+			}
+			.btn{
+				@include border($border-width:4px,$border-color:#fab300,$radius:5px);
+				margin-top: .32rem;
+				color: #fab300;
+				height: .48rem;
+				width: 1.66rem;
+				line-height: .48rem;
+				text-align: center;
+			}
+		}
+}
