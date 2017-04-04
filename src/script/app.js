@@ -33,6 +33,7 @@ import Setup from './component/setup'
 import Anenst from './component/anenst'
 import Share from './component/share'
 import Detail from './component/detail'
+import Search from './component/search'
 
 import Account from './component/account'
 import Concerned from './component/concerned'
@@ -82,6 +83,7 @@ ReactDom.render(
           		<Route path="collect" component={Collect}/>
           		<Route path="evaluate" component={Evaluate}/>
 			</Route>
+			<Route path="/search" component={Search}></Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')

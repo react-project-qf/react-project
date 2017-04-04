@@ -1,7 +1,7 @@
 import React from 'react'
 class Header extends React.Component {
 	toSearch() {
-		console.log("www")
+		window.location.href = "#/search"
 	}
 	render() {
 		return (
