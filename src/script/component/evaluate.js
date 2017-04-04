@@ -9,10 +9,12 @@ class Evaluate extends React.Component {
   }
   render() {
     return (
-      <div className="m-come">
-      	待评价
-
+      <div className="evaluate">
+         <div className="cartNone">
+        <img src="./images/comment_empty_icon.png" alt=""/>
+        <p>及时评价的你，棒棒哒！</p>
       </div>
+    </div>
     )
   }
 }

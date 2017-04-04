@@ -9,6 +9,7 @@ class Friends extends React.Component{
 		};
   }
 	renderData(data) {
+
 		console.log("data", data)
 		var arr = [];
 		data.map(function(m) {

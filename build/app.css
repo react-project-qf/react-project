@@ -17834,3 +17834,221 @@ a {
     text-align: center; }
   .payment ul li a.active {
     border-bottom: 1px #ffc001 solid; }
+<<<<<<< HEAD
+=======
+
+.now {
+  width: 100%; }
+  .now .cartNone {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; }
+    .now .cartNone img {
+      margin-top: 40%;
+      height: .8rem;
+      width: .8rem; }
+    .now .cartNone p {
+      margin-top: .36rem; }
+    .now .cartNone .btn {
+      position: relative;
+      border-radius: 5px;
+      margin-top: .32rem;
+      color: #fab300;
+      height: .48rem;
+      width: 1.66rem;
+      line-height: .48rem;
+      text-align: center; }
+      .now .cartNone .btn::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        content: " ";
+        border-color: #fab300;
+        border-style: solid;
+        border-width: 4px;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .now .cartNone .btn::after {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .now .cartNone .btn::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+            border-radius: 10px; } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .now .cartNone .btn::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333);
+            border-radius: 15px; } }
+
+.come {
+  width: 100%; }
+  .come .cartNone {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; }
+    .come .cartNone img {
+      margin-top: 40%;
+      height: .8rem;
+      width: .8rem; }
+    .come .cartNone p {
+      margin-top: .36rem; }
+    .come .cartNone .btn {
+      position: relative;
+      border-radius: 5px;
+      margin-top: .32rem;
+      color: #fab300;
+      height: .48rem;
+      width: 1.66rem;
+      line-height: .48rem;
+      text-align: center; }
+      .come .cartNone .btn::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        content: " ";
+        border-color: #fab300;
+        border-style: solid;
+        border-width: 4px;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .come .cartNone .btn::after {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .come .cartNone .btn::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+            border-radius: 10px; } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .come .cartNone .btn::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333);
+            border-radius: 15px; } }
+
+.collect {
+  width: 100%; }
+  .collect .cartNone {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; }
+    .collect .cartNone img {
+      margin-top: 40%;
+      height: .8rem;
+      width: .8rem; }
+    .collect .cartNone p {
+      margin-top: .36rem; }
+    .collect .cartNone .btn {
+      position: relative;
+      border-radius: 5px;
+      margin-top: .32rem;
+      color: #fab300;
+      height: .48rem;
+      width: 1.66rem;
+      line-height: .48rem;
+      text-align: center; }
+      .collect .cartNone .btn::after {
+        pointer-events: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        content: " ";
+        border-color: #fab300;
+        border-style: solid;
+        border-width: 4px;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+        @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+          .collect .cartNone .btn::after {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px; } }
+        @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+          .collect .cartNone .btn::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+            border-radius: 10px; } }
+        @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+          .collect .cartNone .btn::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(0.33333);
+            transform: scale(0.33333);
+            border-radius: 15px; } }
+
+.evaluate {
+  width: 100%; }
+  .evaluate .cartNone {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; }
+    .evaluate .cartNone img {
+      margin-top: 40%;
+      height: .8rem;
+      width: .8rem; }
+    .evaluate .cartNone p {
+      margin-top: .36rem; }
+>>>>>>> nisi

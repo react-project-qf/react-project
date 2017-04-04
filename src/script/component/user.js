@@ -40,17 +40,17 @@ class My extends React.Component{
             <div className="info">查看全部订单</div>
             <i className="yo-ico">&#xf07f;</i>
           </div>
-          <div className="order" onClick={()=>{location.href='#/payment';}}>
+          <div className="order">
             <ul>
-              <li>
+              <li onClick={()=>{location.href='#/payment/come';}}>
                 <i><img src="./images/pay.png" alt=""/></i>
                 <b>待支付</b>
               </li>
-              <li>
+              <li onClick={()=>{location.href='#/payment/collect';}}>
                 <i><img src="./images/goods.png" alt=""/></i>
                 <b>待收货</b>
               </li>
-              <li>
+              <li onClick={()=>{location.href='#/payment/evaluate';}}>
                 <i><img src="./images/evaluate.png" alt=""/></i>
                 <b>待评价</b>
               </li>

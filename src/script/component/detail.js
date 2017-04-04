@@ -107,7 +107,6 @@ class Detail extends React.Component {
       dialogShow: false
     })
   }
-
   componentDidMount() {
     console.log(this);
     console.log(window.scrollY);
