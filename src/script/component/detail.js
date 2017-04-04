@@ -13,7 +13,7 @@ import Scroller from '../../component_dev/scroller/src/index'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
-    this.props.prodDetail=""
+    this.props.prodDetail = ""
     this.state = {
       detailList: [<li/>],
       List: this.props.params.id,
@@ -48,48 +48,61 @@ class Detail extends React.Component {
       dialogShow: false,
       dialogContent: "加入购物车"
     })
-    if (this.state.prod_id != "" && this.state.imgUrl != "") {
-      var goods = {
-        "prod_id": this.state.prod_id,
-        "name": this.state.marketing_title,
-        "count": 1,
-        "marketPrace": this.state.sale_price * 1 + 10,
-        "sale_price": this.state.sale_price * 1,
-        "imgUrl": this.state.imgUrl,
-        "sku": this.state.sku,
-        "ischeck": true
-      }
-      var list = JSON.parse(window.localStorage.getItem("ly-goodList"))
-      var flag = 0
-      var str = ""
-      if (list == null) {
-        list = []
-        list.push(goods)
-        str = JSON.stringify(list)
-        window.localStorage.setItem("ly-goodList", str);
-        Toast.show('加入购物车成功', 3000);
-      } else {
-        for (var i = 0; i < list.length; i++) {
-          if (goods.prod_id == list[i].prod_id) {
-            list[i].count = list[i].count + 1
-            flag = 1
-          }
+    if (window.localStorage.getItem("ly-auth")) {
+      if (this.state.prod_id != "" && this.state.imgUrl != "") {
+        var goods = {
+          "prod_id": this.state.prod_id,
+          "name": this.state.marketing_title,
+          "count": 1,
+          "marketPrace": this.state.sale_price * 1 + 10,
+          "sale_price": this.state.sale_price * 1,
+          "imgUrl": this.state.imgUrl,
+          "sku": this.state.sku,
+          "ischeck": true
         }
-        if (flag == 1) {
-          str = JSON.stringify(list)
-          window.localStorage.setItem("ly-goodList", str)
-        } else {
+        var list = JSON.parse(window.localStorage.getItem("ly-goodList"))
+        var flag = 0
+        var str = ""
+        if (list == null) {
+          list = []
           list.push(goods)
           str = JSON.stringify(list)
           window.localStorage.setItem("ly-goodList", str)
+          Toast.show('加入购物车成功', 3000);
+        } else {
+          for (var i = 0; i < list.length; i++) {
+            if (goods.prod_id == list[i].prod_id) {
+              list[i].count = list[i].count + 1
+              flag = 1
+            }
+          }
+          if (flag == 1) {
+            str = JSON.stringify(list)
+            window.localStorage.setItem("ly-goodList", str)
+          } else {
+            list.push(goods)
+            str = JSON.stringify(list)
+            window.localStorage.setItem("ly-goodList", str)
+          }
+          Toast.show('加入购物车成功', 3000);
         }
-        Toast.show('加入购物车成功', 3000);
+      } else {
+        Toast.show('网络异常请稍后', 3000);
       }
     } else {
-      Toast.show('网络异常请稍后', 3000);
+      this.setState({
+        dialogShow: true,
+        dialogContent: "您还没有登录,请先登录"
+      })
     }
   }
   dialogOk() {
+    this.setState({
+      dialogShow: false
+    })
+    location.href = "#/login"
+  }
+  dialogCancel() {
     this.setState({
       dialogShow: false
     })
@@ -107,13 +120,6 @@ class Detail extends React.Component {
         prodDetail: data.prodDetail
       });
     })
-    // setTimeout(function () {
-    //   that.setState({
-    //     prodDetail: that.state.prodDetail
-    //   });
-    // },6000)
-
-
     Ajax("/api/Product/single_ajax/type/skuInfo", {
       sku: this.state.List
     }, function(data) {
@@ -140,8 +146,7 @@ class Detail extends React.Component {
     })
   }
 
-  componentDidUpdate(){
-  }
+  componentDidUpdate() {}
   render() {
     return (
       <div className="container m-detail" id="content" >
@@ -181,7 +186,7 @@ class Detail extends React.Component {
           <span><Link to="/cart"><img src="./images/nav_shop_off.png" alt=""/></Link></span>
           <span className="toCat" onClick={this.getCat.bind(this)}>加入购物车</span>
         </div>
-        <Dialog  title="提示" show={this.state.dialogShow} onOk={() => this.dialogOk()} onCancel={() => this.dialogOk()}>
+        <Dialog  title="提示" show={this.state.dialogShow} onOk={() => this.dialogOk()} onCancel={() => this.dialogCancel()}>
             <p>{this.state.dialogContent}</p>
         </Dialog>
       </div>
