@@ -42,18 +42,15 @@ class Page extends React.Component{
     fetchData(url, (data) => {
       this.renderHomeData(data.recommend)
     })
-   
+
   }
   render(){
     return(
       <Scroller ref="scroller" usePullRefresh={true}  useLoadMore={false}
       extraClass={'yo-scroller-fullscreen'} scrollY={true} onRefresh={() => {
         console.log("上拉刷新")
-        this.setState({
-          homeList: []
-        })
         let url = './api/mall/postIndexData'
-        fetchData(url,(data) => { 
+        fetchData(url,(data) => {
           this.renderHomeData(data.recommend)
           this.refs.scroller.stopRefreshing(true)
         })
@@ -64,7 +61,7 @@ class Page extends React.Component{
           </ul>
         </div>
         </Scroller>
-       ) 
+       )
   }
 }
 export default Page
